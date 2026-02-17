@@ -1,0 +1,37 @@
+.footer {
+  padding: 48px 24px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.credit {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.heart {
+  color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+  .links {
+    gap: 24px;
+  }
+}
