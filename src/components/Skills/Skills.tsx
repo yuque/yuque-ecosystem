@@ -32,61 +32,61 @@ const personalSkills = [
   },
 ]
 
-const teamSkills = [
+const groupSkills = [
   {
     icon: '🔍',
     title: '团队智能搜索',
     desc: '搜索团队知识库，快速定位团队沉淀的文档和知识。',
     tags: ['search_docs', 'get_doc_content', 'list_group_repos'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-search',
+    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/group-search',
   },
   {
     icon: '📝',
     title: '团队会议纪要',
     desc: '会议纪要自动归档到团队知识库，全员可查。',
     tags: ['create_doc', 'update_doc', 'list_group_repos'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-meeting-notes',
+    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/group-meeting-notes',
   },
   {
     icon: '📊',
     title: '团队周报',
     desc: '汇总团队成员文档贡献，自动生成团队周报。',
     tags: ['group_doc_stats', 'group_member_stats', 'create_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-weekly',
+    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/group-weekly',
   },
   {
     icon: '📐',
     title: '团队技术方案',
     desc: '按团队模板生成技术方案，存到团队知识库待评审。',
     tags: ['create_doc', 'update_doc', 'list_group_repos'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-tech-design',
+    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/group-tech-design',
   },
   {
     icon: '🎒',
     title: '新人入职指南',
     desc: '自动整理团队核心文档，生成入职阅读指南和学习路径。',
     tags: ['list_group_repos', 'list_docs', 'create_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-onboarding',
+    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/group-onboarding',
   },
   {
     icon: '📈',
     title: '团队知识月报',
     desc: '月底自动统计文档产出和知识沉淀趋势，量化团队知识资产。',
     tags: ['group_stats', 'group_member_stats', 'create_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-knowledge-report',
+    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/group-knowledge-report',
   },
 ]
 
-type Scenario = 'personal' | 'team'
+type Scenario = 'personal' | 'group'
 
 const scenarioHint: Record<Scenario, string> = {
   personal: '使用个人 Token，管理个人知识库',
-  team: '使用团队 Token（旗舰版），管理团队知识库',
+  group: '使用团队 Token（旗舰版），管理团队知识库',
 }
 
 function Skills() {
   const [active, setActive] = useState<Scenario>('personal')
-  const skills = active === 'personal' ? personalSkills : teamSkills
+  const skills = active === 'personal' ? personalSkills : groupSkills
 
   return (
     <section className={styles.section}>
@@ -115,8 +115,8 @@ function Skills() {
             👤 个人场景
           </button>
           <button
-            className={`${styles.tabBtn} ${active === 'team' ? styles.tabBtnActive : ''}`}
-            onClick={() => setActive('team')}
+            className={`${styles.tabBtn} ${active === 'group' ? styles.tabBtnActive : ''}`}
+            onClick={() => setActive('group')}
           >
             👥 团队场景
           </button>
