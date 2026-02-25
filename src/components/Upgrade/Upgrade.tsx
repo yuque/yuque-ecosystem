@@ -17,10 +17,10 @@ function Upgrade() {
               当我们发布新版本的 Skills 时，你可以通过以下方式更新：
             </p>
             <div className={styles.codeBlock}>
-              <span className={styles.codeComment}># 更新 Marketplace 目录</span>{'\n'}
-              /plugin marketplace update{'\n'}{'\n'}
-              <span className={styles.codeComment}># 重新安装 Plugin 以获取最新版本</span>{'\n'}
-              /plugin install yuque@yuque-ecosystem
+              <span className={styles.codeComment}># 在终端中更新</span>{'\n'}
+              claude plugin update yuque@yuque-ecosystem{'\n'}{'\n'}
+              <span className={styles.codeComment}># 或在 Claude Code 内部</span>{'\n'}
+              /plugin marketplace update yuque-ecosystem
             </div>
           </div>
         </div>
