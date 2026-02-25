@@ -73,7 +73,7 @@ function QuickStart() {
           <div className={styles.step}>
             <div className={styles.stepNumber}>3</div>
             <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>设置语雀 Token</h3>
+              <h3 className={styles.stepTitle}>设置语雀 Token（永久生效）</h3>
               <p className={styles.stepDesc}>
                 前往{' '}
                 <a
@@ -84,10 +84,11 @@ function QuickStart() {
                 >
                   语雀 Token 设置页
                 </a>
-                {' '}获取 Token。
+                {' '}获取 Token，然后写入 shell 配置文件：
               </p>
               <div className={styles.codeBlock}>
-                export YUQUE_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>
+                <span className={styles.codeComment}># 写入 ~/.zshrc，新终端自动生效</span>{'\n'}
+                echo 'export YUQUE_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>' {'>>'}  ~/.zshrc && source ~/.zshrc
               </div>
             </div>
           </div>
@@ -118,12 +119,12 @@ function QuickStart() {
           <div className={styles.step}>
             <div className={styles.stepNumber}>2</div>
             <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>添加 MCP Server</h3>
+              <h3 className={styles.stepTitle}>一条命令添加 MCP Server</h3>
+              <p className={styles.stepDesc}>
+                Token 自动持久化到 Claude Code 配置中，无需手动设置环境变量。
+              </p>
               <div className={styles.codeBlock}>
-                <span className={styles.codeComment}># 添加 yuque-mcp</span>{'\n'}
-                claude mcp add yuque-mcp -- npx -y yuque-mcp{'\n'}{'\n'}
-                <span className={styles.codeComment}># 设置环境变量</span>{'\n'}
-                export YUQUE_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>
+                claude mcp add -e YUQUE_TOKEN=<span className={styles.codeHighlight}>your-token-here</span> yuque -- npx -y yuque-mcp
               </div>
             </div>
           </div>
