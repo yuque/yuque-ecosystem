@@ -18,9 +18,9 @@ function Upgrade() {
             </p>
             <div className={styles.codeBlock}>
               <span className={styles.codeComment}># 在终端中更新</span>{'\n'}
-              claude plugin update yuque@yuque-ecosystem{'\n'}{'\n'}
+              claude plugin update yuque@yuque{'\n'}{'\n'}
               <span className={styles.codeComment}># 或在 Claude Code 内部</span>{'\n'}
-              /plugin marketplace update yuque-ecosystem
+              /plugin update yuque@yuque
             </div>
           </div>
         </div>

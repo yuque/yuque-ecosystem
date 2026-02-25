@@ -48,7 +48,7 @@ function QuickStart() {
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle}>添加语雀 Marketplace</h3>
               <div className={styles.codeBlock}>
-                claude plugin marketplace add yuque/yuque-ecosystem
+                claude plugin marketplace add yuque/yuque-plugin
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ function QuickStart() {
                 自动配置 MCP Server + Skills，开箱即用。
               </p>
               <div className={styles.codeBlock}>
-                claude plugin install yuque@yuque-ecosystem
+                claude plugin install yuque@yuque
               </div>
             </div>
           </div>
