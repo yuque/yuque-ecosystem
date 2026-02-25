@@ -12,9 +12,9 @@ function Upgrade() {
         <div className={styles.step}>
           <div className={styles.stepNumber}>1</div>
           <div className={styles.stepContent}>
-            <h3 className={styles.stepTitle}>更新 Plugin（Skills &amp; Agent）</h3>
+            <h3 className={styles.stepTitle}>更新 Plugin（Skills）</h3>
             <p className={styles.stepDesc}>
-              当我们发布新版本的 Skills 或 Agent 时，你可以通过以下方式更新：
+              当我们发布新版本的 Skills 时，你可以通过以下方式更新：
             </p>
             <div className={styles.codeBlock}>
               <span className={styles.codeComment}># 更新 Marketplace 目录</span>{'\n'}
