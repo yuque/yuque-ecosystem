@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "语雀 AI 生态 Plugin Marketplace — MCP Tools, Skills, and Agents for Yuque",
   "owner": {
-    "name": "chen201724",
+    "name": "yuque",
     "email": "willchen.babydog@gmail.com"
   },
   "plugins": [
@@ -13,11 +13,11 @@
       "description": "语雀知识库 AI 集成 — 25 MCP Tools + 6 Skills + 专业 Agent",
       "version": "1.0.0",
       "author": {
-        "name": "chen201724"
+        "name": "yuque"
       },
       "source": {
         "source": "github",
-        "repo": "chen201724/yuque-plugin"
+        "repo": "yuque/yuque-plugin"
       },
       "category": "productivity"
     }

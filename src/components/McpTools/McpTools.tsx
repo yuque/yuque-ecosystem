@@ -116,7 +116,7 @@ function McpTools() {
         <div className={styles.titleLinks}>
           <a
             className={styles.externalLink}
-            href="https://github.com/chen201724/yuque-mcp-server"
+            href="https://github.com/yuque/yuque-mcp-server"
             target="_blank"
             rel="noopener noreferrer"
           >

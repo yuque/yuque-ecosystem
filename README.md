@@ -25,8 +25,8 @@ claude mcp add yuque-mcp -- npx -y yuque-mcp --token=YOUR_TOKEN
 ## 📦 Links
 
 - [npm: yuque-mcp](https://www.npmjs.com/package/yuque-mcp)
-- [Website](https://chen201724.github.io/yuque-ecosystem/)
+- [Website](https://yuque.github.io/yuque-ecosystem/)
 
 ## License
 
-MIT © chen201724
+MIT © yuque

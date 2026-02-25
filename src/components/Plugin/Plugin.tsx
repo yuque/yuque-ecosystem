@@ -14,7 +14,7 @@ function Plugin() {
         <h2 className={styles.sectionTitle}>一键集成，开箱即用</h2>
         <a
           className={styles.externalLink}
-          href="https://github.com/chen201724/yuque-plugin"
+          href="https://github.com/yuque/yuque-plugin"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -48,7 +48,7 @@ function Plugin() {
           </p>
           <div className={styles.codeBlock}>
             <span className={styles.codeComment}># 安装 yuque-plugin</span>{'\n'}
-            claude plugin add github:chen201724/yuque-plugin
+            claude plugin add github:yuque/yuque-plugin
           </div>
         </div>
 

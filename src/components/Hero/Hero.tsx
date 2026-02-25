@@ -28,7 +28,7 @@ function Hero() {
             Get Started
           </a>
           <a
-            href="https://github.com/chen201724/yuque-ecosystem"
+            href="https://github.com/yuque/yuque-ecosystem"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.btnSecondary}

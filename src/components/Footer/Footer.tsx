@@ -33,7 +33,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.links}>
         <a
-          href="https://github.com/chen201724/yuque-ecosystem"
+          href="https://github.com/yuque/yuque-ecosystem"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.link}
@@ -61,7 +61,7 @@ function Footer() {
       <span id="busuanzi_value_site_pv" style={{ display: 'none' }} />
       <span id="busuanzi_value_site_uv" style={{ display: 'none' }} />
       <p className={styles.credit}>
-        Built with <span className={styles.heart}>❤️</span> by chen201724
+        Built with <span className={styles.heart}>❤️</span> by yuque
       </p>
     </footer>
   )
