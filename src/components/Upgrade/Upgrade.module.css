@@ -1,0 +1,132 @@
+.section {
+  padding: 100px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionLabel {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.sectionDesc {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 185, 107, 0.1);
+  border: 1px solid rgba(0, 185, 107, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stepContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stepDesc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.codeBlock {
+  position: relative;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-text);
+  overflow-x: auto;
+  white-space: pre;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.codeComment {
+  color: var(--color-text-muted);
+}
+
+.codeHighlight {
+  color: var(--color-primary);
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-border);
+  margin-left: 17px;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 16px;
+  }
+  .step {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .stepTitle {
+    font-size: 15px;
+  }
+  .stepDesc {
+    font-size: 13px;
+  }
+  .codeBlock {
+    font-size: 11px;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+  .divider {
+    margin-left: 0;
+    width: 24px;
+    height: 1px;
+  }
+}
