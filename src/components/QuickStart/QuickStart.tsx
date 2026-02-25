@@ -141,10 +141,10 @@ function QuickStart() {
               <div className={styles.codeBlock}>
                 <span className={styles.codeComment}># 搜索文档</span>{'\n'}
                 "帮我找一下上周写的技术方案"{'\n'}{'\n'}
-                <span className={styles.codeComment}># 创建文档</span>{'\n'}
-                "把这段会议记录整理成文档，放到团队知识库里"{'\n'}{'\n'}
-                <span className={styles.codeComment}># 生成周报</span>{'\n'}
-                "汇总我本周的文档动态，生成周报"
+                <span className={styles.codeComment}># 整理笔记</span>{'\n'}
+                "帮我把这篇草稿整理成结构清晰的文档"{'\n'}{'\n'}
+                <span className={styles.codeComment}># 碎片捕捉</span>{'\n'}
+                "记一下：微服务拆分时要注意数据一致性问题"
               </div>
             </div>
           </div>
