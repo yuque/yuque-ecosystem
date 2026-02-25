@@ -1,5 +1,6 @@
 import Hero from './components/Hero/Hero'
 import Modules from './components/Modules/Modules'
+import DesignPhilosophy from './components/DesignPhilosophy/DesignPhilosophy'
 import McpTools from './components/McpTools/McpTools'
 import Skills from './components/Skills/Skills'
 import QuickStart from './components/QuickStart/QuickStart'
@@ -11,6 +12,7 @@ function App() {
     <>
       <Hero />
       <Modules />
+      <DesignPhilosophy />
       <McpTools />
       <Skills />
       <QuickStart />
