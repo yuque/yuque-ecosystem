@@ -17,10 +17,11 @@ function Upgrade() {
               当我们发布新版本的 Skills 或 Agent 时，你可以通过以下方式更新：
             </p>
             <div className={styles.codeBlock}>
-              <span className={styles.codeComment}># 更新 Marketplace 目录</span>{'\n'}
-              /plugin marketplace update{'\n'}{'\n'}
-              <span className={styles.codeComment}># 重新安装 Plugin 以获取最新版本</span>{'\n'}
-              /plugin install yuque@yuque-ecosystem
+              <span className={styles.codeComment}># 方式一：手动更新</span>{'\n'}
+              /plugin marketplace update yuque-ecosystem{'\n'}{'\n'}
+              <span className={styles.codeComment}># 方式二：开启自动更新（推荐）</span>{'\n'}
+              <span className={styles.codeComment}># 运行 /plugin → Marketplaces tab</span>{'\n'}
+              <span className={styles.codeComment}># → yuque-ecosystem → Enable auto-update</span>
             </div>
           </div>
         </div>
