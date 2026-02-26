@@ -1,0 +1,72 @@
+.wrapper {
+  position: relative;
+}
+
+.code {
+  position: relative;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-text);
+  overflow-x: auto;
+  white-space: pre;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.copyBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.wrapper:hover .copyBtn {
+  opacity: 1;
+}
+
+.copyBtn:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.copied {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.copied:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+  .code {
+    font-size: 11px;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  .copyBtn {
+    width: 28px;
+    height: 28px;
+    top: 6px;
+    right: 6px;
+    border-radius: 6px;
+  }
+}

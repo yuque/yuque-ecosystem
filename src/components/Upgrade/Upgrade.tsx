@@ -1,4 +1,5 @@
 import styles from './Upgrade.module.css'
+import CodeBlock from '../CodeBlock/CodeBlock'
 
 function Upgrade() {
   return (
@@ -16,12 +17,12 @@ function Upgrade() {
             <p className={styles.stepDesc}>
               当我们发布新版本的 Skills 时，你可以通过以下方式更新：
             </p>
-            <div className={styles.codeBlock}>
+            <CodeBlock>
               <span className={styles.codeComment}># 在终端中更新</span>{'\n'}
               claude plugin update yuque-personal@yuque{'\n'}{'\n'}
               <span className={styles.codeComment}># 或在 Claude Code 内部</span>{'\n'}
               /plugin update yuque-personal@yuque
-            </div>
+            </CodeBlock>
           </div>
         </div>
 
@@ -34,7 +35,7 @@ function Upgrade() {
             <p className={styles.stepDesc}>
               MCP Server（yuque-mcp）通过 <code>npx -y yuque-mcp</code> 运行，每次启动时会自动检查并使用最新版本，无需手动更新。
             </p>
-            <div className={styles.codeBlock}>
+            <CodeBlock>
               <span className={styles.codeComment}># 如需指定版本</span>{'\n'}
               {'{'}{'\n'}
               {'  '}"mcpServers": {'{'}{'\n'}
@@ -44,7 +45,7 @@ function Upgrade() {
               {'    '}{'}'}{'\n'}
               {'  '}{'}'}{'\n'}
               {'}'}
-            </div>
+            </CodeBlock>
           </div>
         </div>
 
@@ -57,12 +58,12 @@ function Upgrade() {
             <p className={styles.stepDesc}>
               随时确认你正在使用的版本。
             </p>
-            <div className={styles.codeBlock}>
+            <CodeBlock>
               <span className={styles.codeComment}># Plugin 版本</span>{'\n'}
               查看 /plugin 界面的 Installed tab{'\n'}{'\n'}
               <span className={styles.codeComment}># MCP Server 版本</span>{'\n'}
               npx yuque-mcp --version
-            </div>
+            </CodeBlock>
           </div>
         </div>
       </div>
