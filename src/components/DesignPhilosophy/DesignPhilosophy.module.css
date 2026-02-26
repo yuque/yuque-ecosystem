@@ -1,0 +1,187 @@
+.section {
+  padding: 100px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.sectionLabel {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.sectionDesc {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 56px;
+  line-height: 1.8;
+}
+
+/* Lifecycle flow */
+.lifecycle {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+}
+
+.phaseGroup {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.phaseCard {
+  padding: 28px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  transition: all 0.3s ease;
+  width: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.phaseCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--phase-color);
+  opacity: 0.8;
+}
+
+.phaseCard:hover {
+  border-color: var(--phase-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.phaseHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.phaseEmoji {
+  font-size: 28px;
+}
+
+.phaseEn {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  display: block;
+}
+
+.phaseTitle {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.phaseDesc {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  min-height: 44px;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skillTag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: rgba(0, 185, 107, 0.08);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  border: 1px solid rgba(0, 185, 107, 0.15);
+}
+
+.arrow {
+  font-size: 20px;
+  color: var(--color-text-muted);
+  padding: 0 12px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Closed loop hint */
+.closedLoop {
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.loopLine {
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  margin: 0 auto 16px;
+}
+
+.loopText {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 1060px) {
+  .lifecycle {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  .arrow {
+    display: none;
+  }
+  .phaseCard {
+    width: calc(50% - 8px);
+    min-width: 220px;
+  }
+  .phaseGroup {
+    width: calc(50% - 8px);
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 20px;
+  }
+  .phaseCard {
+    width: 100%;
+  }
+  .phaseGroup {
+    width: 100%;
+  }
+}
