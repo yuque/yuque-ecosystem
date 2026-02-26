@@ -23,11 +23,11 @@ function App() {
             <div id="quick-start">
               <QuickStart />
             </div>
+            <Upgrade />
           </>
         }
         teamContent={<ComingSoon />}
       />
-      <Upgrade />
       <Footer />
     </>
   )
