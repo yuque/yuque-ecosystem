@@ -1,10 +1,11 @@
 import Hero from './components/Hero/Hero'
 import Modules from './components/Modules/Modules'
-import DesignPhilosophy from './components/DesignPhilosophy/DesignPhilosophy'
 import McpTools from './components/McpTools/McpTools'
+import EditionTabs from './components/EditionTabs/EditionTabs'
+import DesignPhilosophy from './components/DesignPhilosophy/DesignPhilosophy'
 import Skills from './components/Skills/Skills'
-import GroupPreview from './components/GroupPreview/GroupPreview'
 import QuickStart from './components/QuickStart/QuickStart'
+import ComingSoon from './components/ComingSoon/ComingSoon'
 import Upgrade from './components/Upgrade/Upgrade'
 import Footer from './components/Footer/Footer'
 
@@ -14,12 +15,18 @@ function App() {
       <Hero />
       <Modules />
       <McpTools />
-      <GroupPreview />
-      <DesignPhilosophy />
-      <Skills />
-      <div id="quick-start">
-        <QuickStart />
-      </div>
+      <EditionTabs
+        personalContent={
+          <>
+            <DesignPhilosophy />
+            <Skills />
+            <div id="quick-start">
+              <QuickStart />
+            </div>
+          </>
+        }
+        teamContent={<ComingSoon />}
+      />
       <Upgrade />
       <Footer />
     </>

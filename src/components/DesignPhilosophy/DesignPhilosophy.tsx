@@ -6,7 +6,7 @@ const phases = [
     phase: '输入',
     title: 'Capture',
     desc: '碎片想法、阅读笔记，随时捕获，不再遗忘。',
-    skills: ['reading-digest', 'daily-capture'],
+    skills: ['yuque-personal-reading-digest', 'yuque-personal-daily-capture'],
     color: '#58a6ff',
   },
   {
@@ -14,7 +14,7 @@ const phases = [
     phase: '加工',
     title: 'Process',
     desc: '打磨笔记、发现关联、提炼风格，让知识真正内化。',
-    skills: ['note-refine', 'knowledge-connect', 'style-extract'],
+    skills: ['yuque-personal-note-refine', 'yuque-personal-knowledge-connect', 'yuque-personal-style-extract'],
     color: '#d2a8ff',
   },
   {
@@ -22,7 +22,7 @@ const phases = [
     phase: '输出',
     title: 'Retrieve',
     desc: '智能搜索、多粒度摘要，需要时秒级调用。',
-    skills: ['smart-search', 'smart-summary'],
+    skills: ['yuque-personal-smart-search', 'yuque-personal-smart-summary'],
     color: '#00b96b',
   },
   {
@@ -30,7 +30,7 @@ const phases = [
     phase: '维护',
     title: 'Maintain',
     desc: '自动检测过期内容，保持知识库常新常准。',
-    skills: ['stale-detector'],
+    skills: ['yuque-personal-stale-detector'],
     color: '#f0883e',
   },
 ]
@@ -38,7 +38,7 @@ const phases = [
 function DesignPhilosophy() {
   return (
     <section className={styles.section}>
-      <p className={styles.sectionLabel}>Design Philosophy · 个人版</p>
+      <p className={styles.sectionLabel}>Design Philosophy</p>
       <h2 className={styles.sectionTitle}>语雀 = 你的第二大脑</h2>
       <p className={styles.sectionDesc}>
         知识不该只是存着。从输入到输出，AI Skills 覆盖知识管理的完整生命周期，

@@ -40,7 +40,7 @@ function Upgrade() {
               {'  '}"mcpServers": {'{'}{'\n'}
               {'    '}"yuque": {'{'}{'\n'}
               {'      '}"command": "npx",{'\n'}
-              {'      '}"args": ["-y", "<span className={styles.codeHighlight}>yuque-mcp@1.0.0</span>"]{'\n'}
+              {'      '}"args": ["-y", "<span className={styles.codeHighlight}>yuque-mcp@latest</span>"]{'\n'}
               {'    '}{'}'}{'\n'}
               {'  '}{'}'}{'\n'}
               {'}'}
