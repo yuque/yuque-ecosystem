@@ -38,7 +38,7 @@ const phases = [
 function DesignPhilosophy() {
   return (
     <section className={styles.section}>
-      <p className={styles.sectionLabel}>Design Philosophy</p>
+      <p className={styles.sectionLabel}>Design Philosophy · 个人版</p>
       <h2 className={styles.sectionTitle}>语雀 = 你的第二大脑</h2>
       <p className={styles.sectionDesc}>
         知识不该只是存着。从输入到输出，AI Skills 覆盖知识管理的完整生命周期，

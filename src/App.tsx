@@ -13,10 +13,10 @@ function App() {
     <>
       <Hero />
       <Modules />
-      <DesignPhilosophy />
       <McpTools />
-      <Skills />
       <GroupPreview />
+      <DesignPhilosophy />
+      <Skills />
       <div id="quick-start">
         <QuickStart />
       </div>

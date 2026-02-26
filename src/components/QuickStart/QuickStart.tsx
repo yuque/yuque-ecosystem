@@ -8,7 +8,7 @@ function QuickStart() {
 
   return (
     <section className={styles.section}>
-      <p className={styles.sectionLabel}>Quick Start</p>
+      <p className={styles.sectionLabel}>Quick Start · 个人版</p>
       <div className={styles.titleRow}>
         <h2 className={styles.sectionTitle}>开始使用</h2>
         <a
@@ -21,7 +21,7 @@ function QuickStart() {
         </a>
       </div>
       <p className={styles.sectionDesc}>
-        两种方式接入语雀 AI 能力，推荐使用 Plugin 一键安装。
+        两种方式接入语雀个人版 AI 能力，推荐使用 Plugin 一键安装。团队版即将推出，敬请期待。
       </p>
 
       <div className={styles.tabWrapper}>
@@ -48,7 +48,7 @@ function QuickStart() {
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle}>添加语雀 Marketplace</h3>
               <div className={styles.codeBlock}>
-                claude plugin marketplace add yuque/yuque-plugin
+                /plugin marketplace add yuque/yuque-plugin
               </div>
             </div>
           </div>
@@ -58,12 +58,12 @@ function QuickStart() {
           <div className={styles.step}>
             <div className={styles.stepNumber}>2</div>
             <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>安装 Plugin</h3>
+              <h3 className={styles.stepTitle}>安装个人版 Plugin</h3>
               <p className={styles.stepDesc}>
                 自动配置 MCP Server + Skills，开箱即用。
               </p>
               <div className={styles.codeBlock}>
-                claude plugin install yuque@yuque
+                /plugin install yuque-personal@yuque
               </div>
             </div>
           </div>

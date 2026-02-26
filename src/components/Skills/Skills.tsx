@@ -77,7 +77,7 @@ const personalSkills = [
 function Skills() {
   return (
     <section className={styles.section}>
-      <p className={styles.sectionLabel}>Skills</p>
+      <p className={styles.sectionLabel}>Skills · 个人版</p>
       <div className={styles.titleRow}>
         <h2 className={styles.sectionTitle}>场景化 AI 工作流</h2>
         <a
