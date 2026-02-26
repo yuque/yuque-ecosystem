@@ -1,93 +1,80 @@
-import { useState } from 'react'
 import styles from './Skills.module.css'
 
 const personalSkills = [
+  // 📥 输入
+  {
+    icon: '📖',
+    title: '阅读笔记',
+    desc: '阅读文章后自动提取核心观点、金句、行动项，生成结构化阅读笔记。',
+    tags: ['get_doc', 'create_doc', 'search'],
+    category: '📥 输入',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/reading-digest',
+  },
+  {
+    icon: '💡',
+    title: '碎片捕捉',
+    desc: '随时记录灵感和想法，定期自动归类整理，合并成结构化的主题笔记。',
+    tags: ['search', 'create_doc', 'update_doc'],
+    category: '📥 输入',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/daily-capture',
+  },
+  // 🧠 加工
+  {
+    icon: '✨',
+    title: '笔记打磨',
+    desc: '把粗糙笔记打磨成高质量文档，补充结构、优化表达、改善排版。',
+    tags: ['get_doc', 'update_doc'],
+    category: '🧠 加工',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/note-refine',
+  },
+  {
+    icon: '🕸️',
+    title: '知识关联',
+    desc: '分析知识库文档间的隐藏联系，建议交叉引用链接，构建知识网络。',
+    tags: ['get_repo_docs', 'get_doc', 'update_doc', 'search'],
+    category: '🧠 加工',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/knowledge-connect',
+  },
+  {
+    icon: '✍️',
+    title: '风格提取',
+    desc: '分析你的写作风格，生成风格画像，帮你保持一致的文风写新内容。',
+    tags: ['get_repo_docs', 'get_doc', 'create_doc'],
+    category: '🧠 加工',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/style-extract',
+  },
+  // 📤 输出
   {
     icon: '🔍',
-    title: '个人智能搜索',
-    desc: '搜索个人知识库文档，自然语言提问，秒找到并总结关键内容。',
-    tags: ['search_docs', 'get_doc_content'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/personal-search',
+    title: '智能搜索',
+    desc: '自然语言搜索个人知识库，秒找到并总结关键内容。',
+    tags: ['search', 'get_doc'],
+    category: '📤 输出',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/smart-search',
   },
   {
-    icon: '📝',
-    title: '个人会议纪要',
-    desc: '开完会丢给 AI，自动整理格式并归档到个人知识库。',
-    tags: ['create_doc', 'update_doc', 'list_repos'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/personal-meeting-notes',
+    icon: '📋',
+    title: '智能摘要',
+    desc: '对任意文档或知识库生成不同粒度的摘要：一句话、要点、详细。',
+    tags: ['get_doc', 'get_repo_docs'],
+    category: '📤 输出',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/smart-summary',
   },
+  // 🔄 维护
   {
-    icon: '📊',
-    title: '个人周报',
-    desc: '汇总本周个人文档创建和更新动态，一键生成周报。',
-    tags: ['list_docs', 'get_doc_content', 'create_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/personal-weekly',
-  },
-  {
-    icon: '📐',
-    title: '个人技术方案',
-    desc: '给个需求描述，自动生成技术方案骨架，存到个人知识库。',
-    tags: ['create_doc', 'update_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/personal-tech-design',
+    icon: '🔎',
+    title: '过期检测',
+    desc: '扫描知识库发现过期文档，生成健康报告，建议更新或归档。',
+    tags: ['get_repo_docs', 'get_doc', 'search'],
+    category: '🔄 维护',
+    link: 'https://github.com/yuque/yuque-plugin/tree/main/plugins/yuque-personal/skills/stale-detector',
   },
 ]
 
-const teamSkills = [
-  {
-    icon: '🔍',
-    title: '团队智能搜索',
-    desc: '搜索团队知识库，快速定位团队沉淀的文档和知识。',
-    tags: ['search_docs', 'get_doc_content', 'list_group_repos'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-search',
-  },
-  {
-    icon: '📝',
-    title: '团队会议纪要',
-    desc: '会议纪要自动归档到团队知识库，全员可查。',
-    tags: ['create_doc', 'update_doc', 'list_group_repos'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-meeting-notes',
-  },
-  {
-    icon: '📊',
-    title: '团队周报',
-    desc: '汇总团队成员文档贡献，自动生成团队周报。',
-    tags: ['group_doc_stats', 'group_member_stats', 'create_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-weekly',
-  },
-  {
-    icon: '📐',
-    title: '团队技术方案',
-    desc: '按团队模板生成技术方案，存到团队知识库待评审。',
-    tags: ['create_doc', 'update_doc', 'list_group_repos'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-tech-design',
-  },
-  {
-    icon: '🎒',
-    title: '新人入职指南',
-    desc: '自动整理团队核心文档，生成入职阅读指南和学习路径。',
-    tags: ['list_group_repos', 'list_docs', 'create_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-onboarding',
-  },
-  {
-    icon: '📈',
-    title: '团队知识月报',
-    desc: '月底自动统计文档产出和知识沉淀趋势，量化团队知识资产。',
-    tags: ['group_stats', 'group_member_stats', 'create_doc'],
-    link: 'https://github.com/yuque/yuque-skills/tree/main/skills/team-knowledge-report',
-  },
-]
-
-type Scenario = 'personal' | 'team'
-
-const scenarioHint: Record<Scenario, string> = {
-  personal: '使用个人 Token，管理个人知识库',
-  team: '使用团队 Token（旗舰版），管理团队知识库',
-}
+// TODO: 团队版 skills 暂时隐藏，后续恢复
+// const teamSkills = [ ... ]
 
 function Skills() {
-  const [active, setActive] = useState<Scenario>('personal')
-  const skills = active === 'personal' ? personalSkills : teamSkills
-
   return (
     <section className={styles.section}>
       <p className={styles.sectionLabel}>Skills</p>
@@ -95,7 +82,7 @@ function Skills() {
         <h2 className={styles.sectionTitle}>场景化 AI 工作流</h2>
         <a
           className={styles.externalLink}
-          href="https://github.com/yuque/yuque-skills"
+          href="https://github.com/yuque/yuque-plugin"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -104,28 +91,12 @@ function Skills() {
       </div>
       <p className={styles.sectionDesc}>
         每个 Skill 都是一个精心编排的工作流，将多个 Tools 组合成开箱即用的解决方案。
+        <br />
+        覆盖知识管理全生命周期：输入 → 加工 → 输出 → 维护。
       </p>
 
-      <div className={styles.tabWrapper}>
-        <div className={styles.tabContainer}>
-          <button
-            className={`${styles.tabBtn} ${active === 'personal' ? styles.tabBtnActive : ''}`}
-            onClick={() => setActive('personal')}
-          >
-            👤 个人场景
-          </button>
-          <button
-            className={`${styles.tabBtn} ${active === 'team' ? styles.tabBtnActive : ''}`}
-            onClick={() => setActive('team')}
-          >
-            👥 团队场景
-          </button>
-        </div>
-        <p className={styles.tabHint}>{scenarioHint[active]}</p>
-      </div>
-
-      <div className={styles.grid} key={active}>
-        {skills.map((s) => (
+      <div className={styles.grid}>
+        {personalSkills.map((s) => (
           <div key={s.title} className={styles.card}>
             <span className={styles.cardIcon}>{s.icon}</span>
             <h3 className={styles.cardTitle}>{s.title}</h3>
