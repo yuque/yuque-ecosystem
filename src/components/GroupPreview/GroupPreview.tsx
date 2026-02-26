@@ -1,4 +1,4 @@
-import styles from './TeamPreview.module.css'
+import styles from './GroupPreview.module.css'
 
 const personalFeatures = [
   { icon: '📥', text: '碎片捕捉 & 阅读笔记' },
@@ -7,14 +7,14 @@ const personalFeatures = [
   { icon: '🔄', text: '过期检测 & 知识维护' },
 ]
 
-const teamFeatures = [
+const groupFeatures = [
   { icon: '👥', text: '团队知识库协作管理' },
   { icon: '📋', text: '经验沉淀 & 最佳实践提炼' },
   { icon: '🔗', text: '跨团队知识发现与共享' },
   { icon: '📊', text: '团队知识健康度分析' },
 ]
 
-function TeamPreview() {
+function GroupPreview() {
   return (
     <section className={styles.section}>
       <p className={styles.sectionLabel}>Editions</p>
@@ -46,8 +46,8 @@ function TeamPreview() {
           </div>
         </div>
 
-        {/* Team */}
-        <div className={`${styles.card} ${styles.cardTeam}`}>
+        {/* Group */}
+        <div className={`${styles.card} ${styles.cardGroup}`}>
           <div className={styles.cardHeader}>
             <span className={styles.cardEmoji}>👥</span>
             <div className={styles.cardTitleGroup}>
@@ -59,7 +59,7 @@ function TeamPreview() {
             让团队经验不再流失。AI 驱动的协作知识管理，沉淀组织智慧。
           </p>
           <div className={styles.features}>
-            {teamFeatures.map((f) => (
+            {groupFeatures.map((f) => (
               <div key={f.text} className={styles.feature}>
                 <span className={styles.featureIcon}>{f.icon}</span>
                 <span>{f.text}</span>
@@ -72,4 +72,4 @@ function TeamPreview() {
   )
 }
 
-export default TeamPreview
+export default GroupPreview

@@ -72,7 +72,7 @@ const personalSkills = [
 ]
 
 // TODO: 团队版 skills 暂时隐藏，后续恢复
-// const teamSkills = [ ... ]
+// const groupSkills = [ ... ]
 
 function Skills() {
   return (

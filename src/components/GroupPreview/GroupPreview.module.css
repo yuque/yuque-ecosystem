@@ -68,11 +68,11 @@
   background: var(--color-primary);
 }
 
-.cardTeam {
+.cardGroup {
   border-color: rgba(88, 166, 255, 0.3);
 }
 
-.cardTeam::before {
+.cardGroup::before {
   content: '';
   position: absolute;
   top: 0;
