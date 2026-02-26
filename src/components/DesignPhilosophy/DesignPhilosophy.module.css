@@ -41,7 +41,7 @@
 
 .phaseGroup {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 0;
 }
 
@@ -54,6 +54,8 @@
   width: 240px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .phaseCard::before {
@@ -104,7 +106,7 @@
   font-size: 13px;
   line-height: 1.7;
   margin-bottom: 16px;
-  min-height: 44px;
+  flex: 1;
 }
 
 .skillTags {
@@ -131,6 +133,8 @@
   padding: 0 12px;
   flex-shrink: 0;
   user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 /* Closed loop hint */

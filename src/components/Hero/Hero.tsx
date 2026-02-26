@@ -16,9 +16,7 @@ function Hero() {
         </p>
         <div className={styles.actions}>
           <a
-            href="https://www.npmjs.com/package/yuque-mcp"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#quick-start"
             className={styles.btnPrimary}
           >
             <svg className={styles.btnIcon} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -88,7 +88,7 @@ function QuickStart() {
               </p>
               <div className={styles.codeBlock}>
                 <span className={styles.codeComment}># 写入 ~/.zshrc，新终端自动生效</span>{'\n'}
-                echo 'export YUQUE_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>' {'>>'}  ~/.zshrc && source ~/.zshrc
+                echo 'export YUQUE_PERSONAL_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>' {'>>'}  ~/.zshrc && source ~/.zshrc
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ function QuickStart() {
                 Token 自动持久化到 Claude Code 配置中，无需手动设置环境变量。
               </p>
               <div className={styles.codeBlock}>
-                claude mcp add -e YUQUE_TOKEN=<span className={styles.codeHighlight}>your-token-here</span> yuque -- npx -y yuque-mcp
+                claude mcp add -e YUQUE_PERSONAL_TOKEN=<span className={styles.codeHighlight}>your-token-here</span> yuque -- npx -y yuque-mcp
               </div>
             </div>
           </div>

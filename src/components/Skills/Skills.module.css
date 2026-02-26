@@ -124,6 +124,8 @@
   border: 1px solid var(--color-border);
   background: var(--color-bg-secondary);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -150,6 +152,7 @@
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 16px;
+  flex: 1;
 }
 
 .tags {

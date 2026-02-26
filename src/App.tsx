@@ -3,6 +3,7 @@ import Modules from './components/Modules/Modules'
 import DesignPhilosophy from './components/DesignPhilosophy/DesignPhilosophy'
 import McpTools from './components/McpTools/McpTools'
 import Skills from './components/Skills/Skills'
+import TeamPreview from './components/TeamPreview/TeamPreview'
 import QuickStart from './components/QuickStart/QuickStart'
 import Upgrade from './components/Upgrade/Upgrade'
 import Footer from './components/Footer/Footer'
@@ -15,7 +16,10 @@ function App() {
       <DesignPhilosophy />
       <McpTools />
       <Skills />
-      <QuickStart />
+      <TeamPreview />
+      <div id="quick-start">
+        <QuickStart />
+      </div>
       <Upgrade />
       <Footer />
     </>
