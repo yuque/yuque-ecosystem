@@ -33,7 +33,7 @@
 
 ### 🔌 [Plugin](https://github.com/yuque/yuque-plugin)
 
-AI 编程助手插件集成，自动配置 MCP Server + Skills。当前支持 Claude Code。
+AI 编程助手插件集成，一键配置 MCP Server + Skills，开箱即用。
 
 ## 📋 个人版 Skills
 
@@ -59,7 +59,7 @@ AI 编程助手插件集成，自动配置 MCP Server + Skills。当前支持 Cl
 | 仓库 | 说明 |
 |------|------|
 | [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) | MCP Server，底层连接层 |
-| [yuque-plugin](https://github.com/yuque/yuque-plugin) | Plugin + Skills，AI 编程助手集成 |
+| [yuque-plugin](https://github.com/yuque/yuque-plugin) | Plugin + Skills，插件集成与场景化工作流 |
 | [yuque-ecosystem](https://github.com/yuque/yuque-ecosystem) | 本仓库，生态官网 |
 
 ## License
