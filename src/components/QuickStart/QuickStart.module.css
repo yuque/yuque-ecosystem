@@ -145,22 +145,6 @@
   text-decoration: underline;
 }
 
-.codeBlock {
-  position: relative;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 16px 20px;
-  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--color-text);
-  overflow-x: auto;
-  white-space: pre;
-  max-width: 100%;
-  word-break: break-all;
-}
-
 .codeComment {
   color: var(--color-text-muted);
 }
@@ -193,11 +177,6 @@
   }
   .stepDesc {
     font-size: 13px;
-  }
-  .codeBlock {
-    font-size: 11px;
-    padding: 12px 14px;
-    border-radius: 8px;
   }
   .divider {
     margin-left: 0;

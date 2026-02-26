@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './QuickStart.module.css'
+import CodeBlock from '../CodeBlock/CodeBlock'
 
 type Tab = 'plugin' | 'manual'
 
@@ -8,7 +9,7 @@ function QuickStart() {
 
   return (
     <section className={styles.section}>
-      <p className={styles.sectionLabel}>Quick Start · 个人版</p>
+      <p className={styles.sectionLabel}>Quick Start</p>
       <div className={styles.titleRow}>
         <h2 className={styles.sectionTitle}>开始使用</h2>
         <a
@@ -41,115 +42,141 @@ function QuickStart() {
         </div>
       </div>
 
-      {active === 'plugin' ? (
-        <div className={styles.steps}>
-          <div className={styles.step}>
-            <div className={styles.stepNumber}>1</div>
-            <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>添加语雀 Marketplace</h3>
-              <div className={styles.codeBlock}>
-                /plugin marketplace add yuque/yuque-plugin
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.divider} />
-
-          <div className={styles.step}>
-            <div className={styles.stepNumber}>2</div>
-            <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>安装个人版 Plugin</h3>
-              <p className={styles.stepDesc}>
-                自动配置 MCP Server + Skills，开箱即用。
-              </p>
-              <div className={styles.codeBlock}>
-                /plugin install yuque-personal@yuque
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.divider} />
-
-          <div className={styles.step}>
-            <div className={styles.stepNumber}>3</div>
-            <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>设置语雀 Token（永久生效）</h3>
-              <p className={styles.stepDesc}>
-                前往{' '}
-                <a
-                  href="https://www.yuque.com/settings/tokens"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  语雀 Token 设置页
-                </a>
-                {' '}获取 Token，然后写入 shell 配置文件：
-              </p>
-              <div className={styles.codeBlock}>
-                <span className={styles.codeComment}># 写入 ~/.zshrc，新终端自动生效</span>{'\n'}
-                echo 'export YUQUE_PERSONAL_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>' {'>>'}  ~/.zshrc && source ~/.zshrc
-              </div>
-            </div>
+      <div className={styles.steps}>
+        <div className={styles.step}>
+          <div className={styles.stepNumber}>0</div>
+          <div className={styles.stepContent}>
+            <h3 className={styles.stepTitle}>前置准备：安装 Claude Code</h3>
+            <p className={styles.stepDesc}>
+              语雀 AI 工具基于{' '}
+              <a
+                href="https://docs.anthropic.com/en/docs/claude-code"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                Claude Code
+              </a>
+              {' '}运行，请先完成安装并确保可以正常启动。
+            </p>
+            <CodeBlock>
+              npm install -g @anthropic-ai/claude-code
+            </CodeBlock>
           </div>
         </div>
-      ) : (
-        <div className={styles.steps}>
-          <div className={styles.step}>
-            <div className={styles.stepNumber}>1</div>
-            <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>获取语雀 Token</h3>
-              <p className={styles.stepDesc}>
-                前往{' '}
-                <a
-                  href="https://www.yuque.com/settings/tokens"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  语雀 Token 设置页
-                </a>
-                {' '}创建 Personal Access Token。
-              </p>
-            </div>
-          </div>
 
-          <div className={styles.divider} />
+        <div className={styles.divider} />
 
-          <div className={styles.step}>
-            <div className={styles.stepNumber}>2</div>
-            <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>一条命令添加 MCP Server</h3>
-              <p className={styles.stepDesc}>
-                Token 自动持久化到 Claude Code 配置中，无需手动设置环境变量。
-              </p>
-              <div className={styles.codeBlock}>
-                claude mcp add -e YUQUE_PERSONAL_TOKEN=<span className={styles.codeHighlight}>your-token-here</span> yuque -- npx -y yuque-mcp
+        {active === 'plugin' ? (
+          <>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>1</div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>添加语雀 Marketplace</h3>
+                <CodeBlock>
+                  /plugin marketplace add yuque/yuque-plugin
+                </CodeBlock>
               </div>
             </div>
-          </div>
 
-          <div className={styles.divider} />
+            <div className={styles.divider} />
 
-          <div className={styles.step}>
-            <div className={styles.stepNumber}>3</div>
-            <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>开始使用！</h3>
-              <p className={styles.stepDesc}>
-                现在你可以用自然语言操作语雀了。试试这些指令：
-              </p>
-              <div className={styles.codeBlock}>
-                <span className={styles.codeComment}># 搜索文档</span>{'\n'}
-                "帮我找一下上周写的技术方案"{'\n'}{'\n'}
-                <span className={styles.codeComment}># 整理笔记</span>{'\n'}
-                "帮我把这篇草稿整理成结构清晰的文档"{'\n'}{'\n'}
-                <span className={styles.codeComment}># 碎片捕捉</span>{'\n'}
-                "记一下：微服务拆分时要注意数据一致性问题"
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>2</div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>安装个人版 Plugin</h3>
+                <p className={styles.stepDesc}>
+                  自动配置 MCP Server + Skills，开箱即用。
+                </p>
+                <CodeBlock>
+                  /plugin install yuque-personal@yuque
+                </CodeBlock>
               </div>
             </div>
-          </div>
-        </div>
-      )}
+
+            <div className={styles.divider} />
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>3</div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>设置语雀 Token（永久生效）</h3>
+                <p className={styles.stepDesc}>
+                  前往{' '}
+                  <a
+                    href="https://www.yuque.com/settings/tokens"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    语雀 Token 设置页
+                  </a>
+                  {' '}获取 Token，然后写入 shell 配置文件：
+                </p>
+                <CodeBlock>
+                  <span className={styles.codeComment}># 写入 ~/.zshrc，新终端自动生效</span>{'\n'}
+                  echo 'export YUQUE_PERSONAL_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>' {'>>'}  ~/.zshrc && source ~/.zshrc
+                </CodeBlock>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>1</div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>获取语雀 Token</h3>
+                <p className={styles.stepDesc}>
+                  前往{' '}
+                  <a
+                    href="https://www.yuque.com/settings/tokens"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    语雀 Token 设置页
+                  </a>
+                  {' '}创建 Personal Access Token。
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.divider} />
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>2</div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>一条命令添加 MCP Server</h3>
+                <p className={styles.stepDesc}>
+                  Token 自动持久化到 Claude Code 配置中，无需手动设置环境变量。
+                </p>
+                <CodeBlock>
+                  claude mcp add -e YUQUE_PERSONAL_TOKEN=<span className={styles.codeHighlight}>your-token-here</span> yuque -- npx -y yuque-mcp
+                </CodeBlock>
+              </div>
+            </div>
+
+            <div className={styles.divider} />
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>3</div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>开始使用！</h3>
+                <p className={styles.stepDesc}>
+                  现在你可以用自然语言操作语雀了。试试这些指令：
+                </p>
+                <CodeBlock>
+                  <span className={styles.codeComment}># 搜索文档</span>{'\n'}
+                  "帮我找一下上周写的技术方案"{'\n'}{'\n'}
+                  <span className={styles.codeComment}># 整理笔记</span>{'\n'}
+                  "帮我把这篇草稿整理成结构清晰的文档"{'\n'}{'\n'}
+                  <span className={styles.codeComment}># 碎片捕捉</span>{'\n'}
+                  "记一下：微服务拆分时要注意数据一致性问题"
+                </CodeBlock>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     </section>
   )
 }
