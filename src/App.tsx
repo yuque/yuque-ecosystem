@@ -4,7 +4,8 @@ import McpTools from './components/McpTools/McpTools'
 import EditionTabs from './components/EditionTabs/EditionTabs'
 import DesignPhilosophy from './components/DesignPhilosophy/DesignPhilosophy'
 import Skills from './components/Skills/Skills'
-import QuickStart from './components/QuickStart/QuickStart'
+import McpQuickStart from './components/McpQuickStart/McpQuickStart'
+import PluginInstall from './components/PluginInstall/PluginInstall'
 import ComingSoon from './components/ComingSoon/ComingSoon'
 import Upgrade from './components/Upgrade/Upgrade'
 import Footer from './components/Footer/Footer'
@@ -20,9 +21,8 @@ function App() {
           <>
             <DesignPhilosophy />
             <Skills />
-            <div id="quick-start">
-              <QuickStart />
-            </div>
+            <McpQuickStart />
+            <PluginInstall />
             <Upgrade />
           </>
         }
