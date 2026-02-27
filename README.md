@@ -35,6 +35,15 @@
 
 AI 助手插件集成，一键配置 MCP Server + Skills，开箱即用。当前支持 Claude Code。
 
+### 🦞 [OpenClaw 适配](./openclaw/)
+
+OpenClaw 用户专属适配，支持通过飞书、Telegram 等渠道使用语雀能力。
+
+```bash
+# 一键安装
+curl -fsSL https://raw.githubusercontent.com/yuque/yuque-ecosystem/main/openclaw/install.sh | bash
+```
+
 ## 📋 个人版 Skills
 
 | 阶段 | Skill | 说明 |
@@ -51,7 +60,8 @@ AI 助手插件集成，一键配置 MCP Server + Skills，开箱即用。当前
 ## 🚀 快速开始
 
 - **使用 MCP Server** → 查看 [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) 获取配置指南
-- **使用 Plugin** → 查看 [yuque-plugin](https://github.com/yuque/yuque-plugin) 一键安装
+- **使用 Plugin (Claude Code)** → 查看 [yuque-plugin](https://github.com/yuque/yuque-plugin) 一键安装
+- **使用 OpenClaw** → 查看 [OpenClaw 适配](./openclaw/) 一键安装
 - **浏览官网** → [yuque.github.io/yuque-ecosystem](https://yuque.github.io/yuque-ecosystem/)
 
 ## 📦 相关仓库
@@ -60,7 +70,7 @@ AI 助手插件集成，一键配置 MCP Server + Skills，开箱即用。当前
 |------|------|
 | [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) | MCP Server，底层连接层 |
 | [yuque-plugin](https://github.com/yuque/yuque-plugin) | Plugin + Skills，AI 助手集成与场景化工作流 |
-| [yuque-ecosystem](https://github.com/yuque/yuque-ecosystem) | 本仓库，生态官网 |
+| [yuque-ecosystem](https://github.com/yuque/yuque-ecosystem) | 本仓库，生态官网 + OpenClaw 适配 |
 
 ## License
 

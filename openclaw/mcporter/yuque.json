@@ -1,0 +1,54 @@
+{
+  "$schema": "https://mcporter.dev/schema/server.json",
+  "id": "yuque",
+  "name": "Yuque MCP Server",
+  "description": "语雀知识库 MCP Server - 提供文档读写、搜索、知识库管理等 25 个标准化工具",
+  "homepage": "https://github.com/yuque/yuque-mcp-server",
+  "transport": {
+    "type": "stdio",
+    "command": "npx",
+    "args": ["-y", "yuque-mcp"]
+  },
+  "env": {
+    "YUQUE_TOKEN": {
+      "description": "语雀 API Token，从 https://www.yuque.com/settings/tokens 获取",
+      "required": true,
+      "secret": true
+    },
+    "YUQUE_HOST": {
+      "description": "语雀 API Host (可选，企业版用户需要配置)",
+      "required": false,
+      "default": "https://www.yuque.com/api/v2"
+    }
+  },
+  "tools": [
+    { "name": "yuque_hello", "description": "连接测试，验证 Token 是否有效" },
+    { "name": "yuque_get_user", "description": "获取当前用户信息" },
+    { "name": "yuque_list_groups", "description": "列出用户加入的所有团队" },
+    { "name": "yuque_search", "description": "全文搜索文档、知识库" },
+    { "name": "yuque_list_repos", "description": "列出指定团队或用户的所有知识库" },
+    { "name": "yuque_get_repo", "description": "获取知识库详情" },
+    { "name": "yuque_create_repo", "description": "创建新知识库" },
+    { "name": "yuque_update_repo", "description": "更新知识库信息" },
+    { "name": "yuque_delete_repo", "description": "删除知识库" },
+    { "name": "yuque_list_docs", "description": "列出知识库中的所有文档" },
+    { "name": "yuque_get_doc", "description": "获取文档详情和内容" },
+    { "name": "yuque_create_doc", "description": "创建新文档" },
+    { "name": "yuque_update_doc", "description": "更新文档内容或属性" },
+    { "name": "yuque_delete_doc", "description": "删除文档" },
+    { "name": "yuque_get_toc", "description": "获取知识库的目录结构树" },
+    { "name": "yuque_update_toc", "description": "更新目录结构" },
+    { "name": "yuque_list_doc_versions", "description": "列出文档的所有历史版本" },
+    { "name": "yuque_get_doc_version", "description": "获取文档某个历史版本的内容" },
+    { "name": "yuque_list_group_members", "description": "列出团队所有成员" },
+    { "name": "yuque_update_group_member", "description": "更新成员角色/权限" },
+    { "name": "yuque_remove_group_member", "description": "移除团队成员" },
+    { "name": "yuque_group_stats", "description": "团队整体统计数据" },
+    { "name": "yuque_group_member_stats", "description": "成员贡献统计" },
+    { "name": "yuque_group_book_stats", "description": "知识库活跃度统计" },
+    { "name": "yuque_group_doc_stats", "description": "文档统计数据" }
+  ],
+  "categories": ["knowledge-base", "documentation", "productivity"],
+  "tags": ["yuque", "语雀", "知识库", "文档管理", "团队协作"]
+}
+
