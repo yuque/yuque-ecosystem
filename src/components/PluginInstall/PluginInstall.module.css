@@ -123,6 +123,29 @@
   text-decoration: underline;
 }
 
+.envTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.envTerminal {
+  background: rgba(99, 179, 237, 0.12);
+  color: #63b3ed;
+}
+
+.envClaude {
+  background: rgba(214, 138, 68, 0.12);
+  color: #d68a44;
+}
+
 .codeComment {
   color: var(--color-text-muted);
 }
