@@ -164,23 +164,19 @@
   }
 }
 
-/* Scroll indicator */
+/* Scroll indicator — in document flow, below buttons */
 .scrollIndicator {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  margin-top: 48px;
   color: var(--color-text-muted);
   font-size: 12px;
   letter-spacing: 0.05em;
-  animation: fadeInUp 1.5s ease-out 1s both;
+  animation: fadeIn 1.5s ease-out 1s both;
   cursor: pointer;
   transition: color 0.2s ease;
-  z-index: 1;
 }
 
 .scrollIndicator:hover {
@@ -198,7 +194,7 @@
   50% { transform: translateY(6px); }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
-  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
