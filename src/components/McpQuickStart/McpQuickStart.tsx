@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './McpQuickStart.module.css'
 import CodeBlock from '../CodeBlock/CodeBlock'
 
-type Client = 'cursor' | 'vscode' | 'windsurf' | 'claude-desktop' | 'trae' | 'cline'
+type Client = 'cursor' | 'vscode' | 'windsurf' | 'claude-desktop' | 'trae' | 'qoder' | 'cline'
 
 interface ClientInfo {
   id: Client
@@ -16,6 +16,7 @@ const clients: ClientInfo[] = [
   { id: 'windsurf', label: 'Windsurf', flag: 'windsurf' },
   { id: 'claude-desktop', label: 'Claude Desktop', flag: 'claude-desktop' },
   { id: 'trae', label: 'Trae', flag: 'trae' },
+  { id: 'qoder', label: 'Qoder', flag: 'qoder' },
   { id: 'cline', label: 'Cline', flag: 'cline' },
 ]
 
