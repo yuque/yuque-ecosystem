@@ -1,8 +1,11 @@
+import { useRef } from 'react'
 import styles from './Hero.module.css'
 
 function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+
   return (
-    <section className={styles.hero}>
+    <section ref={sectionRef} className={styles.hero}>
       <div className={styles.gridBg} />
       <div className={styles.glowOrb} />
       <div className={styles.content}>
@@ -40,8 +43,7 @@ function Hero() {
         <div
           className={styles.scrollIndicator}
           onClick={() => {
-            const el = document.querySelector('.hero + section') || document.querySelector('section:nth-of-type(2)')
-            el?.scrollIntoView({ behavior: 'smooth' })
+            sectionRef.current?.nextElementSibling?.scrollIntoView({ behavior: 'smooth' })
           }}
         >
           <span>探索更多</span>
