@@ -99,6 +99,8 @@
 .stepContent {
   flex: 1;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .stepTitle {
@@ -150,12 +152,26 @@
     flex-direction: column;
     gap: 12px;
   }
+
+  .stepContent{ 
+    width: 100%;
+    max-width: 100%;
+  }
+
   .stepTitle {
     font-size: 15px;
   }
   .stepDesc {
     font-size: 13px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
+
+  .link { 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
   .divider {
     margin-left: 0;
     width: 24px;

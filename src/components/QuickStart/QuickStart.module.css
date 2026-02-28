@@ -134,11 +134,15 @@
   color: var(--color-text-secondary);
   margin-bottom: 12px;
   line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .link {
   color: var(--color-primary);
   text-decoration: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .link:hover {
@@ -172,6 +176,13 @@
     flex-direction: column;
     gap: 12px;
   }
+  
+  .stepContent .wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
   .stepTitle {
     font-size: 15px;
   }

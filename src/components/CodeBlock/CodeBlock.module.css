@@ -15,7 +15,7 @@
   overflow-x: auto;
   white-space: pre;
   max-width: 100%;
-  word-break: break-all;
+  word-break: normal;
 }
 
 .copyBtn {

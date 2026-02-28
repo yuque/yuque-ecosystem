@@ -42,6 +42,8 @@
 
 .tabContainer {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   border-radius: 14px;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
@@ -128,6 +130,13 @@
   .section {
     padding: 60px 20px 0;
   }
+  .tabContainer {
+    flex-wrap: nowrap;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    zoom: 0.85;
+  }
   .tab {
     padding: 10px 20px;
     font-size: 14px;
@@ -135,5 +144,10 @@
   .tabBadge {
     font-size: 9px;
     padding: 1px 6px;
+  }
+}
+@media (max-width: 360px) { 
+  .tabContainer {
+    zoom: 0.8;
   }
 }
