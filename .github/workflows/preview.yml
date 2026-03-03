@@ -23,13 +23,12 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: website/package-lock.json
 
       - name: Install & Build
         if: github.event.action != 'closed'
         run: |
-          cd website
           npm ci
+          cd website
           VITE_BASE=/yuque-ecosystem/pr-preview/pr-${{ github.event.number }}/ npm run build          
 
       - name: Deploy preview
