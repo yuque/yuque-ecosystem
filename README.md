@@ -1,10 +1,11 @@
 # Yuque AI Ecosystem — 语雀 AI 生态
 
-
 > The unified home for everything in the Yuque AI ecosystem — website, plugins, skills, and shared resources.
 
 [![Website](https://img.shields.io/badge/Website-yuque.github.io-blue)](https://yuque.github.io/yuque-ecosystem/)
 [![npm](https://img.shields.io/npm/v/yuque-mcp)](https://www.npmjs.com/package/yuque-mcp)
+
+📖 **[语雀 + AI：从文档工具到你的第二大脑](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final)** — 了解语雀 AI 生态的完整愿景
 
 ## Architecture
 
