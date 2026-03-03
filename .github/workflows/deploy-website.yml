@@ -23,10 +23,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
-      - run: npm ci
-      - run: cd website && npm run build
+      - name: Install & Build
+        run: |
+          cd website
+          npm install
+          npm run build          
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

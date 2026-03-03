@@ -22,13 +22,12 @@ jobs:
         if: github.event.action != 'closed'
         with:
           node-version: 20
-          cache: npm
 
       - name: Install & Build
         if: github.event.action != 'closed'
         run: |
-          npm ci
           cd website
+          npm install
           VITE_BASE=/yuque-ecosystem/pr-preview/pr-${{ github.event.number }}/ npm run build          
 
       - name: Deploy preview
