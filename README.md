@@ -1,66 +1,80 @@
 # Yuque AI Ecosystem — 语雀 AI 生态
 
-> MCP Server · Skills · Plugin — 让 AI 无缝连接语雀，释放知识的力量。
 
-🌐 [官网](https://yuque.github.io/yuque-ecosystem/)
+> The unified home for everything in the Yuque AI ecosystem — website, plugins, skills, and shared resources.
 
-## 🏗 生态概览
+[![Website](https://img.shields.io/badge/Website-yuque.github.io-blue)](https://yuque.github.io/yuque-ecosystem/)
+[![npm](https://img.shields.io/npm/v/yuque-mcp)](https://www.npmjs.com/package/yuque-mcp)
 
-语雀 AI 生态由三层组成，从底层连接到上层场景，逐层构建：
+## Architecture
+
+This is a **Stripe-style monorepo**: one core SDK ([yuque-mcp-server](https://github.com/yuque/yuque-mcp-server)) + one ecosystem repository (this repo) containing all client integrations.
+
+| Repository | Purpose | Stripe Analogy |
+|---|---|---|
+| [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) | Core MCP Server (npm package) | stripe-node (SDK) |
+| **yuque-ecosystem** (this repo) | Website + All Client Plugins + Skills | stripe-examples + docs |
+
+## Repository Structure
 
 ```
-┌─────────────────────────────────────────────┐
-│  🔌 Plugin — AI 助手插件集成                │
-├─────────────────────────────────────────────┤
-│  🎯 Skills — 场景化 AI 工作流               │
-├─────────────────────────────────────────────┤
-│  ⚙️ MCP Server — 标准化 Tools               │
-└─────────────────────────────────────────────┘
+yuque-ecosystem/
+├── website/                  # Official website (GitHub Pages)
+├── plugins/
+│   ├── claude-code/          # Claude Code Plugin (Marketplace)
+│   │   ├── personal/         # Personal edition — 25 Tools + 8 Skills
+│   │   └── group/            # Team edition — 25 Tools + 6 Skills
+│   └── openclaw/             # OpenClaw Plugin (Agent Skills)
+├── shared/
+│   └── mcp-config/           # MCP config templates for various editors
+├── .claude-plugin/           # Claude Code Marketplace entry
+└── package.json              # npm workspaces root
 ```
 
-### ⚙️ [MCP Server](https://github.com/yuque/yuque-mcp-server)
+## Quick Start
 
-底层连接层，提供标准化 Tools，覆盖语雀知识库的读写、搜索、管理等全部能力。
+### Claude Code
 
-- npm：[yuque-mcp](https://www.npmjs.com/package/yuque-mcp)
+```bash
+# Option 1: Install via Marketplace
+claude plugin marketplace add yuque/yuque-ecosystem
 
-### 🎯 [Skills](https://github.com/yuque/yuque-plugin)
+# Option 2: Add MCP Server directly
+claude mcp add yuque-mcp -- npx -y yuque-mcp --token=YOUR_TOKEN
+```
 
-场景化 AI 工作流，将多个 Tools 编排成开箱即用的解决方案。
+### Other Editors
 
-- **个人版**：覆盖知识管理全生命周期（📥 输入 → 🧠 加工 → 📤 输出 → 🔄 维护）
-- **团队版**：Coming Soon
+See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for Cursor, Windsurf, VS Code, and more.
 
-### 🔌 [Plugin](https://github.com/yuque/yuque-plugin)
+## Modules
 
-AI 助手插件集成，一键配置 MCP Server + Skills，开箱即用。当前支持 Claude Code。
+| Module | Description | Link |
+|---|---|---|
+| 🌐 Website | Official ecosystem website | [`website/`](./website/) |
+| 🔌 Claude Code Plugin | Claude Code Marketplace plugin | [`plugins/claude-code/`](./plugins/claude-code/) |
+| 🤖 OpenClaw Plugin | OpenClaw Agent integration | [`plugins/openclaw/`](./plugins/openclaw/) |
+| 📋 MCP Config | Editor configuration templates | [`shared/mcp-config/`](./shared/mcp-config/) |
 
-## 📋 个人版 Skills
+## Development
 
-| 阶段 | Skill | 说明 |
-|------|-------|------|
-| 📥 输入 | 📖 阅读笔记 | 阅读文章后自动提取核心观点，生成结构化阅读笔记 |
-| 📥 输入 | 💡 碎片捕捉 | 随时记录灵感想法，定期自动归类整理成主题笔记 |
-| 🧠 加工 | ✨ 笔记打磨 | 把粗糙笔记打磨成高质量文档，优化结构与表达 |
-| 🧠 加工 | 🕸️ 知识关联 | 分析文档间隐藏联系，构建交叉引用知识网络 |
-| 🧠 加工 | ✍️ 风格提取 | 分析写作风格生成画像，保持一致文风 |
-| 📤 输出 | 🔍 智能搜索 | 自然语言搜索知识库，秒找关键内容 |
-| 📤 输出 | 📋 智能摘要 | 对文档或知识库生成不同粒度的摘要 |
-| 🔄 维护 | 🔎 过期检测 | 扫描发现过期文档，生成健康报告 |
+```bash
+# Website development
+cd website
+npm install
+npm run dev
 
-## 🚀 快速开始
+# OpenClaw Plugin development
+cd plugins/openclaw
+npm install
+npm run build
+```
 
-- **使用 MCP Server** → 查看 [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) 获取配置指南
-- **使用 Plugin** → 查看 [yuque-plugin](https://github.com/yuque/yuque-plugin) 一键安装
-- **浏览官网** → [yuque.github.io/yuque-ecosystem](https://yuque.github.io/yuque-ecosystem/)
+## Links
 
-## 📦 相关仓库
-
-| 仓库 | 说明 |
-|------|------|
-| [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) | MCP Server，底层连接层 |
-| [yuque-plugin](https://github.com/yuque/yuque-plugin) | Plugin + Skills，AI 助手集成与场景化工作流 |
-| [yuque-ecosystem](https://github.com/yuque/yuque-ecosystem) | 本仓库，生态官网 |
+- [npm: yuque-mcp](https://www.npmjs.com/package/yuque-mcp)
+- [Website](https://yuque.github.io/yuque-ecosystem/)
+- [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server)
 
 ## License
 

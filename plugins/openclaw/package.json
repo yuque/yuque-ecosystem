@@ -1,0 +1,14 @@
+{
+  "name": "@yuque/openclaw-plugin",
+  "version": "1.0.0",
+  "description": "Yuque AI Ecosystem — OpenClaw Plugin",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": ["yuque", "openclaw", "plugin", "mcp", "ai"],
+  "author": "yuque",
+  "license": "MIT"
+}

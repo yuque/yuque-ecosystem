@@ -1,0 +1,11 @@
+{
+  "name": "yuque-personal",
+  "description": "语雀个人版 — 个人知识库 AI 集成，25 MCP Tools + 4 Skills",
+  "version": "1.0.0",
+  "author": {
+    "name": "yuque"
+  },
+  "homepage": "https://yuque.github.io/yuque-ecosystem/",
+  "repository": "https://github.com/yuque/yuque-plugin",
+  "license": "MIT"
+}

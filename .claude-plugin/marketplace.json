@@ -1,0 +1,35 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "yuque",
+  "version": "2.0.0",
+  "description": "语雀 AI 生态 — MCP Tools and Skills for Yuque",
+  "owner": {
+    "name": "yuque",
+    "email": "willchen.babydog@gmail.com"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins/claude-code"
+  },
+  "plugins": [
+    {
+      "name": "yuque-personal",
+      "description": "语雀个人版 — 个人知识库 AI 集成，25 MCP Tools + 4 Skills",
+      "version": "1.0.0",
+      "author": {
+        "name": "yuque"
+      },
+      "source": "personal",
+      "category": "productivity"
+    },
+    {
+      "name": "yuque-group",
+      "description": "语雀团队版 — 团队知识库 AI 集成，25 MCP Tools + 6 Skills",
+      "version": "1.0.0",
+      "author": {
+        "name": "yuque"
+      },
+      "source": "group",
+      "category": "productivity"
+    }
+  ]
+}

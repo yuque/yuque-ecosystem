@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "yuque": {
+      "command": "npx",
+      "args": ["-y", "yuque-mcp@latest"],
+      "env": {
+        "YUQUE_TOKEN": "${YUQUE_GROUP_TOKEN}"
+      }
+    }
+  }
+}

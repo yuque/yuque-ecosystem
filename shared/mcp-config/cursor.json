@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "yuque": {
+      "command": "npx",
+      "args": ["-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"]
+    }
+  }
+}
