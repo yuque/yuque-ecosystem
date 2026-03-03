@@ -48,6 +48,14 @@ function Footer() {
         >
           npm
         </a>
+        <a
+          href="https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
+          Blog
+        </a>
         <span className={styles.link}>MIT License</span>
       </div>
       {(pvCount || uvCount) && (

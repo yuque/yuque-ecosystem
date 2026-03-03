@@ -15,13 +15,20 @@ function Upgrade() {
           <div className={styles.stepContent}>
             <h3 className={styles.stepTitle}>更新 Plugin（Skills）</h3>
             <p className={styles.stepDesc}>
-              当我们发布新版本的 Skills 时，你可以通过以下方式更新：
+              仓库已迁移到{' '}
+              <a href="https://github.com/yuque/yuque-ecosystem" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)' }}>
+                yuque-ecosystem
+              </a>
+              ，当我们发布新版本的 Skills 时，你可以通过以下方式更新：
             </p>
             <CodeBlock>
               <span className={styles.codeComment}># 在终端中更新</span>{'\n'}
               claude plugin update yuque-personal@yuque{'\n'}{'\n'}
               <span className={styles.codeComment}># 或在 Claude Code 内部</span>{'\n'}
-              /plugin update yuque-personal@yuque
+              /plugin update yuque-personal@yuque{'\n'}{'\n'}
+              <span className={styles.codeComment}># ⚠️ 从旧的 yuque-plugin 迁移？先移除旧 marketplace：</span>{'\n'}
+              /plugin marketplace remove yuque/yuque-plugin{'\n'}
+              /plugin marketplace add yuque/yuque-ecosystem
             </CodeBlock>
           </div>
         </div>
