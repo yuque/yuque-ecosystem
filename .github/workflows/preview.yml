@@ -23,16 +23,18 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: website/package-lock.json
 
       - name: Install & Build
         if: github.event.action != 'closed'
         run: |
+          cd website
           npm ci
           VITE_BASE=/yuque-ecosystem/pr-preview/pr-${{ github.event.number }}/ npm run build          
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: dist/
+          source-dir: website/dist/
           preview-branch: gh-pages
           umbrella-dir: pr-preview
