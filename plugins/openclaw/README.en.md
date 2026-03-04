@@ -2,11 +2,11 @@
 
 # Yuque Plugin for OpenClaw
 
-> 语雀 AI 生态 — MCP Tools + Agent Skills for OpenClaw
+> Yuque AI Ecosystem — MCP Tools + Agent Skills for OpenClaw
 
 ## Overview
 
-This plugin integrates Yuque (语雀) knowledge management into the OpenClaw Agent ecosystem, providing:
+This plugin integrates Yuque knowledge management into the OpenClaw Agent ecosystem, providing:
 
 - **Agent Skills** — Natural language workflows for knowledge management
 - **MCP Integration** — Powered by [yuque-mcp-server](https://www.npmjs.com/package/yuque-mcp)

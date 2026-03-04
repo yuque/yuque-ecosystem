@@ -2,21 +2,21 @@
 
 # Yuque Plugin for OpenCode
 
-> 语雀 AI 生态 — MCP Tools and Skills for [OpenCode](https://opencode.ai)
+> Yuque AI Ecosystem — MCP Tools and Skills for [OpenCode](https://opencode.ai)
 
 Integrate your Yuque knowledge base with OpenCode — the open-source AI coding agent. Get 25 MCP tools for document management and 14 ready-to-use skills for knowledge workflows.
 
 ## Editions
 
-### Personal (个人版)
+### Personal
 
-Personal knowledge base AI integration — 25 MCP Tools + 8 Skills.
+AI-powered personal knowledge base integration — 25 MCP Tools + 8 Skills.
 
 📂 [`personal/`](./personal/)
 
-### Group (团队版)
+### Group (Team)
 
-Team knowledge base AI integration — 25 MCP Tools + 6 Skills.
+AI-powered team knowledge base integration — 25 MCP Tools + 6 Skills.
 
 📂 [`group/`](./group/)
 

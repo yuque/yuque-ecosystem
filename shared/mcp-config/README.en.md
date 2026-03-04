@@ -15,7 +15,7 @@ Copy the appropriate config file and replace `YOUR_YUQUE_TOKEN` with your actual
 | GitHub Copilot (VS Code) | `vscode.json` | `.vscode/mcp.json` |
 | OpenCode | `opencode.json` | `opencode.json` (project) or `~/.config/opencode/opencode.json` (global) |
 
-> **Note:** VS Code itself does not support MCP natively; MCP support is provided through the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension. Make sure GitHub Copilot is installed in VS Code before using the `vscode.json` configuration.
+> **Note:** VS Code does not natively support MCP. MCP support requires the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension. Ensure GitHub Copilot is installed and enabled before configuring the MCP server.
 
 ## Claude Code
 
