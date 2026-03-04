@@ -16,8 +16,8 @@ const modules = [
   {
     icon: '🧩',
     title: 'Plugin',
-    desc: '一键集成 MCP + Skills，让 Claude Code 开箱即用地操作语雀，零配置上手。',
-    meta: '25 Tools + 8 Skills',
+    desc: '一键集成 MCP + Skills，让 AI 助手开箱即用地操作语雀。支持 Claude Code、OpenClaw 等客户端。',
+    meta: '25 Tools + 14 Skills',
   },
 ]
 
