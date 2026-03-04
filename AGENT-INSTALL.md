@@ -8,7 +8,7 @@ Determine which AI coding client you are running in and follow the corresponding
 
 - **Claude Code** → See [plugins/claude-code/AGENT-INSTALL.md](./plugins/claude-code/AGENT-INSTALL.md)
 - **OpenCode** → See [plugins/opencode/AGENT-INSTALL.md](./plugins/opencode/AGENT-INSTALL.md)
-- **Cursor / VS Code / Windsurf / Other Editors** → See [shared/mcp-config/AGENT-INSTALL.md](./shared/mcp-config/AGENT-INSTALL.md)
+- **Cursor / GitHub Copilot (VS Code) / Windsurf / Other Editors** → See [shared/mcp-config/AGENT-INSTALL.md](./shared/mcp-config/AGENT-INSTALL.md)
 - **OpenClaw** → Coming soon
 
 ### How to Detect Your Client
@@ -25,6 +25,9 @@ opencode --version 2>/dev/null && echo "CLIENT=opencode"
 
 # Check if running inside VS Code
 [ -n "$VSCODE_PID" ] && echo "CLIENT=vscode"
+
+# Check if GitHub Copilot extension is installed (required for MCP support in VS Code)
+code --list-extensions 2>/dev/null | grep -i "github.copilot" && echo "COPILOT=installed"
 ```
 
 ## Step 2: Prerequisites
@@ -95,7 +98,7 @@ Now proceed to the guide for your specific client (see Step 1 links above).
 | Claude Code | MCP Direct | `claude mcp add yuque-mcp -- npx -y yuque-mcp --token=$YUQUE_TOKEN` |
 | OpenCode | Config File | Add to `opencode.json` (see OpenCode guide) |
 | Cursor | Config File | Add to `.cursor/mcp.json` (see MCP config guide) |
-| VS Code | Config File | Add to `.vscode/mcp.json` (see MCP config guide) |
+| VS Code | Config File | Add to `.vscode/mcp.json` (requires GitHub Copilot extension; see MCP config guide) |
 | Windsurf | Config File | Add to `.windsurf/mcp.json` (see MCP config guide) |
 
 ## Troubleshooting

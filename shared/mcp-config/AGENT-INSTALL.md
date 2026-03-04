@@ -75,6 +75,17 @@ echo "✅ Cursor MCP config written to .cursor/mcp.json"
 
 ## VS Code (GitHub Copilot)
 
+> **Important:** VS Code does not natively support MCP. MCP support requires the GitHub Copilot extension. Ensure GitHub Copilot is installed before proceeding.
+
+### Prerequisites
+
+```bash
+# Check if GitHub Copilot extension is installed
+code --list-extensions 2>/dev/null | grep -i "github.copilot"
+# ✅ Expected: GitHub.copilot listed
+# ❌ If not found: install from https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+```
+
 ### Config File Location
 
 - **Project-level:** `.vscode/mcp.json` (in project root)
@@ -100,9 +111,10 @@ echo "✅ VS Code MCP config written to .vscode/mcp.json"
 
 ### Verify
 
-1. Open VS Code
-2. Open the Copilot chat panel
-3. Yuque tools should appear in the available tools list
+1. Ensure the GitHub Copilot extension is installed and active
+2. Open VS Code
+3. Open the Copilot chat panel
+4. Yuque tools should appear in the available tools list
 
 ---
 
