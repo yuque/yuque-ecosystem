@@ -10,8 +10,10 @@ Copy the appropriate config file and replace `YOUR_YUQUE_TOKEN` with your actual
 |--------|-------------|-------------|
 | Cursor | `cursor.json` | `.cursor/mcp.json` |
 | Windsurf | `windsurf.json` | `.windsurf/mcp.json` |
-| VS Code (Copilot) | `vscode.json` | `.vscode/mcp.json` |
+| GitHub Copilot (VS Code) | `vscode.json` | `.vscode/mcp.json` |
 | OpenCode | `opencode.json` | `opencode.json` (project) or `~/.config/opencode/opencode.json` (global) |
+
+> **Note:** VS Code itself does not support MCP natively; MCP support is provided through the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension. Make sure GitHub Copilot is installed in VS Code before using the `vscode.json` configuration.
 
 ## Claude Code
 

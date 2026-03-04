@@ -66,7 +66,7 @@ See [`plugins/opencode/`](./plugins/opencode/) for skills installation and full 
 
 ### Other Editors
 
-See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for Cursor, Windsurf, VS Code, and more.
+See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for Cursor, Windsurf, GitHub Copilot (VS Code), and more.
 
 ## Modules
 

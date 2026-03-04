@@ -11,8 +11,8 @@ interface ClientInfo {
 }
 
 const clients: ClientInfo[] = [
-  { id: 'vscode', label: 'VS Code', flag: 'vscode' },
   { id: 'cursor', label: 'Cursor', flag: 'cursor' },
+  { id: 'vscode', label: 'GitHub Copilot', flag: 'vscode' },
   { id: 'windsurf', label: 'Windsurf', flag: 'windsurf' },
   { id: 'claude-desktop', label: 'Claude Desktop', flag: 'claude-desktop' },
   { id: 'trae', label: 'Trae', flag: 'trae' },
@@ -21,7 +21,7 @@ const clients: ClientInfo[] = [
 ]
 
 function McpQuickStart() {
-  const [activeClient, setActiveClient] = useState<Client>('vscode')
+  const [activeClient, setActiveClient] = useState<Client>('cursor')
 
   const currentClient = clients.find((c) => c.id === activeClient)!
 
