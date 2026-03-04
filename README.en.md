@@ -1,13 +1,13 @@
 [中文](./README.md) | [English](./README.en.md) | [🤖 Agent Install](./AGENT-INSTALL.md)
 
-# Yuque AI Ecosystem — 语雀 AI 生态
+# Yuque AI Ecosystem
 
 > The unified home for everything in the Yuque AI ecosystem — website, plugins, skills, and shared resources.
 
 [![Website](https://img.shields.io/badge/Website-yuque.github.io-blue)](https://yuque.github.io/yuque-ecosystem/)
 [![npm](https://img.shields.io/npm/v/yuque-mcp)](https://www.npmjs.com/package/yuque-mcp)
 
-📖 **[语雀 + AI：从文档工具到你的第二大脑](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final)** — 了解语雀 AI 生态的完整愿景
+📖 **[Yuque + AI: From Documentation Tool to Your Second Brain](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final)** — Explore the full vision of the Yuque AI Ecosystem
 
 ## Architecture
 
@@ -64,11 +64,11 @@ Add to your `opencode.json`:
 }
 ```
 
-See [`plugins/opencode/`](./plugins/opencode/) for skills installation and full setup guide.
+See [`plugins/opencode/`](./plugins/opencode/) for skills installation and the full setup guide.
 
 ### Other Editors
 
-See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for Cursor, Windsurf, GitHub Copilot (VS Code), and more.
+See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for Cursor, Windsurf, VS Code, and more.
 
 ## Modules
 

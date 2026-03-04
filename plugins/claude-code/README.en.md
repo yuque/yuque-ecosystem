@@ -2,19 +2,19 @@
 
 # Yuque Plugin for Claude Code
 
-> 语雀 AI 生态 — MCP Tools and Skills for Claude Code
+> Yuque AI Ecosystem — MCP Tools and Skills for Claude Code
 
 ## Editions
 
-### Personal (个人版)
+### Personal
 
-Personal knowledge base AI integration — 25 MCP Tools + 8 Skills.
+AI-powered personal knowledge base integration — 25 MCP Tools + 8 Skills.
 
 📂 [`personal/`](./personal/)
 
-### Group (团队版)
+### Group (Team)
 
-Team knowledge base AI integration — 25 MCP Tools + 6 Skills.
+AI-powered team knowledge base integration — 25 MCP Tools + 6 Skills.
 
 📂 [`group/`](./group/)
 
