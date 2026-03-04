@@ -25,6 +25,9 @@ yuque-ecosystem/
 │   ├── claude-code/          # Claude Code Plugin (Marketplace)
 │   │   ├── personal/         # Personal edition — 25 Tools + 8 Skills
 │   │   └── group/            # Team edition — 25 Tools + 6 Skills
+│   ├── opencode/             # OpenCode Plugin (MCP + Skills)
+│   │   ├── personal/         # Personal edition — 25 Tools + 8 Skills
+│   │   └── group/            # Team edition — 25 Tools + 6 Skills
 │   └── openclaw/             # OpenClaw Plugin (Agent Skills)
 ├── shared/
 │   └── mcp-config/           # MCP config templates for various editors
@@ -44,6 +47,23 @@ claude plugin marketplace add yuque/yuque-ecosystem
 claude mcp add yuque-mcp -- npx -y yuque-mcp --token=YOUR_TOKEN
 ```
 
+### OpenCode
+
+Add to your `opencode.json`:
+
+```jsonc
+{
+  "mcp": {
+    "yuque": {
+      "type": "local",
+      "command": ["npx", "-y", "yuque-mcp", "--token=YOUR_TOKEN"]
+    }
+  }
+}
+```
+
+See [`plugins/opencode/`](./plugins/opencode/) for skills installation and full setup guide.
+
 ### Other Editors
 
 See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for Cursor, Windsurf, VS Code, and more.
@@ -54,6 +74,7 @@ See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for
 |---|---|---|
 | 🌐 Website | Official ecosystem website | [`website/`](./website/) |
 | 🔌 Claude Code Plugin | Claude Code Marketplace plugin | [`plugins/claude-code/`](./plugins/claude-code/) |
+| 🟢 OpenCode Plugin | OpenCode MCP + Skills integration | [`plugins/opencode/`](./plugins/opencode/) |
 | 🤖 OpenClaw Plugin | OpenClaw Agent integration | [`plugins/openclaw/`](./plugins/openclaw/) |
 | 📋 MCP Config | Editor configuration templates | [`shared/mcp-config/`](./shared/mcp-config/) |
 

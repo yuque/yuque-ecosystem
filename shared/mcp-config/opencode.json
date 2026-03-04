@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "yuque": {
+      "type": "local",
+      "command": ["npx", "-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"],
+      "enabled": true,
+      "environment": {
+        "YUQUE_TOKEN": ""
+      }
+    }
+  }
+}
