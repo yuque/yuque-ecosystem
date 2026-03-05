@@ -43,6 +43,33 @@ function McpQuickStart() {
         选择你的 MCP 客户端，一键接入语雀 AI 能力。支持所有主流编辑器和 AI 工具。
       </p>
 
+      {/* Platform Guides - moved to top */}
+      <div className={styles.platformGuides}>
+        <p className={styles.platformGuidesTitle}>📚 平台特定指南</p>
+        <div className={styles.platformLinks}>
+          <a
+            href="https://www.yuque.com/yuque/blog/lh9nfocqh1nqf0c0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.platformLink}
+          >
+            <span className={styles.platformIcon}>🪟</span>
+            <span className={styles.platformName}>Windows 用户上手指南</span>
+            <span className={styles.platformArrow}>→</span>
+          </a>
+          <a
+            href="https://github.com/yuque/yuque-mcp-server#installation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.platformLink}
+          >
+            <span className={styles.platformIcon}>🍎</span>
+            <span className={styles.platformName}>macOS 用户上手指南</span>
+            <span className={styles.platformArrow}>→</span>
+          </a>
+        </div>
+      </div>
+
       {/* Prerequisites - inline chips */}
       <div className={styles.prerequisites}>
         <span className={styles.prereqTitle}>前置条件:</span>
