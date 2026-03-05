@@ -210,6 +210,64 @@
   color: var(--color-primary);
 }
 
+/* Platform Guides */
+.platformGuides {
+  margin-bottom: 36px;
+}
+
+.platformGuidesTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.platformLinks {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.platformLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.platformLink:hover {
+  border-color: var(--color-primary);
+  background: rgba(0, 185, 107, 0.04);
+}
+
+.platformIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.platformName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.platformArrow {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  transition: all 0.2s ease;
+}
+
+.platformLink:hover .platformArrow {
+  color: var(--color-primary);
+  transform: translateX(2px);
+}
+
 @media (max-width: 640px) {
   .section {
     padding: 60px 16px;
@@ -232,5 +290,8 @@
   }
   .optionDesc {
     font-size: 13px;
+  }
+  .platformLinks {
+    flex-direction: column;
   }
 }
