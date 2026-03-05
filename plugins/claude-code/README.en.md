@@ -10,13 +10,13 @@
 
 AI-powered personal knowledge base integration — 25 MCP Tools + 8 Skills.
 
-📂 [`personal/`](./personal/)
+📂 [`../yuque-personal/`](../yuque-personal/)
 
 ### Group (Team)
 
 AI-powered team knowledge base integration — 25 MCP Tools + 6 Skills.
 
-📂 [`group/`](./group/)
+📂 [`../yuque-group/`](../yuque-group/)
 
 ## Installation
 
