@@ -74,14 +74,6 @@ function PluginInstall() {
           onClick={() => setActiveTab('openclaw')}
         >
           🐾 OpenClaw
-          <span style={{
-            padding: '2px 8px',
-            borderRadius: '100px',
-            fontSize: '11px',
-            fontWeight: 700,
-            background: 'rgba(255, 196, 0, 0.12)',
-            color: '#ffc400',
-          }}>Coming Soon</span>
         </button>
       </div>
 
@@ -179,25 +171,83 @@ function PluginInstall() {
       ) : (
         <div className={styles.steps}>
           <div className={styles.step}>
-            <div className={styles.stepContent} style={{ textAlign: 'center', padding: '48px 0' }}>
-              <p style={{ fontSize: '48px', marginBottom: '16px' }}>🐾</p>
-              <h3 className={styles.stepTitle} style={{ textAlign: 'center', marginBottom: '12px' }}>
-                OpenClaw Plugin · Coming Soon
+            <div className={styles.stepNumber}>1</div>
+            <div className={styles.stepContent}>
+              <h3 className={styles.stepTitle}>
+                安装 OpenClaw
+                <span className={`${styles.envTag} ${styles.envTerminal}`}>🖥️ 终端</span>
               </h3>
-              <p className={styles.stepDesc} style={{ textAlign: 'center', maxWidth: '480px', margin: '0 auto' }}>
-                OpenClaw Plugin 适合所有用户，基于 OpenClaw Agent 运行，无需开发者环境。
-                <br />
-                正在开发中，敬请期待！
+              <p className={styles.stepDesc}>
+                OpenClaw 是开源的 AI Agent 框架，支持多种 AI 模型。请先完成安装。
               </p>
-              <a
-                href="https://github.com/yuque/yuque-ecosystem"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-                style={{ fontSize: '14px' }}
-              >
-                关注 GitHub 获取最新动态 →
-              </a>
+              <CodeBlock>
+                npm install -g openclaw
+              </CodeBlock>
+            </div>
+          </div>
+
+          <div className={styles.divider} />
+
+          <div className={styles.step}>
+            <div className={styles.stepNumber}>2</div>
+            <div className={styles.stepContent}>
+              <h3 className={styles.stepTitle}>
+                设置语雀 Token
+                <span className={`${styles.envTag} ${styles.envTerminal}`}>🖥️ 终端</span>
+              </h3>
+              <p className={styles.stepDesc}>
+                前往{' '}
+                <a
+                  href="https://www.yuque.com/settings/tokens"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  语雀 Token 设置页
+                </a>
+                {' '}获取 Token，写入环境变量：
+              </p>
+              <CodeBlock>
+                <span className={styles.codeComment}># 写入 ~/.zshrc，新终端自动生效</span>{'\n'}
+                echo 'export YUQUE_PERSONAL_TOKEN=<span className={styles.codeHighlight}>"your-token-here"</span>' {'>>'}  ~/.zshrc && source ~/.zshrc
+              </CodeBlock>
+            </div>
+          </div>
+
+          <div className={styles.divider} />
+
+          <div className={styles.step}>
+            <div className={styles.stepNumber}>3</div>
+            <div className={styles.stepContent}>
+              <h3 className={styles.stepTitle}>
+                安装语雀 Skills
+                <span className={`${styles.envTag} ${styles.envTerminal}`}>🖥️ 终端</span>
+              </h3>
+              <p className={styles.stepDesc}>
+                从 GitHub 安装语雀 Skills 包：
+              </p>
+              <CodeBlock>
+                openclaw skills install yuque/yuque-ecosystem/plugins/openclaw
+              </CodeBlock>
+            </div>
+          </div>
+
+          <div className={styles.divider} />
+
+          <div className={styles.step}>
+            <div className={styles.stepNumber}>4</div>
+            <div className={styles.stepContent}>
+              <h3 className={styles.stepTitle}>
+                配置 MCP Server
+                <span className={`${styles.envTag} ${styles.envTerminal}`}>🖥️ 终端</span>
+              </h3>
+              <p className={styles.stepDesc}>
+                将 MCP Server 配置添加到 OpenClaw：
+              </p>
+              <CodeBlock>
+                <span className={styles.codeComment}># 下载配置模板</span>{'\n'}
+                curl -o ~/.openclaw/mcp-servers.json https://raw.githubusercontent.com/yuque/yuque-ecosystem/main/shared/mcp-config/openclaw.json
+              </CodeBlock>
             </div>
           </div>
         </div>
