@@ -116,7 +116,7 @@ If you used Method 2 (MCP only), you can manually add skills:
 # Clone or navigate to the ecosystem repo
 cd /path/to/yuque-ecosystem
 
-# Skills are in plugins/claude-code/personal/skills/ and plugins/claude-code/group/skills/
+# Skills are in plugins/yuque-personal/skills/ and plugins/yuque-group/skills/
 # Claude Code auto-discovers skills from the plugin directory
 ```
 
