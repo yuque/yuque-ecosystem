@@ -7,9 +7,6 @@
     "name": "yuque",
     "email": "willchen.babydog@gmail.com"
   },
-  "metadata": {
-    "pluginRoot": "./plugins/claude-code"
-  },
   "plugins": [
     {
       "name": "yuque-personal",
