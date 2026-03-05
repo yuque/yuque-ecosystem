@@ -15,7 +15,7 @@
       "author": {
         "name": "yuque"
       },
-      "source": "plugins/claude-code/personal",
+      "source": "./plugins/claude-code/personal",
       "category": "productivity"
     },
     {
@@ -25,7 +25,7 @@
       "author": {
         "name": "yuque"
       },
-      "source": "plugins/claude-code/group",
+      "source": "./plugins/claude-code/group",
       "category": "productivity"
     }
   ]
