@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions
+    url: https://github.com/yuque/yuque-ecosystem/discussions/categories/q-a
+    about: Ask questions and get help from the community.
+  - name: Feature Requests
+    url: https://github.com/yuque/yuque-ecosystem/discussions/categories/ideas
+    about: Suggest new features or improvements.

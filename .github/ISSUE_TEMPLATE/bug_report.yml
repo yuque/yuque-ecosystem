@@ -1,0 +1,67 @@
+name: Bug Report
+description: Report a bug in yuque-ecosystem
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected Area
+      description: Which part of the ecosystem is affected?
+      options:
+        - Website
+        - Claude Code Plugin
+        - OpenClaw Plugin
+        - Shared
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version are you using?
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Provide a clear set of steps to reproduce the bug.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Any relevant environment info (OS, browser, Node.js version, etc.)
+      placeholder: |
+        - OS: macOS 15.0
+        - Browser: Chrome 130
+        - Node.js: 22.0.0
+    validations:
+      required: false

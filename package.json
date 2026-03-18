@@ -1,5 +1,14 @@
 {
   "name": "yuque-ecosystem",
   "private": true,
-  "workspaces": ["website", "plugins/openclaw"]
+  "workspaces": [
+    "website",
+    "plugins/openclaw"
+  ],
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^5.0.0"
+  }
 }
