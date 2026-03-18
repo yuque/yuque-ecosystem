@@ -40,7 +40,6 @@ const categories: Category[] = [
       { name: 'yuque_get_repo', desc: '获取知识库详情（名称、描述、文档数等）' },
       { name: 'yuque_create_repo', desc: '创建新知识库' },
       { name: 'yuque_update_repo', desc: '更新知识库信息' },
-      { name: 'yuque_delete_repo', desc: '删除知识库' },
     ],
   },
   {
@@ -52,7 +51,6 @@ const categories: Category[] = [
       { name: 'yuque_get_doc', desc: '获取文档详情和内容（Markdown/HTML）' },
       { name: 'yuque_create_doc', desc: '创建新文档' },
       { name: 'yuque_update_doc', desc: '更新文档内容或属性' },
-      { name: 'yuque_delete_doc', desc: '删除文档' },
     ],
   },
   {
@@ -74,24 +72,14 @@ const categories: Category[] = [
     ],
   },
   {
-    key: 'groups',
-    label: 'Groups',
-    icon: '👥',
+    key: 'notes',
+    label: 'Notes',
+    icon: '📝',
     tools: [
-      { name: 'yuque_list_group_members', desc: '列出团队所有成员' },
-      { name: 'yuque_update_group_member', desc: '更新成员角色/权限' },
-      { name: 'yuque_remove_group_member', desc: '移除团队成员' },
-    ],
-  },
-  {
-    key: 'stats',
-    label: 'Stats',
-    icon: '📊',
-    tools: [
-      { name: 'yuque_group_stats', desc: '团队整体统计数据' },
-      { name: 'yuque_group_member_stats', desc: '成员贡献统计' },
-      { name: 'yuque_group_book_stats', desc: '知识库活跃度统计' },
-      { name: 'yuque_group_doc_stats', desc: '文档统计数据' },
+      { name: 'yuque_list_notes', desc: '列出小记列表' },
+      { name: 'yuque_get_note', desc: '获取小记详情' },
+      { name: 'yuque_create_note', desc: '创建新小记' },
+      { name: 'yuque_update_note', desc: '更新小记内容' },
     ],
   },
   {
@@ -112,7 +100,7 @@ function McpTools() {
     <section className={styles.section}>
       <p className={styles.sectionLabel}>MCP Tools</p>
       <div className={styles.titleRow}>
-        <h2 className={styles.sectionTitle}>25 个标准化工具，覆盖语雀全部核心能力</h2>
+        <h2 className={styles.sectionTitle}>20 个标准化工具，覆盖语雀全部核心能力</h2>
         <div className={styles.titleLinks}>
           <a
             className={styles.externalLink}
