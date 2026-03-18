@@ -5,12 +5,24 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "build": "echo 'No build needed — jiti loads TS at runtime'"
+    "build": "tsc --noEmit"
   },
-  "keywords": ["yuque", "openclaw", "plugin", "mcp", "ai", "knowledge-management"],
+  "keywords": [
+    "yuque",
+    "openclaw",
+    "plugin",
+    "mcp",
+    "ai",
+    "knowledge-management"
+  ],
   "author": "yuque",
   "license": "MIT",
   "openclaw": {
-    "extensions": ["./index.ts"]
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
   }
 }
