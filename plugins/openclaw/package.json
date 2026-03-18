@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Yuque AI Ecosystem — OpenClaw Plugin",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch"
+    "build": "echo 'No build needed — jiti loads TS at runtime'"
   },
-  "keywords": ["yuque", "openclaw", "plugin", "mcp", "ai"],
+  "keywords": ["yuque", "openclaw", "plugin", "mcp", "ai", "knowledge-management"],
   "author": "yuque",
-  "license": "MIT"
+  "license": "MIT",
+  "openclaw": {
+    "extensions": ["./index.ts"]
+  }
 }

@@ -2,17 +2,11 @@
   "id": "yuque",
   "name": "语雀 AI 生态",
   "version": "1.0.0",
-  "description": "语雀知识管理 — MCP Tools + Agent Skills for OpenClaw",
-  "skills": ["skills/yuque"],
+  "description": "语雀知识管理 — Agent Skills for OpenClaw",
+  "skills": ["skills"],
   "configSchema": {
     "type": "object",
-    "properties": {
-      "token": { "type": "string", "description": "语雀 API Token" },
-      "apiUrl": { "type": "string", "description": "语雀 API 地址（可选，默认公网）" }
-    },
-    "required": ["token"]
-  },
-  "uiHints": {
-    "token": { "label": "语雀 Token", "sensitive": true, "placeholder": "从 yuque.com/settings/tokens 获取" }
+    "additionalProperties": false,
+    "properties": {}
   }
 }

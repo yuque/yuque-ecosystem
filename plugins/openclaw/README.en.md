@@ -1,41 +1,76 @@
 [中文](./README.md) | [English](./README.en.md)
 
-# Yuque Plugin for OpenClaw
+# Yuque OpenClaw Plugin
 
-> Yuque AI Ecosystem — MCP Tools + Agent Skills for OpenClaw
+> Yuque Knowledge Management — Agent Skills for OpenClaw
 
 ## Overview
 
-This plugin integrates Yuque knowledge management into the OpenClaw Agent ecosystem, providing:
+Integrates Yuque knowledge management into the OpenClaw Agent ecosystem with 8 ready-to-use personal knowledge management Skills.
 
-- **Agent Skills** — Natural language workflows for knowledge management
-- **MCP Integration** — Powered by [yuque-mcp-server](https://www.npmjs.com/package/yuque-mcp)
+## Prerequisites
 
-## Structure
+- [OpenClaw](https://github.com/nicepkg/openclaw) installed and running
+- Yuque account with a [personal Token](https://www.yuque.com/settings/tokens)
+- [yuque-mcp](https://www.npmjs.com/package/yuque-mcp) configured as MCP Server
+
+## Installation
+
+```bash
+openclaw plugins install @yuque/openclaw-plugin
+```
+
+## Skills
+
+| Skill | Description |
+|-------|-------------|
+| **smart-search** | Search personal knowledge bases with natural language, get summarized answers with source links |
+| **smart-summary** | Generate summaries of any document or knowledge base at different granularity levels |
+| **reading-digest** | Extract core insights, golden quotes, and action items into structured reading notes |
+| **daily-capture** | Collect fleeting ideas throughout the day, organize into structured thematic notes |
+| **note-refine** | Polish rough notes into high-quality documents with better structure and formatting |
+| **knowledge-connect** | Discover hidden connections between documents, suggest cross-reference links |
+| **style-extract** | Analyze writing style from documents, generate a reusable style profile |
+| **stale-detector** | Scan knowledge bases for stale documents, generate maintenance reports |
+
+## MCP Server Configuration
+
+Add yuque-mcp to your OpenClaw `mcpServers` configuration:
+
+```json
+{
+  "mcpServers": {
+    "yuque-mcp": {
+      "command": "npx",
+      "args": ["-y", "yuque-mcp"],
+      "env": {
+        "YUQUE_TOKEN": "your-yuque-token",
+        "YUQUE_API_URL": "https://www.yuque.com/api/v2"
+      }
+    }
+  }
+}
+```
+
+> Token is passed via MCP Server environment variables. The plugin itself does not require token configuration.
+
+## Directory Structure
 
 ```
 plugins/openclaw/
 ├── openclaw.plugin.json   # Plugin manifest
-├── src/
-│   └── index.ts           # Plugin entry point
-├── skills/
-│   └── yuque/
-│       └── SKILL.md       # Agent skill definition
+├── index.ts               # Plugin entry point (loaded by jiti at runtime)
+├── skills/                # 8 Agent Skills
+│   ├── smart-search/
+│   ├── smart-summary/
+│   ├── reading-digest/
+│   ├── daily-capture/
+│   ├── note-refine/
+│   ├── knowledge-connect/
+│   ├── style-extract/
+│   └── stale-detector/
 ├── package.json
-└── tsconfig.json
-```
-
-## Setup
-
-1. Install the plugin in OpenClaw
-2. Configure your Yuque API token
-3. The Agent will automatically have access to Yuque skills
-
-## Development
-
-```bash
-npm install
-npm run build
+└── README.md
 ```
 
 ## Links
