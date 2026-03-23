@@ -20,7 +20,6 @@ const categories: Category[] = [
     icon: '👤',
     tools: [
       { name: 'yuque_get_user', desc: '获取当前用户信息（头像、昵称、个人简介等）' },
-      { name: 'yuque_list_groups', desc: '列出用户加入的所有团队/组织' },
     ],
   },
   {
@@ -32,14 +31,14 @@ const categories: Category[] = [
     ],
   },
   {
-    key: 'repos',
-    label: 'Repos',
+    key: 'books',
+    label: 'Books',
     icon: '📚',
     tools: [
-      { name: 'yuque_list_repos', desc: '列出指定团队或用户的所有知识库' },
-      { name: 'yuque_get_repo', desc: '获取知识库详情（名称、描述、文档数等）' },
-      { name: 'yuque_create_repo', desc: '创建新知识库' },
-      { name: 'yuque_update_repo', desc: '更新知识库信息' },
+      { name: 'yuque_list_books', desc: '列出当前用户的所有知识库' },
+      { name: 'yuque_get_book', desc: '获取知识库详情（名称、描述、文档数等）' },
+      { name: 'yuque_create_book', desc: '创建新知识库' },
+      { name: 'yuque_update_book', desc: '更新知识库信息' },
     ],
   },
   {
@@ -48,7 +47,7 @@ const categories: Category[] = [
     icon: '📄',
     tools: [
       { name: 'yuque_list_docs', desc: '列出知识库中的所有文档' },
-      { name: 'yuque_get_doc', desc: '获取文档详情和内容（Markdown/HTML）' },
+      { name: 'yuque_get_doc', desc: '获取文档详情和完整内容' },
       { name: 'yuque_create_doc', desc: '创建新文档' },
       { name: 'yuque_update_doc', desc: '更新文档内容或属性' },
     ],
@@ -63,15 +62,6 @@ const categories: Category[] = [
     ],
   },
   {
-    key: 'versions',
-    label: 'Versions',
-    icon: '🕐',
-    tools: [
-      { name: 'yuque_list_doc_versions', desc: '列出文档的所有历史版本' },
-      { name: 'yuque_get_doc_version', desc: '获取文档某个历史版本的内容' },
-    ],
-  },
-  {
     key: 'notes',
     label: 'Notes',
     icon: '📝',
@@ -80,14 +70,6 @@ const categories: Category[] = [
       { name: 'yuque_get_note', desc: '获取小记详情' },
       { name: 'yuque_create_note', desc: '创建新小记' },
       { name: 'yuque_update_note', desc: '更新小记内容' },
-    ],
-  },
-  {
-    key: 'utility',
-    label: 'Utility',
-    icon: '🔧',
-    tools: [
-      { name: 'yuque_hello', desc: '连接测试，验证 Token 是否有效' },
     ],
   },
 ]
@@ -100,7 +82,7 @@ function McpTools() {
     <section className={styles.section}>
       <p className={styles.sectionLabel}>MCP Tools</p>
       <div className={styles.titleRow}>
-        <h2 className={styles.sectionTitle}>20 个标准化工具，覆盖语雀全部核心能力</h2>
+        <h2 className={styles.sectionTitle}>16 个标准化工具，覆盖语雀全部核心能力</h2>
         <div className={styles.titleLinks}>
           <a
             className={styles.externalLink}
