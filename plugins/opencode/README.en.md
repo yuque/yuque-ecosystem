@@ -4,19 +4,19 @@
 
 > Yuque AI Ecosystem — MCP Tools and Skills for [OpenCode](https://opencode.ai)
 
-Integrate your Yuque knowledge base with OpenCode — the open-source AI coding agent. Get 25 MCP tools for document management and 14 ready-to-use skills for knowledge workflows.
+Integrate your Yuque knowledge base with OpenCode — the open-source AI coding agent. Get 16 MCP tools for document management and 14 ready-to-use skills for knowledge workflows.
 
 ## Editions
 
 ### Personal
 
-AI-powered personal knowledge base integration — 25 MCP Tools + 8 Skills.
+AI-powered personal knowledge base integration — 16 MCP Tools + 8 Skills.
 
 📂 [`personal/`](./personal/)
 
 ### Group (Team)
 
-AI-powered team knowledge base integration — 25 MCP Tools + 6 Skills.
+AI-powered team knowledge base integration — 16 MCP Tools + 6 Skills.
 
 📂 [`group/`](./group/)
 
@@ -69,7 +69,7 @@ opencode mcp list
 opencode mcp debug yuque
 ```
 
-Once connected, all 25 yuque-mcp tools will be available to the AI agent.
+Once connected, all 16 yuque-mcp tools will be available to the AI agent.
 
 ---
 
@@ -146,54 +146,49 @@ After installation, OpenCode will automatically discover the skills. The agent c
 
 ---
 
-## Available MCP Tools (25)
+## Available MCP Tools (16)
 
-The `yuque-mcp` server provides 25 tools across these categories:
+The `yuque-mcp` server provides 16 tools across these categories:
 
-### Document Management
+### User
 | Tool | Description |
 |------|-------------|
-| `yuque_search` | Search documents by keyword |
-| `yuque_get_doc` | Get document content by ID/slug |
-| `yuque_create_doc` | Create a new document |
-| `yuque_update_doc` | Update document content |
-| `yuque_delete_doc` | Delete a document |
-| `yuque_get_doc_history` | Get document revision history |
+| `yuque_get_user` | Get current authenticated user information |
 
-### Repository (Knowledge Base) Management
+### Search
 | Tool | Description |
 |------|-------------|
-| `yuque_list_repos` | List accessible knowledge bases |
-| `yuque_get_repo` | Get knowledge base details |
-| `yuque_create_repo` | Create a new knowledge base |
-| `yuque_update_repo` | Update knowledge base settings |
-| `yuque_delete_repo` | Delete a knowledge base |
-| `yuque_get_toc` | Get table of contents |
+| `yuque_search` | Search for documents or repos in Yuque |
 
-### User & Group
+### Books (知识库)
 | Tool | Description |
 |------|-------------|
-| `yuque_get_user` | Get current user info |
-| `yuque_list_groups` | List groups the user belongs to |
-| `yuque_get_group` | Get group details |
-| `yuque_list_group_repos` | List repos in a group |
+| `yuque_list_books` | List all books for the current user |
+| `yuque_get_book` | Get a specific book by ID or namespace |
+| `yuque_create_book` | Create a new book |
+| `yuque_update_book` | Update a book |
 
-### Collaboration
+### Docs
 | Tool | Description |
 |------|-------------|
-| `yuque_list_comments` | List document comments |
-| `yuque_create_comment` | Add a comment to a document |
-| `yuque_delete_comment` | Delete a comment |
+| `yuque_list_docs` | List all documents in a book |
+| `yuque_get_doc` | Get a specific document with full content |
+| `yuque_create_doc` | Create a new document in a book |
+| `yuque_update_doc` | Update an existing document |
 
-### Statistics
+### TOC
 | Tool | Description |
 |------|-------------|
-| `yuque_get_doc_stats` | Get document view/read stats |
-| `yuque_get_repo_stats` | Get repo-level statistics |
-| `yuque_get_group_stats` | Get group-level statistics |
-| `yuque_get_group_member_stats` | Get group member contribution stats |
-| `yuque_get_trending_docs` | Get trending documents |
-| `yuque_get_active_members` | Get most active members |
+| `yuque_get_toc` | Get the table of contents for a book |
+| `yuque_update_toc` | Update the table of contents for a book |
+
+### Notes (小记)
+| Tool | Description |
+|------|-------------|
+| `yuque_list_notes` | List all notes with pagination |
+| `yuque_get_note` | Get a specific note with full content |
+| `yuque_create_note` | Create a new note |
+| `yuque_update_note` | Update an existing note |
 
 ---
 

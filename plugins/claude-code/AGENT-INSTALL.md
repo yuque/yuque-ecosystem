@@ -60,7 +60,7 @@ export YUQUE_TOKEN="your_token_here"
 
 ## Installation Method 2: MCP Server Only
 
-Use this if you only need the 25 MCP tools without skills, or if the marketplace is unavailable.
+Use this if you only need the 16 MCP tools without skills, or if the marketplace is unavailable.
 
 ### Install
 
@@ -93,7 +93,7 @@ After either installation method, verify the integration is working:
 ```bash
 claude mcp list
 # Look for "yuque-mcp" in the output
-# Should show ~25 tools available
+# Should show ~16 tools available
 ```
 
 ### Test 2: Quick Functional Test
@@ -126,15 +126,16 @@ cd /path/to/yuque-ecosystem
 
 ## Available After Installation
 
-### MCP Tools (25)
+### MCP Tools (16)
 
 | Category | Tools |
 |----------|-------|
-| Document Management | `yuque_search`, `yuque_get_doc`, `yuque_create_doc`, `yuque_update_doc`, `yuque_delete_doc`, `yuque_get_doc_history` |
-| Knowledge Base | `yuque_list_repos`, `yuque_get_repo`, `yuque_create_repo`, `yuque_update_repo`, `yuque_delete_repo`, `yuque_get_toc` |
-| User & Group | `yuque_get_user`, `yuque_list_groups`, `yuque_get_group`, `yuque_list_group_repos` |
-| Collaboration | `yuque_list_comments`, `yuque_create_comment`, `yuque_delete_comment` |
-| Statistics | `yuque_get_doc_stats`, `yuque_get_repo_stats`, `yuque_get_group_stats`, `yuque_get_group_member_stats`, `yuque_get_trending_docs`, `yuque_get_active_members` |
+| User | `yuque_get_user` |
+| Search | `yuque_search` |
+| Books (知识库) | `yuque_list_books`, `yuque_get_book`, `yuque_create_book`, `yuque_update_book` |
+| Docs | `yuque_list_docs`, `yuque_get_doc`, `yuque_create_doc`, `yuque_update_doc` |
+| TOC | `yuque_get_toc`, `yuque_update_toc` |
+| Notes (小记) | `yuque_list_notes`, `yuque_get_note`, `yuque_create_note`, `yuque_update_note` |
 
 ### Skills (Marketplace install only)
 

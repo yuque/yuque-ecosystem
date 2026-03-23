@@ -201,17 +201,18 @@ echo "✅ All config files installed and token replaced"
 
 ---
 
-## Post-Installation: Available MCP Tools (25)
+## Post-Installation: Available MCP Tools (16)
 
 Once connected, the following tools are available to the AI agent:
 
 | Category | Tools |
 |----------|-------|
-| Document Management | `yuque_search`, `yuque_get_doc`, `yuque_create_doc`, `yuque_update_doc`, `yuque_delete_doc`, `yuque_get_doc_history` |
-| Knowledge Base | `yuque_list_repos`, `yuque_get_repo`, `yuque_create_repo`, `yuque_update_repo`, `yuque_delete_repo`, `yuque_get_toc` |
-| User & Group | `yuque_get_user`, `yuque_list_groups`, `yuque_get_group`, `yuque_list_group_repos` |
-| Collaboration | `yuque_list_comments`, `yuque_create_comment`, `yuque_delete_comment` |
-| Statistics | `yuque_get_doc_stats`, `yuque_get_repo_stats`, `yuque_get_group_stats`, `yuque_get_group_member_stats`, `yuque_get_trending_docs`, `yuque_get_active_members` |
+| User | `yuque_get_user` |
+| Search | `yuque_search` |
+| Books (知识库) | `yuque_list_books`, `yuque_get_book`, `yuque_create_book`, `yuque_update_book` |
+| Docs | `yuque_list_docs`, `yuque_get_doc`, `yuque_create_doc`, `yuque_update_doc` |
+| TOC | `yuque_get_toc`, `yuque_update_toc` |
+| Notes (小记) | `yuque_list_notes`, `yuque_get_note`, `yuque_create_note`, `yuque_update_note` |
 
 > **Note:** MCP-only installations provide tools but not skills. For skills, use the [Claude Code plugin](../../plugins/claude-code/) or [OpenCode plugin](../../plugins/opencode/).
 
