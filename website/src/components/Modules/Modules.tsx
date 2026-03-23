@@ -5,7 +5,7 @@ const modules = [
     icon: '🔌',
     title: 'MCP Server',
     desc: '底层连接层，为 AI 助手提供标准化的语雀 API 接口，让任何 MCP 兼容客户端都能操作语雀。',
-    meta: '25 个标准化 Tools',
+    meta: '16 个标准化 Tools',
   },
   {
     icon: '⚡',
@@ -17,7 +17,7 @@ const modules = [
     icon: '🧩',
     title: 'Plugin',
     desc: '一键集成 MCP + Skills，让 AI 助手开箱即用地操作语雀。支持 Claude Code、OpenClaw 等客户端。',
-    meta: '25 Tools + 14 Skills',
+    meta: '16 Tools + 14 Skills',
   },
 ]
 
