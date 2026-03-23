@@ -25,11 +25,11 @@ yuque-ecosystem/
 ├── website/                  # Official website (GitHub Pages)
 ├── plugins/
 │   ├── claude-code/          # Claude Code Plugin (Marketplace)
-│   │   ├── personal/         # Personal edition — 25 Tools + 8 Skills
-│   │   └── group/            # Team edition — 25 Tools + 6 Skills
+│   │   ├── personal/         # Personal edition — 16 Tools + 8 Skills
+│   │   └── group/            # Team edition — 16 Tools + 6 Skills
 │   ├── opencode/             # OpenCode Plugin (MCP + Skills)
-│   │   ├── personal/         # Personal edition — 25 Tools + 8 Skills
-│   │   └── group/            # Team edition — 25 Tools + 6 Skills
+│   │   ├── personal/         # Personal edition — 16 Tools + 8 Skills
+│   │   └── group/            # Team edition — 16 Tools + 6 Skills
 │   └── openclaw/             # OpenClaw Plugin (Agent Skills)
 ├── shared/
 │   └── mcp-config/           # MCP config templates for various editors

@@ -1,6 +1,6 @@
 # 语雀团队版 Plugin / Yuque Group Plugin
 
-团队知识库 AI 集成 — 25 MCP Tools + 6 Skills。
+团队知识库 AI 集成 — 16 MCP Tools + 6 Skills。
 
 ## Skills
 

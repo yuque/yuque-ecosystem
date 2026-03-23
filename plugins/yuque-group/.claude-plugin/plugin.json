@@ -1,8 +1,10 @@
 {
   "name": "yuque-group",
-  "description": "语雀团队版 — 团队知识库 AI 集成，25 MCP Tools + 6 Skills",
+  "description": "语雀团队版 — 团队知识库 AI 集成，16 MCP Tools + 6 Skills",
   "version": "1.0.1",
   "author": {
+      "name": "yuque"
+    },
     "name": "yuque"
   },
   "homepage": "https://yuque.github.io/yuque-ecosystem/",

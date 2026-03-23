@@ -13,7 +13,7 @@
   "plugins": [
     {
       "name": "yuque-personal",
-      "description": "语雀个人版 — 个人知识库 AI 集成，25 MCP Tools + 4 Skills",
+      "description": "语雀个人版 — 个人知识库 AI 集成，16 MCP Tools + 8 Skills",
       "version": "1.0.0",
       "author": {
         "name": "yuque"
@@ -23,7 +23,7 @@
     },
     {
       "name": "yuque-group",
-      "description": "语雀团队版 — 团队知识库 AI 集成，25 MCP Tools + 6 Skills",
+      "description": "语雀团队版 — 团队知识库 AI 集成，16 MCP Tools + 6 Skills",
       "version": "1.0.0",
       "author": {
         "name": "yuque"

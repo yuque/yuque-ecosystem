@@ -1,6 +1,6 @@
 # 语雀个人版 Plugin / Yuque Personal Plugin
 
-个人知识库 AI 集成 — 25 MCP Tools + 8 Skills。
+个人知识库 AI 集成 — 16 MCP Tools + 8 Skills。
 
 语雀 = 第二大脑，Skills = AI 认知能力。
 

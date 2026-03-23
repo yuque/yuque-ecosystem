@@ -8,13 +8,13 @@
 
 ### Personal (个人版)
 
-Personal knowledge base AI integration — 25 MCP Tools + 8 Skills.
+Personal knowledge base AI integration — 16 MCP Tools + 8 Skills.
 
 📂 [`../yuque-personal/`](../yuque-personal/)
 
 ### Group (团队版)
 
-Team knowledge base AI integration — 25 MCP Tools + 6 Skills.
+Team knowledge base AI integration — 16 MCP Tools + 6 Skills.
 
 📂 [`../yuque-group/`](../yuque-group/)
 
