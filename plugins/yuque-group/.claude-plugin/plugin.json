@@ -1,11 +1,12 @@
 {
   "name": "yuque-group",
   "description": "语雀团队版 — 团队知识库 AI 集成，25 MCP Tools + 6 Skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "yuque"
   },
   "homepage": "https://yuque.github.io/yuque-ecosystem/",
   "repository": "https://github.com/yuque/yuque-plugin",
-  "license": "MIT"
+  "license": "MIT",
+  "skills": "./skills/"
 }
