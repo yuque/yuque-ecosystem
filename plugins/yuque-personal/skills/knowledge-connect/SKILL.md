@@ -24,8 +24,8 @@ Analyze documents in your Yuque knowledge base, find hidden connections between 
 
 All tools are from the `yuque-mcp` server:
 
-- `yuque_list_repos` — List user's knowledge bases
-- `yuque_get_repo_docs` — List all documents in a knowledge base
+- `yuque_list_books` — List user's knowledge bases
+- `yuque_list_docs` — List all documents in a knowledge base
 - `yuque_get_doc` — Read document content for analysis
 - `yuque_search` — Search for potentially related documents
 - `yuque_update_doc` — Add cross-reference links to documents
@@ -48,13 +48,13 @@ User wants cross-repo connections. Analyze documents across multiple repos.
 For Case B/C, first list available repos:
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 ```
 
 Then list documents in the target repo(s):
 
 ```
-Tool: yuque_get_repo_docs
+Tool: yuque_list_docs
 Parameters:
   repo_id: "<namespace>"
 ```

@@ -27,7 +27,7 @@ All tools are from the `yuque-mcp` server:
 - `yuque_get_doc` — Read existing capture log or thematic notes
 - `yuque_create_doc` — Create new capture log or thematic notes
 - `yuque_update_doc` — Append to capture log or update thematic notes
-- `yuque_list_repos` — List knowledge bases to find the target repo
+- `yuque_list_books` — List knowledge bases to find the target repo
 
 ## Workflow
 
@@ -209,7 +209,7 @@ Confirm: "主题笔记「[主题标题]」已保存到「[知识库名称]」：
 |-----------|--------|
 | Document not found (404) | Create a new capture log for today |
 | Permission denied (403) | Tell user they may lack permission to access or edit this document |
-| Target repo not found | List user's repos with `yuque_list_repos` and ask them to pick one |
+| Target repo not found | List user's repos with `yuque_list_books` and ask them to pick one |
 | `yuque_create_doc` fails | Present the capture/note in chat and suggest manual saving |
 | No captures found for organization | Inform user: "最近没有找到碎片记录，先随手记几条吧！" |
 | Capture content is empty | Ask user: "你想记录什么？" |

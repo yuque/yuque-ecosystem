@@ -22,7 +22,7 @@ Take raw meeting information from the user, format it into a standard meeting no
 
 All tools are from the `yuque-mcp` server:
 
-- `yuque_list_repos` — List group knowledge bases to find the target repo
+- `yuque_list_books` — List group knowledge bases to find the target repo
 - `yuque_create_doc` — Create the meeting notes document
 
 ## Workflow
@@ -134,7 +134,7 @@ Use this template:
 List the team's knowledge bases:
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 Parameters:
   login: "<group_login>"
   type: "group"
@@ -186,7 +186,7 @@ After creation, respond with:
 | Situation | Action |
 |-----------|--------|
 | User provides very little info | Ask for at least: topic, attendees, key decisions |
-| `yuque_list_repos` returns empty | Ask user to verify group login and group Token |
+| `yuque_list_books` returns empty | Ask user to verify group login and group Token |
 | `yuque_create_doc` fails (403) | Tell user they may lack write permission; check group Token scope |
 | `yuque_create_doc` fails (other) | Show error, suggest user check yuque-mcp connection |
 | No clear action items | Still create the doc, note "本次会议无明确待办事项" |

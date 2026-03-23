@@ -24,8 +24,8 @@ Analyze your existing Yuque documents to extract your unique writing style — v
 
 All tools are from the `yuque-mcp` server:
 
-- `yuque_list_repos` — List user's knowledge bases
-- `yuque_get_repo_docs` — List documents in a knowledge base
+- `yuque_list_books` — List user's knowledge bases
+- `yuque_list_docs` — List documents in a knowledge base
 - `yuque_get_doc` — Read document content for style analysis
 - `yuque_search` — Find specific types of documents for analysis
 - `yuque_create_doc` — Save the style profile as a document
@@ -46,11 +46,11 @@ User specifies a knowledge base. Sample documents from it.
 If the user isn't sure, search for their most substantial documents:
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 ```
 
 ```
-Tool: yuque_get_repo_docs
+Tool: yuque_list_docs
 Parameters:
   repo_id: "<namespace>"
 ```

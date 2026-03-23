@@ -22,7 +22,7 @@ Scan a team's Yuque knowledge bases, identify core documents, and generate a str
 
 All tools are from the `yuque-mcp` server:
 
-- `yuque_list_repos` — List all knowledge bases in the team
+- `yuque_list_books` — List all knowledge bases in the team
 - `yuque_get_toc` — Get the table of contents for each knowledge base
 - `yuque_get_doc` — (Optional) Read specific docs for summary
 - `yuque_group_members` — Get group member list (for mentor assignment)
@@ -50,7 +50,7 @@ If the user doesn't specify a role, generate a general-purpose guide.
 #### 2a. List All Repos
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 Parameters:
   login: "<group_login>"
   type: "group"
@@ -249,7 +249,7 @@ Parameters:
 
 | Situation | Action |
 |-----------|--------|
-| `yuque_list_repos` returns empty | Ask user to verify group login and group Token |
+| `yuque_list_books` returns empty | Ask user to verify group login and group Token |
 | `yuque_get_toc` fails for a repo | Skip that repo, note it in the guide |
 | `yuque_group_members` fails | Skip mentor suggestion, still generate the guide |
 | Team has very few docs (<10) | Create a simpler guide, suggest the group build more docs |

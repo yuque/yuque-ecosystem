@@ -23,7 +23,7 @@ Scan a Yuque knowledge base to discover documents that haven't been updated in a
 
 All tools are from the `yuque-mcp` server:
 
-- `yuque_list_repos` — List user's knowledge bases
+- `yuque_list_books` — List user's knowledge bases
 - `yuque_list_docs` — List all documents in a knowledge base with metadata
 - `yuque_get_doc` — Read document content for staleness analysis
 - `yuque_get_toc` — Get knowledge base structure
@@ -39,7 +39,7 @@ Extract `repo_id` (namespace) from the provided link or name.
 List all repos first:
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 Parameters:
   user_id: "<user_id>"
 ```
@@ -190,7 +190,7 @@ These are suggestions only — do not take action without user confirmation.
 
 | Situation | Action |
 |-----------|--------|
-| Knowledge base not found | Inform user and suggest listing their repos with `yuque_list_repos` |
+| Knowledge base not found | Inform user and suggest listing their repos with `yuque_list_books` |
 | Knowledge base is empty | Inform user: "这个知识库目前没有文档，无需体检" |
 | `yuque_list_docs` returns error | Inform user of the issue, suggest checking the knowledge base link |
 | Too many documents (100+) | Analyze metadata for all, but only deep-read the top 10 stalest documents |

@@ -270,6 +270,6 @@ Parameters:
 | `yuque_group_stats` fails | Inform user, check group login and team Token |
 | Any stats API returns partial data | Generate report with available data, note gaps |
 | Group has very low activity | Still generate report, focus suggestions on how to improve |
-| User doesn't know group login | Help them find it via `yuque_list_repos` |
+| User doesn't know group login | Help them find it via `yuque_list_books` |
 | Multiple groups | Ask user which group to report on |
 | Team Token missing statistic:read | Inform user the Token needs `statistic:read` permission |

@@ -22,7 +22,7 @@ Search across group Yuque knowledge bases using natural language, read relevant 
 
 All tools are from the `yuque-mcp` server:
 
-- `yuque_list_repos` — List group knowledge bases to determine search scope
+- `yuque_list_books` — List group knowledge bases to determine search scope
 - `yuque_search` — Search documents by keyword
 - `yuque_get_doc` — Read full document content by slug/id
 
@@ -33,7 +33,7 @@ All tools are from the `yuque-mcp` server:
 First, get the list of group knowledge bases to understand the search scope:
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 Parameters:
   login: "<group_login>"
   type: "group"
@@ -130,7 +130,7 @@ Compose the answer in the following format:
 
 | Situation | Action |
 |-----------|--------|
-| `yuque_list_repos` fails | Check if group login is correct and group Token is configured |
+| `yuque_list_books` fails | Check if group login is correct and group Token is configured |
 | `yuque_search` returns empty | Try alternative keywords, then inform user |
 | `yuque_get_doc` fails (404) | Skip this doc, note it may have been deleted |
 | `yuque_get_doc` fails (403) | Tell user they may lack permission; check group Token scope |

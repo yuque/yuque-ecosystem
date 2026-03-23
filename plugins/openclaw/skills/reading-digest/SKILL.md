@@ -24,7 +24,7 @@ Read an article or document, extract core insights, golden quotes, and action it
 All tools are from the `yuque-mcp` server:
 
 - `yuque_get_doc` — Read full document content
-- `yuque_list_repos` — List user's knowledge bases (to find the target repo for saving)
+- `yuque_list_books` — List user's knowledge bases (to find the target repo for saving)
 - `yuque_create_doc` — Create a new document (to save reading notes)
 - `yuque_search` — Search for existing reading notes to avoid duplicates
 
@@ -161,6 +161,6 @@ If the user doesn't want to save, just present the reading notes in the chat.
 | Document not found (404) | Inform user the document may have been deleted or the link is incorrect |
 | Permission denied (403) | Tell user they may lack permission to access this document |
 | Document content is empty | Inform user: "该文档内容为空，无法生成阅读笔记" |
-| Target repo not found when saving | List user's repos with `yuque_list_repos` and ask them to pick one |
+| Target repo not found when saving | List user's repos with `yuque_list_books` and ask them to pick one |
 | `yuque_create_doc` fails | Inform user the save failed, present the notes in chat instead |
 | Article is not text-based (e.g., pure images) | Inform user: "该文档主要是图片内容，无法提取文字进行分析" |

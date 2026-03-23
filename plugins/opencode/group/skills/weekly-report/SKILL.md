@@ -24,7 +24,7 @@ All tools are from the `yuque-mcp` server:
 
 - `yuque_group_doc_stats` — Get document activity stats for a group
 - `yuque_group_member_stats` — Get member contribution stats for a group
-- `yuque_list_repos` — List repos in the group (for context)
+- `yuque_list_books` — List repos in the group (for context)
 - `yuque_create_doc` — Create the weekly report document
 
 ## Workflow
@@ -64,7 +64,7 @@ This returns: per-member doc count, word count, activity metrics.
 #### 2c. Repository List (for context)
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 Parameters:
   login: "<group_login>"
   type: "group"
@@ -194,6 +194,6 @@ Parameters:
 | `yuque_group_doc_stats` fails | Inform user, check if group login is correct and group Token is configured |
 | `yuque_group_member_stats` fails | Generate report without member breakdown, note the gap |
 | Group has no activity this week | Create a brief report noting zero activity, suggest reasons |
-| User doesn't know group login | Use `yuque_list_repos` with their personal login to find groups |
+| User doesn't know group login | Use `yuque_list_books` with their personal login to find groups |
 | API returns partial data | Generate report with available data, note what's missing |
 | Team Token missing statistic:read | Inform user the Token needs `statistic:read` permission |

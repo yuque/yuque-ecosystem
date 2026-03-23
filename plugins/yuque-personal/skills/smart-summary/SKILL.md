@@ -24,7 +24,7 @@ Generate summaries at different granularity levels for any Yuque document or ent
 All tools are from the `yuque-mcp` server:
 
 - `yuque_get_doc` — Read full document content by slug/id
-- `yuque_get_repo` — Get knowledge base metadata
+- `yuque_get_book` — Get knowledge base metadata
 - `yuque_list_docs` — List all documents in a knowledge base
 - `yuque_get_toc` — Get the table of contents of a knowledge base
 

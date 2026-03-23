@@ -23,7 +23,7 @@ Help the user write a structured technical design document following a standard 
 All tools are from the `yuque-mcp` server:
 
 - `yuque_search` — (Optional) Search for related existing docs for context
-- `yuque_list_repos` — Find the target group knowledge base
+- `yuque_list_books` — Find the target group knowledge base
 - `yuque_create_doc` — Create the design document
 
 ## Reference
@@ -96,7 +96,7 @@ Present the draft to the user before saving. Ask:
 ### Step 5: Save to Team Yuque
 
 ```
-Tool: yuque_list_repos
+Tool: yuque_list_books
 Parameters:
   login: "<group_login>"
   type: "group"
