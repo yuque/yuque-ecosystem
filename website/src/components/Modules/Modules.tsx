@@ -5,7 +5,7 @@ const modules = [
     icon: '🔌',
     title: 'MCP Server',
     desc: '底层连接层，为 AI 助手提供标准化的语雀 API 接口，让任何 MCP 兼容客户端都能操作语雀。',
-    meta: '16 个标准化 Tools',
+    meta: '19 个标准化 Tools',
   },
   {
     icon: '⚡',
@@ -16,14 +16,14 @@ const modules = [
   {
     icon: '🧩',
     title: 'Plugin',
-    desc: '一键集成 MCP + Skills，让 AI 助手开箱即用地操作语雀。支持 Claude Code、OpenClaw 等客户端。',
-    meta: '16 Tools + 14 Skills',
+    desc: '一键集成 MCP + Skills，让 AI 助手开箱即用地操作语雀。支持 Claude Code、OpenCode 等客户端。',
+    meta: 'MCP Tools + Skills 一键安装',
   },
 ]
 
 function Modules() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="architecture">
       <p className={styles.sectionLabel}>Architecture</p>
       <h2 className={styles.sectionTitle}>三层架构，渐进增强</h2>
       <p className={styles.sectionDesc}>

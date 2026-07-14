@@ -77,7 +77,7 @@
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, #fff 0%, #00B96B 100%);
+  background: linear-gradient(180deg, #ffffff 25%, #8ae2bc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -86,11 +86,19 @@
 .subtitle {
   font-size: clamp(16px, 2.5vw, 20px);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 48px;
-  max-width: 560px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.subtitleMeta {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
 }
 
 .actions {

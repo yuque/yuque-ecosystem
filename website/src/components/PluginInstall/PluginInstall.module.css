@@ -79,6 +79,7 @@
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  min-width: 0;
 }
 
 .stepNumber {

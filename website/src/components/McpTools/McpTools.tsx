@@ -72,17 +72,29 @@ const categories: Category[] = [
       { name: 'yuque_update_note', desc: '更新小记内容' },
     ],
   },
+  {
+    key: 'boards',
+    label: 'Boards',
+    icon: '🎨',
+    tools: [
+      { name: 'yuque_get_resource', desc: '读取文档中的画板资源（思维导图、流程图等）' },
+      { name: 'yuque_create_resource', desc: '在文档中创建画板（思维导图 / 流程图 / 架构图）' },
+      { name: 'yuque_update_resource', desc: '更新文档中的画板内容' },
+    ],
+  },
 ]
+
+const toolCount = categories.reduce((n, c) => n + c.tools.length, 0)
 
 function McpTools() {
   const [activeKey, setActiveKey] = useState('user')
   const active = categories.find((c) => c.key === activeKey)!
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="tools">
       <p className={styles.sectionLabel}>MCP Tools</p>
       <div className={styles.titleRow}>
-        <h2 className={styles.sectionTitle}>16 个标准化工具，覆盖语雀全部核心能力</h2>
+        <h2 className={styles.sectionTitle}>{toolCount} 个标准化工具，覆盖语雀全部核心能力</h2>
         <div className={styles.titleLinks}>
           <a
             className={styles.externalLink}
