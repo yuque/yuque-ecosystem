@@ -3,11 +3,8 @@
   "mcp": {
     "yuque": {
       "type": "local",
-      "command": ["npx", "-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"],
-      "enabled": true,
-      "environment": {
-        "YUQUE_TOKEN": ""
-      }
+      "command": ["npx", "-y", "yuque-mcp", "--token={env:YUQUE_TOKEN}"],
+      "enabled": true
     }
   }
 }

@@ -14,50 +14,28 @@ opencode --version
 # ✅ Expected: version string
 # ❌ If "command not found": install OpenCode first (https://opencode.ai)
 
-# Check Node.js version (>= 18 required)
+# Check Node.js version (>= 20 required; 18 is EOL)
 node --version
-# ✅ Expected: v18.x.x or higher
-# ❌ If below 18: upgrade via nvm (`nvm install 18 && nvm use 18`)
+# ✅ Expected: v20.x.x or higher
+# ❌ If below 20: upgrade via nvm (`nvm install 20 && nvm use 20`)
 
 # Check npx is available
 npx --version
 # ✅ Expected: version string
 # ❌ If missing: comes with npm, reinstall Node.js
+
+# Check the token is set
+[ -n "$YUQUE_TOKEN" ] && echo "TOKEN=set" || echo "TOKEN=missing"
+# ❌ If missing: export YUQUE_TOKEN="..." (get one at https://www.yuque.com/settings/tokens)
 ```
 
 ---
 
 ## Step 1: Configure MCP Server
 
-Choose between project-level or global configuration.
+The config uses OpenCode's `{env:YUQUE_TOKEN}` substitution — the token is resolved at runtime and never written into the file. **Do not** replace it with a literal token, especially in a project-level config that may get committed.
 
-### Option A: Project-Level Config
-
-Create or edit `opencode.json` in your project root:
-
-```bash
-cat > opencode.json << 'EOF'
-{
-  "$schema": "https://opencode.ai/config.json",
-  "mcp": {
-    "yuque": {
-      "type": "local",
-      "command": ["npx", "-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"],
-      "enabled": true
-    }
-  }
-}
-EOF
-```
-
-Then replace the token:
-
-```bash
-# Replace placeholder with actual token
-sed -i'' -e "s/YOUR_YUQUE_TOKEN/$YUQUE_TOKEN/g" opencode.json
-```
-
-### Option B: Global Config
+### Option A: Global Config (recommended)
 
 ```bash
 mkdir -p ~/.config/opencode
@@ -68,29 +46,26 @@ cat > ~/.config/opencode/opencode.json << 'EOF'
   "mcp": {
     "yuque": {
       "type": "local",
-      "command": ["npx", "-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"],
+      "command": ["npx", "-y", "yuque-mcp", "--token={env:YUQUE_TOKEN}"],
       "enabled": true
     }
   }
 }
 EOF
-
-# Replace placeholder with actual token
-sed -i'' -e "s/YOUR_YUQUE_TOKEN/$YUQUE_TOKEN/g" ~/.config/opencode/opencode.json
 ```
+
+> If `~/.config/opencode/opencode.json` already exists, merge the `mcp.yuque` entry into it instead of overwriting.
+
+### Option B: Project-Level Config
+
+Create or edit `opencode.json` in your project root with the same `mcp.yuque` entry as above.
 
 ### Option C: Copy Pre-Built Template
 
 If you have this repository cloned:
 
 ```bash
-# Global install
 cp shared/mcp-config/opencode.json ~/.config/opencode/opencode.json
-sed -i'' -e "s/YOUR_YUQUE_TOKEN/$YUQUE_TOKEN/g" ~/.config/opencode/opencode.json
-
-# Project install
-cp shared/mcp-config/opencode.json ./opencode.json
-sed -i'' -e "s/YOUR_YUQUE_TOKEN/$YUQUE_TOKEN/g" ./opencode.json
 ```
 
 ### Verify MCP Connection
@@ -124,48 +99,18 @@ SKILL_DIR="$HOME/.config/opencode/skills"
 mkdir -p "$SKILL_DIR"
 ```
 
-### Install Personal Skills (8 skills)
+### Install Skills (8 skills)
 
 ```bash
 # Requires this repo to be cloned
 REPO_DIR="/path/to/yuque-ecosystem"  # Adjust this path
 
 cp -r "$REPO_DIR/plugins/opencode/personal/skills/"* "$SKILL_DIR/"
-echo "✅ Installed personal skills"
 ls "$SKILL_DIR"
+# ✅ Expected: directories like smart-search/, smart-summary/, daily-capture/, etc.
 ```
-
-### Install Group/Team Skills (6 skills)
-
-```bash
-cp -r "$REPO_DIR/plugins/opencode/group/skills/"* "$SKILL_DIR/"
-echo "✅ Installed group skills"
-ls "$SKILL_DIR"
-```
-
-### Install Both Editions
-
-```bash
-REPO_DIR="/path/to/yuque-ecosystem"  # Adjust this path
-SKILL_DIR="$HOME/.config/opencode/skills"
-mkdir -p "$SKILL_DIR"
-
-cp -r "$REPO_DIR/plugins/opencode/personal/skills/"* "$SKILL_DIR/"
-cp -r "$REPO_DIR/plugins/opencode/group/skills/"* "$SKILL_DIR/"
-
-echo "✅ Installed all skills:"
-ls -d "$SKILL_DIR"/*/
-```
-
-### Verify Skills
 
 After installation, OpenCode automatically discovers skills. No restart needed.
-
-```bash
-# List installed skills
-ls "$SKILL_DIR"
-# Expected: directories like smart-search/, smart-summary/, daily-capture/, etc.
-```
 
 ---
 
@@ -195,7 +140,7 @@ Expected: Returns matching documents from your Yuque knowledge base.
 
 ## Available After Installation
 
-### MCP Tools (16)
+### MCP Tools (from `yuque-mcp`)
 
 | Category | Tools |
 |----------|-------|
@@ -205,30 +150,11 @@ Expected: Returns matching documents from your Yuque knowledge base.
 | Docs | `yuque_list_docs`, `yuque_get_doc`, `yuque_create_doc`, `yuque_update_doc` |
 | TOC | `yuque_get_toc`, `yuque_update_toc` |
 | Notes (小记) | `yuque_list_notes`, `yuque_get_note`, `yuque_create_note`, `yuque_update_note` |
+| Boards (画板) | `yuque_get_resource`, `yuque_create_resource`, `yuque_update_resource` |
 
-### Personal Skills (8)
+### Skills (8)
 
-| Skill | Description |
-|-------|-------------|
-| **smart-search** | Search personal knowledge bases with natural language |
-| **smart-summary** | Generate summaries at different granularity levels |
-| **daily-capture** | Capture ideas and organize into structured notes |
-| **reading-digest** | Extract insights from articles into reading notes |
-| **note-refine** | Polish rough notes into high-quality documents |
-| **knowledge-connect** | Discover hidden connections between documents |
-| **style-extract** | Analyze writing style and generate a style profile |
-| **stale-detector** | Find outdated documents and generate reports |
-
-### Group Skills (6)
-
-| Skill | Description |
-|-------|-------------|
-| **smart-search** | Search group knowledge bases (team-scoped) |
-| **weekly-report** | Generate group weekly reports from activity data |
-| **knowledge-report** | Generate monthly knowledge management reports |
-| **meeting-notes** | Format meetings into structured notes |
-| **tech-design** | Generate technical design documents |
-| **onboarding-guide** | Compile onboarding reading guides |
+smart-search, smart-summary, daily-capture, reading-digest, note-refine, knowledge-connect, style-extract, stale-detector
 
 ---
 
@@ -236,33 +162,7 @@ Expected: Returns matching documents from your Yuque knowledge base.
 
 | Error | Cause | Fix |
 |-------|-------|-----|
-| `command not found: opencode` | OpenCode not installed | Install from <https://opencode.ai> |
-| MCP server not appearing | Config file not found | Verify path: project `opencode.json` or `~/.config/opencode/opencode.json` |
-| `YUQUE_TOKEN` not replaced | Placeholder still in config | Edit config and replace `YOUR_YUQUE_TOKEN` with actual token |
-| JSON parse error | Malformed config file | Validate JSON: `cat opencode.json | python3 -m json.tool` |
-| Skills not discovered | Wrong skill directory | Check that skills are in `.opencode/skills/` or `~/.config/opencode/skills/` |
-| MCP connection timeout | Network or token issue | Test: `npx -y yuque-mcp --token=$YUQUE_TOKEN --test` |
-| `ECONNREFUSED` | Firewall blocking `yuque.com` | Check: `curl -I https://www.yuque.com` |
-
----
-
-## Uninstall
-
-```bash
-# Remove MCP config (edit opencode.json, remove the "yuque" key from "mcp")
-
-# Remove skills
-rm -rf ~/.config/opencode/skills/smart-search
-rm -rf ~/.config/opencode/skills/smart-summary
-rm -rf ~/.config/opencode/skills/daily-capture
-rm -rf ~/.config/opencode/skills/reading-digest
-rm -rf ~/.config/opencode/skills/note-refine
-rm -rf ~/.config/opencode/skills/knowledge-connect
-rm -rf ~/.config/opencode/skills/style-extract
-rm -rf ~/.config/opencode/skills/stale-detector
-rm -rf ~/.config/opencode/skills/weekly-report
-rm -rf ~/.config/opencode/skills/knowledge-report
-rm -rf ~/.config/opencode/skills/meeting-notes
-rm -rf ~/.config/opencode/skills/tech-design
-rm -rf ~/.config/opencode/skills/onboarding-guide
-```
+| `yuque` not in `opencode mcp list` | Config file path or JSON syntax error | Validate JSON; check `~/.config/opencode/opencode.json` |
+| MCP server fails to start | `YUQUE_TOKEN` not set in the environment | `export YUQUE_TOKEN="..."` and restart OpenCode |
+| 401 from Yuque API | Token invalid or expired | Regenerate at <https://www.yuque.com/settings/tokens> |
+| Skills not discovered | Wrong skills directory | Use `.opencode/skills/` (project) or `~/.config/opencode/skills/` (global) |

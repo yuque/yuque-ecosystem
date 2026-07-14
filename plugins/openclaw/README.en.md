@@ -10,15 +10,20 @@ Integrates Yuque knowledge management into the OpenClaw Agent ecosystem with 8 r
 
 ## Prerequisites
 
-- [OpenClaw](https://github.com/nicepkg/openclaw) installed and running
+- [OpenClaw](https://openclaw.ai) installed and running
 - Yuque account with a [personal Token](https://www.yuque.com/settings/tokens)
 - [yuque-mcp](https://www.npmjs.com/package/yuque-mcp) configured as MCP Server
 
 ## Installation
 
+The plugin is not yet published to npm — install it from a local checkout:
+
 ```bash
-openclaw plugins install @yuque/openclaw-plugin
+git clone https://github.com/yuque/yuque-ecosystem.git
+openclaw plugins install ./yuque-ecosystem/plugins/openclaw
 ```
+
+> For development, use `openclaw plugins install --link ./yuque-ecosystem/plugins/openclaw` to keep the install pointing at your checkout.
 
 ## Skills
 
@@ -44,15 +49,14 @@ Add yuque-mcp to your OpenClaw `mcpServers` configuration:
       "command": "npx",
       "args": ["-y", "yuque-mcp"],
       "env": {
-        "YUQUE_TOKEN": "your-yuque-token",
-        "YUQUE_API_URL": "https://www.yuque.com/api/v2"
+        "YUQUE_PERSONAL_TOKEN": "your-yuque-token"
       }
     }
   }
 }
 ```
 
-> Token is passed via MCP Server environment variables. The plugin itself does not require token configuration.
+> Token is passed via MCP Server environment variables (`yuque-mcp` reads `YUQUE_PERSONAL_TOKEN`, or accepts `--token=...` as an argument). The plugin itself does not require token configuration.
 
 ## Directory Structure
 

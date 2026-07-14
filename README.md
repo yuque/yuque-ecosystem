@@ -24,28 +24,33 @@ This is a **Stripe-style monorepo**: one core SDK ([yuque-mcp-server](https://gi
 yuque-ecosystem/
 ├── website/                  # Official website (GitHub Pages)
 ├── plugins/
-│   ├── claude-code/          # Claude Code Plugin (Marketplace)
-│   │   ├── personal/         # Personal edition — 16 Tools + 8 Skills
-│   │   └── group/            # Team edition — 16 Tools + 6 Skills
-│   ├── opencode/             # OpenCode Plugin (MCP + Skills)
-│   │   ├── personal/         # Personal edition — 16 Tools + 8 Skills
-│   │   └── group/            # Team edition — 16 Tools + 6 Skills
-│   └── openclaw/             # OpenClaw Plugin (Agent Skills)
+│   ├── yuque-personal/       # Claude Code 插件（个人版）— skills 唯一源
+│   │   ├── .claude-plugin/   #   plugin.json
+│   │   ├── .mcp.json         #   MCP server 配置
+│   │   └── skills/           #   8 个 Skills（canonical，其余客户端由脚本同步）
+│   ├── claude-code/          # Claude Code 安装文档
+│   ├── opencode/             # OpenCode 接入（MCP 配置 + skills 副本）
+│   └── openclaw/             # OpenClaw 插件（skills 副本）
 ├── shared/
 │   └── mcp-config/           # MCP config templates for various editors
+├── scripts/                  # sync-skills.mjs — 同步 canonical skills 到各客户端
 ├── .claude-plugin/           # Claude Code Marketplace entry
 └── package.json              # npm workspaces root
 ```
+
+> **团队版（yuque-group）已暂时下线**：其 skills 依赖的团队统计类 MCP 工具（`yuque_group_*`）尚未在 `yuque-mcp` 中提供，待底层工具就绪后再重新上架。历史代码见 git 记录。
 
 ## Quick Start
 
 ### Claude Code
 
 ```bash
-# Option 1: Install via Marketplace
+# Option 1: Install via Marketplace（MCP Tools + Skills）
 claude plugin marketplace add yuque/yuque-ecosystem
+claude plugin install yuque-personal@yuque
+export YUQUE_TOKEN="your_token"   # 插件通过该环境变量读取 Token
 
-# Option 2: Add MCP Server directly
+# Option 2: Add MCP Server directly（仅 MCP Tools，无 Skills）
 claude mcp add yuque-mcp -- npx -y yuque-mcp --token=YOUR_TOKEN
 ```
 

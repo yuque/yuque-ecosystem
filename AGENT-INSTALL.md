@@ -9,7 +9,7 @@ Determine which AI coding client you are running in and follow the corresponding
 - **Claude Code** → See [plugins/claude-code/AGENT-INSTALL.md](./plugins/claude-code/AGENT-INSTALL.md)
 - **OpenCode** → See [plugins/opencode/AGENT-INSTALL.md](./plugins/opencode/AGENT-INSTALL.md)
 - **Cursor / GitHub Copilot (VS Code) / Windsurf / Other Editors** → See [shared/mcp-config/AGENT-INSTALL.md](./shared/mcp-config/AGENT-INSTALL.md)
-- **OpenClaw** → Coming soon
+- **OpenClaw** → See [plugins/openclaw/README.md](./plugins/openclaw/README.md)
 
 ### How to Detect Your Client
 
@@ -35,9 +35,9 @@ code --list-extensions 2>/dev/null | grep -i "github.copilot" && echo "COPILOT=i
 Before proceeding with any installation method, ensure the following:
 
 ```bash
-# Check Node.js version (>= 18 required)
+# Check Node.js version (>= 20 required; Node 18 is EOL)
 node --version
-# Expected output: v18.x.x or higher
+# Expected output: v20.x.x or higher
 
 # Check npm is available
 npm --version
@@ -46,14 +46,14 @@ npm --version
 npx --version
 ```
 
-If Node.js is not installed or version is below 18:
+If Node.js is not installed or version is below 20:
 
 ```bash
 # Install via nvm (recommended)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source ~/.bashrc  # or ~/.zshrc
-nvm install 18
-nvm use 18
+nvm install 20
+nvm use 20
 ```
 
 ## Step 3: Get a Yuque API Token
@@ -80,8 +80,8 @@ source ~/.zshrc
 ## Step 4: Verify Token
 
 ```bash
-# Quick test — should return your user info
-npx -y yuque-mcp --token=$YUQUE_TOKEN --test
+# Quick test — should return your user info as JSON (401 = invalid token)
+curl -s -H "X-Auth-Token: $YUQUE_TOKEN" https://www.yuque.com/api/v2/user
 ```
 
 ## Step 5: Follow Client-Specific Guide
@@ -94,7 +94,7 @@ Now proceed to the guide for your specific client (see Step 1 links above).
 
 | Client | Method | Command |
 |--------|--------|---------|
-| Claude Code | Marketplace | `claude plugin marketplace add yuque/yuque-ecosystem` |
+| Claude Code | Marketplace | `claude plugin marketplace add yuque/yuque-ecosystem && claude plugin install yuque-personal@yuque` |
 | Claude Code | MCP Direct | `claude mcp add yuque-mcp -- npx -y yuque-mcp --token=$YUQUE_TOKEN` |
 | OpenCode | Config File | Add to `opencode.json` (see OpenCode guide) |
 | Cursor | Config File | Add to `.cursor/mcp.json` (see MCP config guide) |

@@ -14,8 +14,8 @@ const plugin = {
         .command("status")
         .description("Check yuque plugin status")
         .action(async () => {
-          console.log("🟢 Yuque OpenClaw Plugin v1.0.0");
-          console.log("   Skills: 8 personal knowledge management skills");
+          console.log("🟢 Yuque OpenClaw Plugin");
+          console.log("   Skills: see plugins/openclaw/skills/");
           console.log("   MCP Server: yuque-mcp (configure via mcpServers)");
         });
     }, { commands: ["yuque"] });

@@ -1,6 +1,6 @@
 # 语雀个人版 Plugin / Yuque Personal Plugin
 
-个人知识库 AI 集成 — 16 MCP Tools + 8 Skills。
+个人知识库 AI 集成 — MCP Tools + 8 Skills。
 
 语雀 = 第二大脑，Skills = AI 认知能力。
 
@@ -38,10 +38,12 @@
 
 ## 配置
 
-需要设置 `YUQUE_PERSONAL_TOKEN` 环境变量：
+需要设置 `YUQUE_TOKEN` 环境变量：
 
 ```bash
-export YUQUE_PERSONAL_TOKEN="your-personal-token"
+export YUQUE_TOKEN="your-personal-token"
 ```
 
 获取方式：登录 [语雀](https://www.yuque.com) → 个人设置 → Token → 新建
+
+> **从旧版本升级？** v1.0.x 读取的是 `YUQUE_PERSONAL_TOKEN`，v1.1.0 起统一为 `YUQUE_TOKEN`（与其余文档一致）。请重命名你的环境变量。

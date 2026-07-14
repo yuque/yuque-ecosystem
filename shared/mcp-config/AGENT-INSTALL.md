@@ -12,9 +12,9 @@ This guide covers: **Cursor**, **VS Code (Copilot)**, **Windsurf**, and other MC
 ## Prerequisites Check
 
 ```bash
-# Check Node.js version (>= 18 required)
+# Check Node.js version (>= 20 required; 18 is EOL)
 node --version
-# ✅ Expected: v18.x.x or higher
+# ✅ Expected: v20.x.x or higher
 
 # Check npx is available
 npx --version
@@ -189,19 +189,24 @@ cp "$REPO_DIR/shared/mcp-config/vscode.json" .vscode/mcp.json
 mkdir -p .windsurf
 cp "$REPO_DIR/shared/mcp-config/windsurf.json" .windsurf/mcp.json
 
-# OpenCode
+# OpenCode（模板使用 {env:YUQUE_TOKEN}，无需替换 token）
 cp "$REPO_DIR/shared/mcp-config/opencode.json" ./opencode.json
 
-# Then replace token in all files
-find . -name "mcp.json" -o -name "opencode.json" | \
-  xargs sed -i'' -e "s/YOUR_YUQUE_TOKEN/$YUQUE_TOKEN/g"
+# Cursor / VS Code / Windsurf 模板含 YOUR_YUQUE_TOKEN 占位符，需替换：
+sed -i'' -e "s/YOUR_YUQUE_TOKEN/$YUQUE_TOKEN/g" .cursor/mcp.json .vscode/mcp.json .windsurf/mcp.json
 
-echo "✅ All config files installed and token replaced"
+echo "✅ All config files installed"
 ```
+
+> **Security warning:** project-level `.cursor/mcp.json`, `.vscode/mcp.json`, and `.windsurf/mcp.json` will contain your plaintext token after this step. Add them to `.gitignore` so the token is never committed:
+>
+> ```bash
+> printf '%s\n' '.cursor/mcp.json' '.vscode/mcp.json' '.windsurf/mcp.json' >> .gitignore
+> ```
 
 ---
 
-## Post-Installation: Available MCP Tools (16)
+## Post-Installation: Available MCP Tools
 
 Once connected, the following tools are available to the AI agent:
 
@@ -213,6 +218,7 @@ Once connected, the following tools are available to the AI agent:
 | Docs | `yuque_list_docs`, `yuque_get_doc`, `yuque_create_doc`, `yuque_update_doc` |
 | TOC | `yuque_get_toc`, `yuque_update_toc` |
 | Notes (小记) | `yuque_list_notes`, `yuque_get_note`, `yuque_create_note`, `yuque_update_note` |
+| Boards (画板) | `yuque_get_resource`, `yuque_create_resource`, `yuque_update_resource` |
 
 > **Note:** MCP-only installations provide tools but not skills. For skills, use the [Claude Code plugin](../../plugins/claude-code/) or [OpenCode plugin](../../plugins/opencode/).
 
@@ -223,7 +229,7 @@ Once connected, the following tools are available to the AI agent:
 | Error | Cause | Fix |
 |-------|-------|-----|
 | MCP server not appearing | Config file in wrong location | Verify path matches your editor's expected location |
-| `npx: command not found` | Node.js not installed | Install Node.js >= 18 |
+| `npx: command not found` | Node.js not installed | Install Node.js >= 20 |
 | Token error / 401 | Invalid or expired token | Regenerate at <https://www.yuque.com/settings/tokens> |
 | JSON parse error | Malformed config | Validate: `cat .cursor/mcp.json \| python3 -m json.tool` |
 | Connection timeout | Network issue | Check: `curl -I https://www.yuque.com` |

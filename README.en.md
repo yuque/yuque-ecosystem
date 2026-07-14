@@ -24,28 +24,33 @@ This is a **Stripe-style monorepo**: one core SDK ([yuque-mcp-server](https://gi
 yuque-ecosystem/
 ├── website/                  # Official website (GitHub Pages)
 ├── plugins/
-│   ├── claude-code/          # Claude Code Plugin (Marketplace)
-│   │   ├── personal/         # Personal edition — 16 Tools + 8 Skills
-│   │   └── group/            # Team edition — 16 Tools + 6 Skills
-│   ├── opencode/             # OpenCode Plugin (MCP + Skills)
-│   │   ├── personal/         # Personal edition — 16 Tools + 8 Skills
-│   │   └── group/            # Team edition — 16 Tools + 6 Skills
-│   └── openclaw/             # OpenClaw Plugin (Agent Skills)
+│   ├── yuque-personal/       # Claude Code plugin (personal edition) — canonical skills source
+│   │   ├── .claude-plugin/   #   plugin.json
+│   │   ├── .mcp.json         #   MCP server config
+│   │   └── skills/           #   8 skills (canonical — other clients are synced by script)
+│   ├── claude-code/          # Claude Code install docs
+│   ├── opencode/             # OpenCode integration (MCP config + skills copies)
+│   └── openclaw/             # OpenClaw plugin (skills copies)
 ├── shared/
 │   └── mcp-config/           # MCP config templates for various editors
+├── scripts/                  # sync-skills.mjs — sync canonical skills to client copies
 ├── .claude-plugin/           # Claude Code Marketplace entry
 └── package.json              # npm workspaces root
 ```
+
+> **The team edition (yuque-group) is temporarily withdrawn**: its skills depend on group-statistics MCP tools (`yuque_group_*`) that are not yet available in `yuque-mcp`. It will return once the underlying tools ship. See git history for the previous code.
 
 ## Quick Start
 
 ### Claude Code
 
 ```bash
-# Option 1: Install via Marketplace
+# Option 1: Install via Marketplace (MCP tools + skills)
 claude plugin marketplace add yuque/yuque-ecosystem
+claude plugin install yuque-personal@yuque
+export YUQUE_TOKEN="your_token"   # the plugin reads the token from this env var
 
-# Option 2: Add MCP Server directly
+# Option 2: Add MCP Server directly (MCP tools only, no skills)
 claude mcp add yuque-mcp -- npx -y yuque-mcp --token=YOUR_TOKEN
 ```
 
