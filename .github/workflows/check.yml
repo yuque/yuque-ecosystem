@@ -1,0 +1,29 @@
+name: Repo Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Skills copies in sync with canonical source
+        run: node scripts/sync-skills.mjs --check
+
+      - name: JSON manifests are valid
+        run: |
+          set -e
+          # tsconfig*.json are JSONC (comments allowed) — validated by tsc in the website build instead
+          for f in $(git ls-files '*.json' | grep -v -e package-lock.json -e 'tsconfig.*\.json'); do
+            node -e "JSON.parse(require('fs').readFileSync('$f', 'utf8'))" \
+              || { echo "❌ Invalid JSON: $f"; exit 1; }
+          done
+          echo "✅ All JSON manifests parse"

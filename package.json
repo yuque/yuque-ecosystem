@@ -6,7 +6,9 @@
     "plugins/openclaw"
   ],
   "scripts": {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "sync-skills": "node scripts/sync-skills.mjs",
+    "check-skills": "node scripts/sync-skills.mjs --check"
   },
   "devDependencies": {
     "conventional-changelog-cli": "^5.0.0"
