@@ -32,34 +32,34 @@ curl -s -H "X-Auth-Token: $YUQUE_TOKEN" https://www.yuque.com/api/v2/user
 
 ## Claude Code (recommended path)
 
-The only formally packaged distribution — one command installs MCP server + all skills, with updates.
+Install the MCP server and skills in two steps:
 
 ```bash
-# 1. Register the marketplace (this alone installs nothing)
-claude plugin marketplace add yuque/yuque-ecosystem
-
-# 2. Install the plugin — required step
-claude plugin install yuque-personal@yuque
-
-# 3. Token via env var
-export YUQUE_TOKEN="your_token_here"   # add to ~/.zshrc for persistence
-```
-
-Verify:
-
-```bash
-claude plugin list | grep yuque-personal
-# ✅ "yuque-personal" appears   ❌ re-run step 2 and check its error output
-```
-
-MCP-only alternative (no skills):
-
-```bash
+# 1. MCP server
 claude mcp add yuque-mcp -- npx -y yuque-mcp --token=$YUQUE_TOKEN
+
+# 2. Skills — copy the canonical directory
+REPO_DIR="/path/to/yuque-ecosystem"   # cloned checkout
+mkdir -p ~/.claude/skills
+cp -r "$REPO_DIR/skills/"* ~/.claude/skills/
+```
+
+For a project-level installation, copy the skills into `.claude/skills/` instead.
+
+Verify the MCP server:
+
+```bash
 claude mcp list | grep -i yuque
 ```
 
-Uninstall: `claude plugin uninstall yuque-personal`, `claude plugin marketplace remove yuque`, or `claude mcp remove yuque-mcp`.
+Uninstall the MCP server and remove only the Yuque skill directories that were copied:
+
+```bash
+claude mcp remove yuque-mcp
+rm -rf ~/.claude/skills/{smart-search,smart-summary,daily-capture,reading-digest,note-refine,knowledge-connect,style-extract,stale-detector}
+# Project-level installation:
+rm -rf .claude/skills/{smart-search,smart-summary,daily-capture,reading-digest,note-refine,knowledge-connect,style-extract,stale-detector}
+```
 
 ---
 
@@ -122,13 +122,47 @@ cp -r "$REPO_DIR/skills/"* ~/.openclaw/skills/
 
 ## Cursor / VS Code (Copilot) / Windsurf / other MCP editors
 
-Copy the matching template from [`shared/mcp-config/`](./shared/mcp-config/) and replace `YOUR_YUQUE_TOKEN`:
+Create the matching config file and replace `YOUR_YUQUE_TOKEN`.
 
-| Client | Template | Destination |
-|--------|----------|-------------|
-| Cursor | `cursor.json` | `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global) |
-| VS Code (requires GitHub Copilot extension) | `vscode.json` | `.vscode/mcp.json` |
-| Windsurf | `windsurf.json` | `.windsurf/mcp.json` |
+### Cursor — `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global)
+
+```json
+{
+  "mcpServers": {
+    "yuque-mcp": {
+      "command": "npx",
+      "args": ["-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"]
+    }
+  }
+}
+```
+
+### VS Code (requires GitHub Copilot extension) — `.vscode/mcp.json`
+
+```json
+{
+  "servers": {
+    "yuque-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"]
+    }
+  }
+}
+```
+
+### Windsurf — `.windsurf/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "yuque-mcp": {
+      "command": "npx",
+      "args": ["-y", "yuque-mcp", "--token=YOUR_YUQUE_TOKEN"]
+    }
+  }
+}
+```
 
 > **Security:** project-level configs contain a plaintext token after replacement — add them to `.gitignore`:
 >
@@ -180,6 +214,5 @@ Functional test inside any client session:
 | `node: command not found` | Node.js not installed | Install Node.js >= 20 via nvm (`nvm install 20`) |
 | Token test returns 401 | Invalid or expired token | Regenerate at <https://www.yuque.com/settings/tokens> |
 | MCP server fails to start | Token not reaching the process | Pass `--token=...` or set `YUQUE_PERSONAL_TOKEN` in the server env |
-| Plugin not found in marketplace | Marketplace not registered | Re-run `claude plugin marketplace add yuque/yuque-ecosystem` |
 | Skills not discovered | Wrong skills directory | Check your client's skills path (see its section above) |
 | `ECONNREFUSED` / timeout | Network blocking yuque.com | `curl -I https://www.yuque.com` |

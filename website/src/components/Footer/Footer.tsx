@@ -6,9 +6,8 @@ const linkGroups = [
     title: '产品',
     links: [
       { label: 'MCP Server', href: 'https://github.com/yuque/yuque-mcp-server' },
-      { label: 'Claude Code Plugin', href: 'https://github.com/yuque/yuque-ecosystem/tree/main/plugins/yuque-personal' },
-      { label: 'OpenCode / 其他客户端接入', href: 'https://github.com/yuque/yuque-ecosystem/blob/main/AGENT-INSTALL.md' },
-      { label: '编辑器配置模板', href: 'https://github.com/yuque/yuque-ecosystem/tree/main/shared/mcp-config' },
+      { label: 'Skills', href: 'https://github.com/yuque/yuque-ecosystem/tree/main/skills' },
+      { label: '全客户端安装指南', href: 'https://github.com/yuque/yuque-ecosystem/blob/main/AGENT-INSTALL.md' },
     ],
   },
   {
@@ -75,7 +74,7 @@ function Footer() {
               <span className={styles.brandName}>语雀 AI 生态</span>
             </div>
             <p className={styles.brandDesc}>
-              让 AI 助手无缝连接语雀。开源的 MCP Server、Skills 与 Plugin 集合。
+              让 AI 助手无缝连接语雀。开源的 MCP Server 与 Skills 集合。
             </p>
             {(pvCount || uvCount) && (
               <p className={styles.stats}>

@@ -71,9 +71,6 @@ const personalSkills = [
   },
 ]
 
-// 团队版 skills 已随 yuque-group 插件下线：依赖的 yuque_group_* 统计工具尚未在 yuque-mcp 中提供。
-// 待底层工具就绪后从 git 历史恢复（见 plugins/yuque-group@0b411b7）。
-
 function Skills() {
   return (
     <section className={styles.section} id="skills">
@@ -93,6 +90,8 @@ function Skills() {
         每个 Skill 都是一个精心编排的工作流，将多个 Tools 组合成开箱即用的解决方案。
         <br />
         覆盖知识管理全生命周期：输入 → 加工 → 输出 → 维护。
+        <br />
+        <span className={styles.tabHint}>团队版 Skills 暂缓上架，等待 yuque-mcp 团队统计工具就绪</span>
       </p>
 
       <div className={styles.grid}>

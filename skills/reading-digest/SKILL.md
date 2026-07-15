@@ -1,8 +1,8 @@
 ---
 name: reading-digest
-description: Extract core insights, golden quotes, and action items from articles, then generate structured reading notes and save them to a specified Yuque knowledge base. For personal/individual use.
-license: Apache-2.0
-compatibility: Requires yuque-mcp server connected to a Yuque account with personal Token
+description: "Extract core insights, golden quotes, and action items from articles, then create structured Yuque reading notes. Use when the user wants key takeaways or a personal reading-notes base; trigger phrases include “帮我做阅读笔记”, “读书笔记”, and “extract key points from this article”."
+license: MIT
+compatibility: Requires the yuque-mcp MCP server connected with a personal Yuque token
 metadata:
   author: yuque
   version: "1.0"

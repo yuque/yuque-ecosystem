@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Skills copies in sync with canonical source
-        run: node scripts/sync-skills.mjs --check
+      - name: Skills are valid (frontmatter + tool references)
+        run: node scripts/validate-skills.mjs
 
       - name: JSON manifests are valid
         run: |

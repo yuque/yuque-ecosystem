@@ -1,0 +1,21 @@
+[
+  "yuque_get_user",
+  "yuque_search",
+  "yuque_list_books",
+  "yuque_get_book",
+  "yuque_create_book",
+  "yuque_update_book",
+  "yuque_list_docs",
+  "yuque_get_doc",
+  "yuque_create_doc",
+  "yuque_update_doc",
+  "yuque_get_toc",
+  "yuque_update_toc",
+  "yuque_list_notes",
+  "yuque_get_note",
+  "yuque_create_note",
+  "yuque_update_note",
+  "yuque_get_resource",
+  "yuque_create_resource",
+  "yuque_update_resource"
+]

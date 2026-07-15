@@ -1,8 +1,8 @@
 ---
 name: daily-capture
-description: Collect fleeting ideas and thoughts throughout the day, then periodically organize them into structured thematic notes in your Yuque knowledge base. For personal/individual use.
-license: Apache-2.0
-compatibility: Requires yuque-mcp server connected to a Yuque account with personal Token
+description: "Capture fleeting ideas in Yuque and periodically organize them into structured thematic notes. Use when the user wants to jot down or review fragments; trigger phrases include “记一下”, “随手记”, “整理一下我最近的想法”, “capture this”, and “organize my captures”."
+license: MIT
+compatibility: Requires the yuque-mcp MCP server connected with a personal Yuque token
 metadata:
   author: yuque
   version: "1.0"
