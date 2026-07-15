@@ -1,8 +1,7 @@
 {
   "name": "yuque",
   "owner": {
-    "name": "yuque",
-    "email": "willchen.babydog@gmail.com"
+    "name": "yuque"
   },
   "metadata": {
     "description": "语雀 AI 生态 — MCP Tools and Skills for Yuque",

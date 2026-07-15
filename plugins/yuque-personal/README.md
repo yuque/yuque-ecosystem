@@ -2,6 +2,8 @@
 
 个人知识库 AI 集成 — MCP Tools + 8 Skills。
 
+> **本目录是 Claude Code Marketplace 的打包层**：`skills/` 是从仓库根目录 [`skills/`](../../skills/)（唯一源）同步的副本，请勿直接修改——改动请提交到唯一源后运行 `npm run sync-skills`（CI 会校验漂移）。
+
 语雀 = 第二大脑，Skills = AI 认知能力。
 
 ## Skills

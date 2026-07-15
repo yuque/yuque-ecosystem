@@ -1,4 +1,4 @@
-[中文](./README.md) | [English](./README.en.md) | [🤖 Agent Install](./AGENT-INSTALL.md)
+[中文](./README.md) | [English](./README.en.md) | [🤖 Agent Install](../../AGENT-INSTALL.md)
 
 # MCP Configuration Templates
 
@@ -48,4 +48,4 @@ cp opencode.json ~/.config/opencode/opencode.json
 
 The OpenCode template uses `{env:YUQUE_TOKEN}` — just `export YUQUE_TOKEN="your_token"`, no need to edit the file.
 
-For more details, see [`plugins/opencode/README.md`](../../plugins/opencode/README.md).
+For OpenCode and every other client, see the unified [`AGENT-INSTALL.md`](../../AGENT-INSTALL.md).
