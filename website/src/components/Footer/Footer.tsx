@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './Footer.module.css'
+import yuqueLogo from '../../assets/yuque-logo.svg'
 
 const linkGroups = [
   {
@@ -64,12 +65,7 @@ function Footer() {
           <div className={styles.brandCol}>
             <div className={styles.brand}>
               <span className={styles.logoMark} aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5 4h9.5a1 1 0 0 1 .77 1.64l-2.53 3.04A6.5 6.5 0 0 1 19 15v4a1 1 0 0 1-1 1h-6.5A6.5 6.5 0 0 1 5 13.5V4z"
-                    fill="currentColor"
-                  />
-                </svg>
+                <img src={yuqueLogo} alt="" />
               </span>
               <span className={styles.brandName}>语雀 AI 生态</span>
             </div>
