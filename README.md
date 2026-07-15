@@ -1,96 +1,96 @@
 <div align="center">
 
-<a href="https://yuque.github.io/yuque-ecosystem/"><img src="https://avatars.githubusercontent.com/u/34602419?s=200&v=4" width="88" alt="语雀 logo"></a>
+<a href="https://yuque.github.io/yuque-ecosystem/"><img src="https://avatars.githubusercontent.com/u/34602419?s=200&v=4" width="88" alt="Yuque logo"></a>
 
 <h1>Yuque AI Ecosystem</h1>
 
-语雀 AI 生态官方分发仓库<br>一套知识管理 Skills，任意 AI 客户端开箱即用。
+The official distribution repository for Yuque AI integrations —<br>one set of knowledge-management skills, ready to use in any AI client.
 
 [![Website][website-image]][website-url] [![Deploy][deploy-image]][deploy-url] [![npm][npm-image]][npm-url]
 
-[🌐 官网](https://yuque.github.io/yuque-ecosystem/) · [🚀 快速开始](#快速开始) · [🤖 Agent 安装](./AGENT-INSTALL.md) · [📖 完整愿景](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final) · [English](./README.en.md)
+[🌐 Website](https://yuque.github.io/yuque-ecosystem/) · [🚀 Quick Start](#quick-start) · [🤖 Agent Install](./AGENT-INSTALL.md) · [📖 Full Vision](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final) · [中文](./README.zh-CN.md)
 
-<a href="https://yuque.github.io/yuque-ecosystem/"><img src=".github/assets/website.png" alt="Yuque AI Ecosystem 官网首页"></a>
+<a href="https://yuque.github.io/yuque-ecosystem/"><img src=".github/assets/website.png" alt="Yuque AI Ecosystem website"></a>
 
 </div>
 
-## Skills（8 个）
+## Skills (8)
 
-- 📥 **daily-capture** — 随手速记灵感，定期整理成结构化知识
-- 🔍 **smart-search** — 用自然语言搜索你的语雀知识库并综合作答
-- 📝 **smart-summary** — 按一句话 / 要点 / 详细三档总结文档或知识库
-- 📚 **reading-digest** — 从文章提炼核心洞见、金句与行动项，生成阅读笔记
-- ✨ **note-refine** — 把粗糙小记打磨成结构清晰的文档，保留你的原声
-- 🔗 **knowledge-connect** — 发现文档间的关联话题与互补笔记，建立交叉链接
-- 🧹 **stale-detector** — 扫描知识库中的过时文档并给出更新建议
-- 🎨 **style-extract** — 提炼你的用词、句式与语气，形成个人文风指南
+- 📥 **daily-capture** — Capture fleeting ideas and periodically organize them into structured knowledge
+- 🔍 **smart-search** — Search your Yuque knowledge bases with natural language and synthesize answers
+- 📝 **smart-summary** — Summarize a doc or book at one-line, key-point, or detailed level
+- 📚 **reading-digest** — Extract core insights, golden quotes, and action items into reading notes
+- ✨ **note-refine** — Polish rough notes into structured documents while preserving your voice
+- 🔗 **knowledge-connect** — Uncover related topics and complementary notes, build cross-links
+- 🧹 **stale-detector** — Scan a knowledge base for outdated documents and recommend updates
+- 🎨 **style-extract** — Distill your vocabulary, sentence, and tone patterns into a personal style guide
 
-> **团队版（yuque-group）已暂时下线**：其 skills 依赖的团队统计类 MCP 工具（`yuque_group_*`）尚未在 `yuque-mcp` 中提供，待底层工具就绪后再重新上架。历史代码见 git 记录。
+> **The team edition (yuque-group) is temporarily withdrawn**: its skills depend on group-statistics MCP tools (`yuque_group_*`) that are not yet available in `yuque-mcp`. It will return once the underlying tools ship. See git history for the previous code.
 
-## 快速开始
+## Quick Start
 
 ### Claude Code
 
 ```bash
-# 1. 配置 MCP
+# 1. Configure MCP
 claude mcp add yuque-mcp -- npx -y yuque-mcp --token=$YUQUE_TOKEN
 
-# 2. 复制 Skills
+# 2. Copy skills
 REPO_DIR="/path/to/yuque-ecosystem"
 mkdir -p ~/.claude/skills
 cp -r "$REPO_DIR/skills/"* ~/.claude/skills/
 ```
 
-### 其他客户端（OpenCode / OpenClaw / Cursor / VS Code / Windsurf …）
+### Any other client (OpenCode / OpenClaw / Cursor / VS Code / Windsurf …)
 
-两步通用：① 配好 `yuque-mcp`；② 客户端若支持 skills，把 [`skills/`](./skills/) 拷进它的 skills 目录。
+Two generic steps: ① configure `yuque-mcp`; ② if the client supports skills, copy [`skills/`](./skills/) into its skills directory.
 
-各客户端的具体命令见 [`AGENT-INSTALL.md`](./AGENT-INSTALL.md) —— 把这个文件直接丢给你的 AI agent，它就会装。
+Per-client commands live in [`AGENT-INSTALL.md`](./AGENT-INSTALL.md) — hand that file to your AI agent and it will install everything.
 
-## 定位
+## Positioning
 
-**Skills 是资产，客户端接入是分发，官网是门面。** 能力与体验分属两个仓库：[yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) 定义 AI *能做什么*（MCP 工具），本仓库定义用户*怎么用上*（Skills 编排、安装文档与官网）。
+**Skills are the asset, client integrations are distribution, the website is the storefront.** Capability and experience live in separate repositories: [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) defines what the AI *can do* (MCP tools); this repository defines how users *get it* (skill workflows, install docs, and the website).
 
-| 层     | 内容                                            | 位置                                                        |
-| ------ | ----------------------------------------------- | ----------------------------------------------------------- |
-| 能力层 | MCP Server（npm: `yuque-mcp`）                  | [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) |
-| 资产层 | 知识管理 Skills（唯一源，标准 SKILL.md 格式）   | [`skills/`](./skills/)                                      |
-| 分发层 | 全客户端安装指南（复制 skills/ 即安装）         | [`AGENT-INSTALL.md`](./AGENT-INSTALL.md)                    |
-| 门面层 | 官网（展示 + 安装引导）                         | [`website/`](./website/)                                    |
+| Layer        | Content                                                       | Location                                                      |
+| ------------ | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| Capability   | MCP Server (npm: `yuque-mcp`)                                 | [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) |
+| Asset        | Knowledge-management skills (single source, SKILL.md format)  | [`skills/`](./skills/)                                        |
+| Distribution | All-client install guide (copy skills/ to install)            | [`AGENT-INSTALL.md`](./AGENT-INSTALL.md)                      |
+| Storefront   | Website (showcase + install guides)                           | [`website/`](./website/)                                      |
 
-SKILL.md 是跨客户端的通用格式——OpenCode、OpenClaw 等客户端直接把 [`skills/`](./skills/) 拷进各自的 skills 目录即可，无需专门的适配层。所有客户端统一走「配 MCP + 复制 skills/」两步。
+SKILL.md is a cross-client format — OpenCode, OpenClaw, and any other skills-capable client can copy [`skills/`](./skills/) into their own skills directory directly; no dedicated adapter layer needed. Every client uses the same two steps: configure MCP and copy `skills/`.
 
 <details>
-<summary>仓库结构</summary>
+<summary>Repository structure</summary>
 
 ```
 yuque-ecosystem/
-├── skills/                   # ★ 资产：8 个知识管理 Skills（唯一源）
-├── AGENT-INSTALL.md          # 全客户端安装指南（agent 可直接执行）
-├── website/                  # 官网（GitHub Pages）
-├── scripts/                  # 校验脚本（skills frontmatter 与 MCP 工具引用）
-└── .github/                  # CI、预览与部署工作流
+├── skills/                   # ★ The asset: 8 knowledge-management skills (single source)
+├── AGENT-INSTALL.md          # All-client install guide (directly executable by agents)
+├── website/                  # Official website (GitHub Pages)
+├── scripts/                  # Validation scripts (skills frontmatter & MCP tool references)
+└── .github/                  # CI, preview, and deployment workflows
 ```
 
 </details>
 
-## 开发
+## Development
 
 ```bash
-# 官网开发
+# Website development
 cd website && npm install && npm run dev
 
-# 校验 skills
+# Validate skills
 node scripts/validate-skills.mjs
 ```
 
-## 链接
+## Links
 
 - [npm: yuque-mcp](https://www.npmjs.com/package/yuque-mcp)
-- [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) — 能力层：MCP Server 源码
-- [语雀 + AI：从文档工具到你的第二大脑](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final)
+- [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) — the capability layer: MCP server source
+- [Yuque + AI: From Documentation Tool to Your Second Brain](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final)
 
-## 许可证
+## License
 
 MIT © [Yuque](https://www.yuque.com)
 
