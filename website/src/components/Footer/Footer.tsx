@@ -7,7 +7,7 @@ const linkGroups = [
     links: [
       { label: 'MCP Server', href: 'https://github.com/yuque/yuque-mcp-server' },
       { label: 'Claude Code Plugin', href: 'https://github.com/yuque/yuque-ecosystem/tree/main/plugins/yuque-personal' },
-      { label: 'OpenCode 接入', href: 'https://github.com/yuque/yuque-ecosystem/tree/main/plugins/opencode' },
+      { label: 'OpenCode / 其他客户端接入', href: 'https://github.com/yuque/yuque-ecosystem/blob/main/AGENT-INSTALL.md' },
       { label: '编辑器配置模板', href: 'https://github.com/yuque/yuque-ecosystem/tree/main/shared/mcp-config' },
     ],
   },

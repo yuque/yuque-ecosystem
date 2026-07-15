@@ -4,20 +4,20 @@ const modules = [
   {
     icon: '🔌',
     title: 'MCP Server',
-    desc: '底层连接层，为 AI 助手提供标准化的语雀 API 接口，让任何 MCP 兼容客户端都能操作语雀。',
-    meta: '19 个标准化 Tools',
+    desc: '能力层。为 AI 助手提供标准化的语雀 API 工具，覆盖文档、知识库、小记、画板，任何 MCP 兼容客户端都能使用。',
+    meta: 'npm: yuque-mcp',
   },
   {
     icon: '⚡',
     title: 'Skills',
-    desc: '场景化解决方案，将多个 Tools 编排成完整工作流，覆盖搜索、写作、归档等高频场景。',
-    meta: '8 个精选工作流',
+    desc: '资产层。将多个工具编排成完整工作流，覆盖搜索、写作、归档等高频场景。标准 SKILL.md 格式，跨客户端通用。',
+    meta: '8 个精选工作流 · 仓库唯一源',
   },
   {
     icon: '🧩',
     title: 'Plugin',
-    desc: '一键集成 MCP + Skills，让 AI 助手开箱即用地操作语雀。支持 Claude Code、OpenCode 等客户端。',
-    meta: 'MCP Tools + Skills 一键安装',
+    desc: '分发层。Claude Code 通过 Marketplace 一键安装 MCP + Skills；OpenCode、OpenClaw 等客户端直接复制 skills/ 目录即可接入。',
+    meta: '一次编写，处处可用',
   },
 ]
 

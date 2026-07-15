@@ -2,8 +2,7 @@
   "name": "yuque-ecosystem",
   "private": true,
   "workspaces": [
-    "website",
-    "plugins/openclaw"
+    "website"
   ],
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",

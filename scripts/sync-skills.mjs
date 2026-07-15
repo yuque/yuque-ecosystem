@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
- * Sync canonical skills to client plugin copies.
+ * Sync canonical skills to the Claude Code plugin packaging copy.
  *
- * Canonical source:  plugins/yuque-personal/skills/
- * Synced copies:     plugins/opencode/personal/skills/
- *                    plugins/openclaw/skills/
+ * Canonical source:  skills/
+ * Synced copy:       plugins/yuque-personal/skills/  (marketplace install
+ *                    fetches the plugin directory, so the copy must be
+ *                    committed — never edit it directly)
  *
  * Usage:
  *   node scripts/sync-skills.mjs          # overwrite copies from the source
@@ -15,11 +16,8 @@ import { join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
-const SOURCE = join(root, "plugins/yuque-personal/skills");
-const TARGETS = [
-  join(root, "plugins/opencode/personal/skills"),
-  join(root, "plugins/openclaw/skills"),
-];
+const SOURCE = join(root, "skills");
+const TARGETS = [join(root, "plugins/yuque-personal/skills")];
 
 const checkMode = process.argv.includes("--check");
 
@@ -71,7 +69,7 @@ for (const target of TARGETS) {
 
 if (checkMode && dirty) {
   console.error(
-    "\nSkills copies are out of sync. Edit plugins/yuque-personal/skills/ (the single source) and run: npm run sync-skills"
+    "\nSkills copies are out of sync. Edit skills/ (the single source) and run: npm run sync-skills"
   );
   process.exit(1);
 }

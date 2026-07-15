@@ -2,7 +2,7 @@
 
 # Yuque AI Ecosystem
 
-> The official distribution repository for Yuque AI integrations — one set of skills, ready to use across multiple AI clients, plus the website that presents them.
+> The official distribution repository for Yuque AI integrations — one set of skills, ready to use in any AI client, plus the website that presents them.
 
 [![Website](https://img.shields.io/badge/Website-yuque.github.io-blue)](https://yuque.github.io/yuque-ecosystem/)
 [![npm](https://img.shields.io/npm/v/yuque-mcp)](https://www.npmjs.com/package/yuque-mcp)
@@ -11,96 +11,67 @@
 
 ## Positioning
 
-**Skills are the asset, client integrations are distribution, the website is the storefront.** Capability and experience live in separate repositories: [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) defines what the AI *can do* (MCP tools); this repository defines how users *get it* (skill workflows, client integrations, install docs, and the website).
+**Skills are the asset, client integrations are distribution, the website is the storefront.** Capability and experience live in separate repositories: [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) defines what the AI *can do* (MCP tools); this repository defines how users *get it* (skill workflows, install docs, and the website).
 
 | Layer | Content | Location |
 |---|---|---|
 | Capability | MCP Server (npm: `yuque-mcp`) | [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) |
-| Asset | Knowledge-management skills (single source) | [`plugins/yuque-personal/skills/`](./plugins/yuque-personal/skills/) |
-| Distribution | Claude Code / OpenCode / OpenClaw integrations | [`plugins/`](./plugins/) (synced by script) |
+| Asset | Knowledge-management skills (single source, standard SKILL.md format) | [`skills/`](./skills/) |
+| Distribution | Claude Code Marketplace packaging + all-client install guide | [`plugins/yuque-personal/`](./plugins/yuque-personal/) · [`AGENT-INSTALL.md`](./AGENT-INSTALL.md) |
 | Storefront | Website (showcase + install guides) | [`website/`](./website/) |
 
-Two ground rules: a new client joins as a thin adapter as long as it can carry the same skills plus one MCP config; the website only shows what is installable and verified today.
+SKILL.md is a cross-client format — OpenCode, OpenClaw, and any other skills-capable client can copy [`skills/`](./skills/) into their own skills directory directly; no dedicated adapter layer needed. Claude Code is the one channel with formal packaging (one-command marketplace install with updates).
 
 ## Repository Structure
 
 ```
 yuque-ecosystem/
-├── website/                  # Official website (GitHub Pages)
+├── skills/                   # ★ The asset: 8 knowledge-management skills (single source)
+├── AGENT-INSTALL.md          # All-client install guide (directly executable by agents)
 ├── plugins/
-│   ├── yuque-personal/       # Claude Code plugin (personal edition) — canonical skills source
-│   │   ├── .claude-plugin/   #   plugin.json
-│   │   ├── .mcp.json         #   MCP server config
-│   │   └── skills/           #   8 skills (canonical — other clients are synced by script)
-│   ├── claude-code/          # Claude Code install docs
-│   ├── opencode/             # OpenCode integration (MCP config + skills copies)
-│   └── openclaw/             # OpenClaw plugin (skills copies)
+│   └── yuque-personal/       # Claude Code Marketplace packaging
+│       ├── .claude-plugin/   #   plugin.json
+│       ├── .mcp.json         #   MCP server config
+│       └── skills/           #   synced copy (do not edit; CI checks drift)
 ├── shared/
-│   └── mcp-config/           # MCP config templates for various editors
-├── scripts/                  # sync-skills.mjs — sync canonical skills to client copies
-├── .claude-plugin/           # Claude Code Marketplace entry
-└── package.json              # npm workspaces root
+│   └── mcp-config/           # MCP config templates for Cursor / VS Code / Windsurf, etc.
+├── scripts/                  # sync-skills.mjs — skills/ → plugin copy
+├── website/                  # Official website (GitHub Pages)
+└── .claude-plugin/           # Claude Code Marketplace entry
 ```
 
 > **The team edition (yuque-group) is temporarily withdrawn**: its skills depend on group-statistics MCP tools (`yuque_group_*`) that are not yet available in `yuque-mcp`. It will return once the underlying tools ship. See git history for the previous code.
 
 ## Quick Start
 
-### Claude Code
+### Claude Code (recommended — the formally packaged channel)
 
 ```bash
-# Option 1: Install via Marketplace (MCP tools + skills)
 claude plugin marketplace add yuque/yuque-ecosystem
 claude plugin install yuque-personal@yuque
 export YUQUE_TOKEN="your_token"   # the plugin reads the token from this env var
+```
 
-# Option 2: Add MCP Server directly (MCP tools only, no skills)
+MCP tools only, no skills:
+
+```bash
 claude mcp add yuque-mcp -- npx -y yuque-mcp --token=YOUR_TOKEN
 ```
 
-### OpenCode
+### Any other client (OpenCode / OpenClaw / Cursor / VS Code / Windsurf …)
 
-Add to your `opencode.json`:
+Two generic steps: ① configure `yuque-mcp` using a template from [`shared/mcp-config/`](./shared/mcp-config/); ② if the client supports skills, copy [`skills/`](./skills/) into its skills directory.
 
-```jsonc
-{
-  "mcp": {
-    "yuque": {
-      "type": "local",
-      "command": ["npx", "-y", "yuque-mcp", "--token=YOUR_TOKEN"]
-    }
-  }
-}
-```
-
-See [`plugins/opencode/`](./plugins/opencode/) for skills installation and the full setup guide.
-
-### Other Editors
-
-See [`shared/mcp-config/`](./shared/mcp-config/) for configuration templates for Cursor, Windsurf, GitHub Copilot (VS Code), and more.
-
-## Modules
-
-| Module | Description | Link |
-|---|---|---|
-| 🌐 Website | Official ecosystem website | [`website/`](./website/) |
-| 🔌 Claude Code Plugin | Claude Code Marketplace plugin | [`plugins/claude-code/`](./plugins/claude-code/) |
-| 🟢 OpenCode Plugin | OpenCode MCP + Skills integration | [`plugins/opencode/`](./plugins/opencode/) |
-| 🤖 OpenClaw Plugin | OpenClaw Agent integration | [`plugins/openclaw/`](./plugins/openclaw/) |
-| 📋 MCP Config | Editor configuration templates | [`shared/mcp-config/`](./shared/mcp-config/) |
+Per-client commands live in [`AGENT-INSTALL.md`](./AGENT-INSTALL.md) — hand that file to your AI agent and it will install everything.
 
 ## Development
 
 ```bash
 # Website development
-cd website
-npm install
-npm run dev
+cd website && npm install && npm run dev
 
-# OpenClaw Plugin development
-cd plugins/openclaw
-npm install
-npm run build
+# After editing skills, sync the plugin copy (CI checks drift)
+npm run sync-skills
 ```
 
 ## Links
