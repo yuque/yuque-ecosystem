@@ -15,9 +15,9 @@ const modules = [
   },
   {
     icon: '🧩',
-    title: 'Plugin',
-    desc: '分发层。Claude Code 通过 Marketplace 一键安装 MCP + Skills；OpenCode、OpenClaw 等客户端直接复制 skills/ 目录即可接入。',
-    meta: '一次编写，处处可用',
+    title: '两步安装',
+    desc: '所有客户端统一：配置 MCP + 复制 skills/，无插件依赖。',
+    meta: 'AGENT-INSTALL.md 全客户端指南',
   },
 ]
 
