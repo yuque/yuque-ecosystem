@@ -1,8 +1,8 @@
 ---
 name: note-refine
-description: Polish rough notes into high-quality documents — add structure, improve expression, and enhance formatting while preserving the original meaning. For personal/individual use.
-license: Apache-2.0
-compatibility: Requires yuque-mcp server connected to a Yuque account with personal Token
+description: "Polish rough Yuque notes into structured, readable documents while preserving their meaning. Use when the user wants to clean up a draft, improve layout, or turn fragments into a document; trigger phrases include “帮我整理一下这篇笔记”, “把这个文档排版优化一下”, and “polish my notes”."
+license: MIT
+compatibility: Requires the yuque-mcp MCP server connected with a personal Yuque token
 metadata:
   author: yuque
   version: "1.0"

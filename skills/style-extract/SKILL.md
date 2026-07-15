@@ -1,8 +1,8 @@
 ---
 name: style-extract
-description: Analyze a user's writing style from their Yuque documents — vocabulary habits, sentence patterns, tone characteristics — and generate a style profile that can be used to maintain consistent voice when writing new content. For personal/individual use.
-license: Apache-2.0
-compatibility: Requires yuque-mcp server connected to a Yuque account with personal Token
+description: "Analyze Yuque documents to extract vocabulary, sentence, and tone patterns into a reusable writing-style profile. Use when the user wants to understand or reproduce their voice or keep documents consistent; trigger phrases include “分析一下我的写作风格”, “用我的风格写一篇...”, “帮我生成一个风格画像”, “extract my writing style”, and “write like me”."
+license: MIT
+compatibility: Requires the yuque-mcp MCP server connected with a personal Yuque token
 metadata:
   author: yuque
   version: "1.0"

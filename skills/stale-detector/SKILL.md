@@ -1,8 +1,8 @@
 ---
 name: stale-detector
-description: Scan a Yuque knowledge base to find stale or potentially outdated documents, analyze their relevance, and generate a maintenance report with update or archive recommendations. For personal/individual use.
-license: Apache-2.0
-compatibility: Requires yuque-mcp server connected to a Yuque account with personal Token
+description: "Scan a Yuque knowledge base for stale or outdated documents and recommend updates or archiving. Use when the user is cleaning up, maintaining, or periodically reviewing a knowledge base; trigger phrases include “帮我检查哪些文档过期了”, “知识库体检”, and “find stale docs”."
+license: MIT
+compatibility: Requires the yuque-mcp MCP server connected with a personal Yuque token
 metadata:
   author: yuque
   version: "1.0"

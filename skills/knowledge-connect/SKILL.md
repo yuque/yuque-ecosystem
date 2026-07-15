@@ -1,8 +1,8 @@
 ---
 name: knowledge-connect
-description: Analyze documents in your Yuque knowledge base, discover hidden connections between them (similar topics, complementary content), and suggest cross-reference links to build a knowledge network. For personal/individual use.
-license: Apache-2.0
-compatibility: Requires yuque-mcp server connected to a Yuque account with personal Token
+description: "Analyze Yuque documents to uncover related topics, complementary notes, and cross-reference opportunities. Use when the user wants connections or a knowledge graph; trigger phrases include “帮我找找文档之间的关联”, “哪些笔记是相关的”, “这篇文档和哪些笔记有关”, “connect my notes”, and “find related documents”."
+license: MIT
+compatibility: Requires the yuque-mcp MCP server connected with a personal Yuque token
 metadata:
   author: yuque
   version: "1.0"
