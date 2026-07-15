@@ -1,30 +1,105 @@
 .footer {
-  padding: 48px 24px;
   border-top: 1px solid var(--color-border);
-  text-align: center;
+  background: var(--color-bg-secondary);
+  padding: 64px 24px 32px;
 }
 
-.links {
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.top {
   display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.brandCol {
+  max-width: 320px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.logoMark {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 32px;
-  margin-bottom: 20px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.logoMark svg {
+  width: 18px;
+  height: 18px;
+}
+
+.brandName {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.brandDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.stats {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.linkCols {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.linkCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 140px;
+}
+
+.colTitle {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
 }
 
 .link {
   font-size: 14px;
   color: var(--color-text-secondary);
   transition: color 0.2s ease;
+  width: fit-content;
 }
 
 .link:hover {
   color: var(--color-primary);
 }
 
-.stats {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  margin-bottom: 16px;
+.bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .credit {
@@ -36,8 +111,15 @@
   color: var(--color-primary);
 }
 
-@media (max-width: 640px) {
-  .links {
-    gap: 24px;
+@media (max-width: 768px) {
+  .footer {
+    padding: 48px 20px 24px;
+  }
+  .top {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .linkCols {
+    gap: 32px 48px;
   }
 }

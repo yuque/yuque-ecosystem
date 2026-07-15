@@ -4,28 +4,36 @@
 
 > 语雀 AI 生态 — MCP Tools and Skills for Claude Code
 
-## Editions
+## 插件
 
-### Personal (个人版)
+### yuque-personal（个人版）
 
-Personal knowledge base AI integration — 16 MCP Tools + 8 Skills.
+个人知识库 AI 集成 — MCP Tools + 8 Skills。
 
 📂 [`../yuque-personal/`](../yuque-personal/)
 
-### Group (团队版)
+> **团队版（yuque-group）已暂时下线**：其依赖的团队统计类 MCP 工具尚未在 `yuque-mcp` 中提供，待底层工具就绪后再重新上架。
 
-Team knowledge base AI integration — 16 MCP Tools + 6 Skills.
-
-📂 [`../yuque-group/`](../yuque-group/)
-
-## Installation
+## 安装
 
 ```bash
-# Install from Claude Code Marketplace
+# 1. 添加 marketplace
 claude plugin marketplace add yuque/yuque-ecosystem
+
+# 2. 安装插件（marketplace add 只是注册市场，必须再执行 install）
+claude plugin install yuque-personal@yuque
+
+# 3. 设置 Token（插件通过 YUQUE_TOKEN 环境变量读取）
+export YUQUE_TOKEN="your_token_here"
 ```
 
-## Links
+验证：
+
+```bash
+claude plugin list | grep yuque-personal
+```
+
+## 相关链接
 
 - [Yuque AI Ecosystem Website](https://yuque.github.io/yuque-ecosystem/)
 - [yuque-mcp-server (npm)](https://www.npmjs.com/package/yuque-mcp)

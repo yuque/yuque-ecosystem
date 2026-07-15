@@ -39,6 +39,7 @@
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  min-width: 0;
 }
 
 .stepNumber {
@@ -59,6 +60,8 @@
 .stepContent {
   flex: 1;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .stepTitle {

@@ -86,7 +86,7 @@ function McpQuickStart() {
               rel="noopener noreferrer"
               className={styles.link}
             >
-              Node.js 18+
+              Node.js 20+
             </a>
           </span>
           <span className={styles.prereqItem}>

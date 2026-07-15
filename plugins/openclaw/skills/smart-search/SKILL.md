@@ -107,7 +107,7 @@ Compose the answer in the following format:
 - If the answer is only partially found, say what you found and what's missing
 - Never fabricate information not present in the documents
 - Include document links so the user can read the full source
-- This skill searches the user's personal knowledge bases — for team knowledge bases, use the `smart-search` skill in the `yuque-group` plugin
+- This skill searches the knowledge bases accessible to the configured Yuque token
 
 ## Error Handling
 

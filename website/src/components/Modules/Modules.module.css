@@ -69,9 +69,17 @@
 }
 
 .cardIcon {
-  font-size: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+  font-size: 26px;
+  line-height: 1;
   margin-bottom: 20px;
-  display: block;
 }
 
 .cardTitle {

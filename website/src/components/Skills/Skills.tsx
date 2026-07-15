@@ -71,12 +71,12 @@ const personalSkills = [
   },
 ]
 
-// TODO: 团队版 skills 暂时隐藏，后续恢复
-// const groupSkills = [ ... ]
+// 团队版 skills 已随 yuque-group 插件下线：依赖的 yuque_group_* 统计工具尚未在 yuque-mcp 中提供。
+// 待底层工具就绪后从 git 历史恢复（见 plugins/yuque-group@0b411b7）。
 
 function Skills() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="skills">
       <p className={styles.sectionLabel}>Skills</p>
       <div className={styles.titleRow}>
         <h2 className={styles.sectionTitle}>场景化 AI 工作流</h2>

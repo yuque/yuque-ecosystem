@@ -6,7 +6,9 @@ Pre-built MCP server configuration snippets for various AI code editors.
 
 ## Usage
 
-Copy the appropriate config file and replace `YOUR_YUQUE_TOKEN` with your actual token from [yuque.com/settings/tokens](https://www.yuque.com/settings/tokens).
+Copy the appropriate config file and replace `YOUR_YUQUE_TOKEN` with your actual token from [yuque.com/settings/tokens](https://www.yuque.com/settings/tokens) (except the OpenCode template, which reads the env var via `{env:YUQUE_TOKEN}`).
+
+> **Note:** after the replacement, project-level config files contain your plaintext token — add them to `.gitignore` so it is never committed.
 
 | Client | Config File | Destination |
 |--------|-------------|-------------|
@@ -29,6 +31,7 @@ Or install the plugin from the Marketplace:
 
 ```bash
 claude plugin marketplace add yuque/yuque-ecosystem
+claude plugin install yuque-personal@yuque
 ```
 
 ## OpenCode
@@ -43,6 +46,6 @@ cp opencode.json /path/to/your/project/opencode.json
 cp opencode.json ~/.config/opencode/opencode.json
 ```
 
-Then edit the file and replace `YOUR_YUQUE_TOKEN` with your actual token.
+The OpenCode template uses `{env:YUQUE_TOKEN}` — just `export YUQUE_TOKEN="your_token"`, no need to edit the file.
 
 For more details, see [`plugins/opencode/README.md`](../../plugins/opencode/README.md).

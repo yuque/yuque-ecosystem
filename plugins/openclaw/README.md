@@ -10,15 +10,20 @@
 
 ## 前置条件
 
-- [OpenClaw](https://github.com/nicepkg/openclaw) 已安装并运行
+- [OpenClaw](https://openclaw.ai) 已安装并运行
 - 语雀账号及 [个人 Token](https://www.yuque.com/settings/tokens)
 - [yuque-mcp](https://www.npmjs.com/package/yuque-mcp) 已配置为 MCP Server
 
 ## 安装
 
+插件尚未发布到 npm，请从本地仓库安装：
+
 ```bash
-openclaw plugins install @yuque/openclaw-plugin
+git clone https://github.com/yuque/yuque-ecosystem.git
+openclaw plugins install ./yuque-ecosystem/plugins/openclaw
 ```
+
+> 开发调试可用 `openclaw plugins install --link ./yuque-ecosystem/plugins/openclaw`，保持安装指向本地目录。
 
 ## Skills
 
@@ -44,15 +49,14 @@ openclaw plugins install @yuque/openclaw-plugin
       "command": "npx",
       "args": ["-y", "yuque-mcp"],
       "env": {
-        "YUQUE_TOKEN": "your-yuque-token",
-        "YUQUE_API_URL": "https://www.yuque.com/api/v2"
+        "YUQUE_PERSONAL_TOKEN": "your-yuque-token"
       }
     }
   }
 }
 ```
 
-> Token 通过 MCP Server 的环境变量传入，插件本身不需要配置 Token。
+> Token 通过 MCP Server 的环境变量传入（`yuque-mcp` 读取的是 `YUQUE_PERSONAL_TOKEN`，也可用 `--token=...` 参数），插件本身不需要配置 Token。
 
 ## 目录结构
 
