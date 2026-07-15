@@ -4,7 +4,7 @@ description: Search your personal Yuque knowledge bases with natural language qu
 license: Apache-2.0
 compatibility: Requires yuque-mcp server connected to a Yuque account with personal Token
 metadata:
-  author: chen201724
+  author: yuque
   version: "2.0"
 ---
 

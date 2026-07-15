@@ -2,21 +2,25 @@
 
 # Yuque AI Ecosystem
 
-> The unified home for everything in the Yuque AI ecosystem — website, plugins, skills, and shared resources.
+> The official distribution repository for Yuque AI integrations — one set of skills, ready to use across multiple AI clients, plus the website that presents them.
 
 [![Website](https://img.shields.io/badge/Website-yuque.github.io-blue)](https://yuque.github.io/yuque-ecosystem/)
 [![npm](https://img.shields.io/npm/v/yuque-mcp)](https://www.npmjs.com/package/yuque-mcp)
 
 📖 **[Yuque + AI: From Documentation Tool to Your Second Brain](https://www.yuque.com/yuque/ai/yuque-ai-ecosystem-final)** — Explore the full vision of the Yuque AI Ecosystem
 
-## Architecture
+## Positioning
 
-This is a **Stripe-style monorepo**: one core SDK ([yuque-mcp-server](https://github.com/yuque/yuque-mcp-server)) + one ecosystem repository (this repo) containing all client integrations.
+**Skills are the asset, client integrations are distribution, the website is the storefront.** Capability and experience live in separate repositories: [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) defines what the AI *can do* (MCP tools); this repository defines how users *get it* (skill workflows, client integrations, install docs, and the website).
 
-| Repository | Purpose | Stripe Analogy |
+| Layer | Content | Location |
 |---|---|---|
-| [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) | Core MCP Server (npm package) | stripe-node (SDK) |
-| **yuque-ecosystem** (this repo) | Website + All Client Plugins + Skills | stripe-examples + docs |
+| Capability | MCP Server (npm: `yuque-mcp`) | [yuque-mcp-server](https://github.com/yuque/yuque-mcp-server) |
+| Asset | Knowledge-management skills (single source) | [`plugins/yuque-personal/skills/`](./plugins/yuque-personal/skills/) |
+| Distribution | Claude Code / OpenCode / OpenClaw integrations | [`plugins/`](./plugins/) (synced by script) |
+| Storefront | Website (showcase + install guides) | [`website/`](./website/) |
+
+Two ground rules: a new client joins as a thin adapter as long as it can carry the same skills plus one MCP config; the website only shows what is installable and verified today.
 
 ## Repository Structure
 

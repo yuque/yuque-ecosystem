@@ -11,13 +11,13 @@ function Hero() {
       <div className={styles.content}>
         <div className={styles.badge}>
           <span className={styles.badgeDot} />
-          Open Source · MIT License
+          官方开源 · MIT License
         </div>
         <h1 className={styles.title}>Yuque AI Ecosystem</h1>
         <p className={styles.subtitle}>
           让 AI 助手无缝连接语雀，释放知识的力量。
           <br />
-          <span className={styles.subtitleMeta}>MCP Server · Skills · Plugin，支持 Claude Code、Cursor 等主流 AI 客户端</span>
+          <span className={styles.subtitleMeta}>语雀 AI 集成官方分发中心 — MCP Server · Skills · Plugin，支持 Claude Code、Cursor 等主流 AI 客户端</span>
         </p>
         <div className={styles.actions}>
           <a
